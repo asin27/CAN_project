@@ -322,10 +322,10 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>0</wLevel>
+            <wLevel>1</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\Core;.\CAN\headers;.\CAN\drivers\include;.\security</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -456,26 +456,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>timer</GroupName>
-          <Files>
-            <File>
-              <FileName>IRQ_timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\timer\IRQ_timer.c</FilePath>
-            </File>
-            <File>
-              <FileName>lib_timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\timer\lib_timer.c</FilePath>
-            </File>
-            <File>
-              <FileName>timer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\timer\timer.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>RIT</GroupName>
           <Files>
             <File>
@@ -512,26 +492,6 @@
               <FileName>lib_joystick.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\joystick\lib_joystick.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>ADC</GroupName>
-          <Files>
-            <File>
-              <FileName>adc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\adc\adc.h</FilePath>
-            </File>
-            <File>
-              <FileName>IRQ_adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\adc\IRQ_adc.c</FilePath>
-            </File>
-            <File>
-              <FileName>lib_adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\adc\lib_adc.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -586,6 +546,91 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>CAN</GroupName>
+          <Files>
+            <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CAN\can.c</FilePath>
+            </File>
+            <File>
+              <FileName>highcan.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CAN\highcan.c</FilePath>
+            </File>
+            <File>
+              <FileName>IRQ_CAN.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CAN\IRQ_CAN.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CAN\Drivers\source\lpc17xx_can.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_clkpwr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CAN\Drivers\source\lpc17xx_clkpwr.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>security</GroupName>
+          <Files>
+            <File>
+              <FileName>aes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\security\aes.c</FilePath>
+            </File>
+            <File>
+              <FileName>aes.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\security\aes.h</FilePath>
+            </File>
+            <File>
+              <FileName>security.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\security\security.c</FilePath>
+            </File>
+            <File>
+              <FileName>security.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\security\security.h</FilePath>
+            </File>
+            <File>
+              <FileName>sha256.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\security\sha256.c</FilePath>
+            </File>
+            <File>
+              <FileName>sha256.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\security\sha256.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>trng</GroupName>
+          <Files>
+            <File>
+              <FileName>adc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\trng\adc.h</FilePath>
+            </File>
+            <File>
+              <FileName>IRQ_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\trng\IRQ_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>lib_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\trng\lib_adc.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -604,5 +649,14 @@
     </components>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>sample</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>

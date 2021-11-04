@@ -18,3 +18,7 @@
 .\sample.o: adc/adc.h
 .\sample.o: GLCD/GLCD.h
 .\sample.o: TouchPanel/TouchPanel.h
+.\sample.o: .\security\security.h
+.\sample.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\sample.o: .\security\sha256.h
+.\sample.o: .\security\aes.h

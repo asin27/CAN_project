@@ -19,6 +19,9 @@
 #include "adc/adc.h"
 #include "GLCD/GLCD.h"
 #include "TouchPanel/TouchPanel.h"
+#include "security.h"
+
+struct AES_ctx ctx_dec[2];
 
 /*----------------------------------------------------------------------------
   Main Program
