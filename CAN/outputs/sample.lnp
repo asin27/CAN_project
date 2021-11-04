@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+".\outputs\startup_lpc17xx.o"
+".\outputs\main.o"
+".\outputs\core_cm3.o"
+".\outputs\system_lpc17xx.o"
+".\outputs\asciilib.o"
+".\outputs\glcd.o"
+".\outputs\can.o"
+".\outputs\highcan.o"
+".\outputs\irq_can.o"
+".\outputs\lpc17xx_clkpwr.o"
+".\outputs\lpc17xx_can.o"
+".\outputs\string.o"
+".\outputs\security.o"
+".\outputs\sha256.o"
+".\outputs\aes.o"
+".\outputs\des.o"
+".\outputs\irq_adc.o"
+".\outputs\lib_adc.o"
+".\outputs\irq_rit.o"
+".\outputs\lib_rit.o"
+".\outputs\funct_joystick.o"
+".\outputs\lib_joystick.o"
+--strict --scatter ".\outputs\sample.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\listings\sample.map" -o .\outputs\sample.axf

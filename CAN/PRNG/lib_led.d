@@ -1,0 +1,10 @@
+.\lib_led.o: led\lib_led.c
+.\lib_led.o: C:\Users\Antonio\Desktop\progetti\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h
+.\lib_led.o: C:\Users\Antonio\Desktop\progetti\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h
+.\lib_led.o: D:\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
+.\lib_led.o: C:\Users\Antonio\Desktop\progetti\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h
+.\lib_led.o: C:\Users\Antonio\Desktop\progetti\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h
+.\lib_led.o: C:\Users\Antonio\Desktop\progetti\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h
+.\lib_led.o: C:\Users\Antonio\Desktop\progetti\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h
+.\lib_led.o: C:\Users\Antonio\Desktop\progetti\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\lib_led.o: led\led.h

@@ -1,0 +1,20 @@
+import bpy
+import sys
+
+
+def esporta():
+	obdata = bpy.context.object.data
+	precision = 6
+	with open('a.txt', 'w') as f:
+		sys.stdout = f
+		print('#include "cos3d.h"\n')
+		print('#define car_vertexes_n {}'.format(obdata.vertices.__len__()))
+		print('#define car_edges_n {}\n'.format(obdata.edges.__len__()))
+		print('vector3f car_vertexes[{}] = {{'.format(obdata.vertices.__len__()))
+		for v in obdata.vertices:
+			print('{{ {}, {}, {} }},'.format(round(v.co.x,precision), round(v.co.z,precision), round(v.co.y,precision)))
+		print('};\n\n')
+		print('vector2int car_edges[{}] = {{'.format(obdata.edges.__len__()))
+		for e in obdata.edges:
+			print('{{ {}, {} }},'.format(e.vertices[0], e.vertices[1]))
+		print('};\n\n')

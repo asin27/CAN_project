@@ -1,0 +1,13 @@
+.\outputs\highcan.o: CAN\highcan.c
+.\outputs\highcan.o: .\CAN\Drivers\include\lpc17xx_can.h
+.\outputs\highcan.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
+.\outputs\highcan.o: .\Core\CM3\CoreSupport\core_cm3.h
+.\outputs\highcan.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outputs\highcan.o: .\Core\CM3\CoreSupport\core_cmInstr.h
+.\outputs\highcan.o: .\Core\CM3\CoreSupport\core_cmFunc.h
+.\outputs\highcan.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\outputs\highcan.o: .\CAN\Drivers\include\lpc_types.h
+.\outputs\highcan.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\outputs\highcan.o: CAN\../GLCD/GLCD.h
+.\outputs\highcan.o: .\CAN\headers\./highcan.h
+.\outputs\highcan.o: .\CAN\headers\././can.h

@@ -1,0 +1,212 @@
+Dependencies for Project 'sample', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\startup_LPC17xx.s)(0x6145B152)(--cpu Cortex-M3 -g --apcs=interwork -ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 533" --pd "LPC175x_6x SETA 1"--list .\listings\startup_lpc17xx.lst --xref -o .\outputs\startup_lpc17xx.o --depend .\outputs\startup_lpc17xx.d)
+F (.\main.c)(0x61606C3D)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\main.o --omf_browse .\outputs\main.crf --depend .\outputs\main.d)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (GLCD/GLCD.h)(0x6145B152)
+I (.\CAN\headers\highcan.h)(0x6145B152)
+I (.\CAN\Drivers\include\lpc17xx_can.h)(0x6145B152)
+I (.\CAN\Drivers\include\lpc_types.h)(0x6145B152)
+I (.\CAN\headers\./can.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
+I (.\security\security.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
+I (.\security\sha256.h)(0x6145B152)
+I (.\security\aes.h)(0x6145B152)
+I (.\security\des.h)(0x6145B152)
+I (trng/adc.h)(0x61606981)
+I (RIT/RIT.h)(0x5FF6F818)
+I (joystick/joystick.h)(0x5FF6F818)
+F (.\core_cm3.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\core_cm3.o --omf_browse .\outputs\core_cm3.crf --depend .\outputs\core_cm3.d)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+F (.\system_LPC17xx.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\system_lpc17xx.o --omf_browse .\outputs\system_lpc17xx.crf --depend .\outputs\system_lpc17xx.d)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+F (.\GLCD\AsciiLib.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\asciilib.o --omf_browse .\outputs\asciilib.crf --depend .\outputs\asciilib.d)
+I (GLCD\AsciiLib.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+F (.\GLCD\AsciiLib.h)(0x6145B152)()
+F (.\GLCD\GLCD.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\glcd.o --omf_browse .\outputs\glcd.crf --depend .\outputs\glcd.d)
+I (GLCD\GLCD.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (GLCD\AsciiLib.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+F (.\GLCD\GLCD.h)(0x6145B152)()
+F (.\CAN\can.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\can.o --omf_browse .\outputs\can.crf --depend .\outputs\can.d)
+I (.\CAN\headers\./can.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (.\CAN\Drivers\include\lpc17xx_can.h)(0x6145B152)
+I (.\CAN\Drivers\include\lpc_types.h)(0x6145B152)
+I (CAN\../GLCD/GLCD.h)(0x6145B152)
+F (.\CAN\highcan.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\highcan.o --omf_browse .\outputs\highcan.crf --depend .\outputs\highcan.d)
+I (.\CAN\Drivers\include\lpc17xx_can.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (.\CAN\Drivers\include\lpc_types.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
+I (CAN\../GLCD/GLCD.h)(0x6145B152)
+I (.\CAN\headers\./highcan.h)(0x6145B152)
+I (.\CAN\headers\././can.h)(0x6145B152)
+F (.\CAN\IRQ_CAN.c)(0x61605F11)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\irq_can.o --omf_browse .\outputs\irq_can.crf --depend .\outputs\irq_can.d)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (.\CAN\headers\./highcan.h)(0x6145B152)
+I (.\CAN\Drivers\include\lpc17xx_can.h)(0x6145B152)
+I (.\CAN\Drivers\include\lpc_types.h)(0x6145B152)
+I (.\CAN\headers\././can.h)(0x6145B152)
+I (CAN\../GLCD/GLCD.h)(0x6145B152)
+I (.\security\security.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
+I (.\security\sha256.h)(0x6145B152)
+I (.\security\aes.h)(0x6145B152)
+I (.\security\des.h)(0x6145B152)
+I (CAN\../trng/adc.h)(0x61606981)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+F (.\CAN\Drivers\source\lpc17xx_clkpwr.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\lpc17xx_clkpwr.o --omf_browse .\outputs\lpc17xx_clkpwr.crf --depend .\outputs\lpc17xx_clkpwr.d)
+I (.\CAN\Drivers\include\lpc17xx_clkpwr.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (.\CAN\Drivers\include\lpc_types.h)(0x6145B152)
+F (.\CAN\Drivers\source\lpc17xx_can.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\lpc17xx_can.o --omf_browse .\outputs\lpc17xx_can.crf --depend .\outputs\lpc17xx_can.d)
+I (.\CAN\Drivers\include\lpc17xx_can.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (.\CAN\Drivers\include\lpc_types.h)(0x6145B152)
+I (.\CAN\Drivers\include\lpc17xx_clkpwr.h)(0x6145B152)
+I (.\CAN\Drivers\include\lpc17xx_libcfg_default.h)(0x6145B152)
+F (.\CAN\Drivers\include\lpc17xx_can.h)(0x6145B152)()
+F (.\utilities\string.cpp)(0x6145B152)(--cpp -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\string.o --omf_browse .\outputs\string.crf --depend .\outputs\string.d)
+I (utilities\string.h)(0x6145B152)
+F (.\utilities\string.h)(0x6145B152)()
+F (.\security\security.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\security.o --omf_browse .\outputs\security.crf --depend .\outputs\security.d)
+I (security\security.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
+I (security\sha256.h)(0x6145B152)
+I (security\aes.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (security\des.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+F (.\security\security.h)(0x6145B152)()
+F (.\security\sha256.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\sha256.o --omf_browse .\outputs\sha256.crf --depend .\outputs\sha256.d)
+I (security\sha256.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
+F (.\security\sha256.h)(0x6145B152)()
+F (.\security\aes.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\aes.o --omf_browse .\outputs\aes.crf --depend .\outputs\aes.d)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+I (security\aes.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
+F (.\security\des.c)(0x6145B152)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\des.o --omf_browse .\outputs\des.crf --depend .\outputs\des.d)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+I (security\des.h)(0x6145B152)
+F (.\security\aes.h)(0x6145B152)()
+F (.\security\des.h)(0x6145B152)()
+F (.\trng\adc.h)(0x61606981)()
+F (.\trng\IRQ_adc.c)(0x61606981)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\irq_adc.o --omf_browse .\outputs\irq_adc.crf --depend .\outputs\irq_adc.d)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (trng\adc.h)(0x61606981)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+I (.\PRNG\adc\../led/led.h)(0x54294EB4)
+I (trng\../timer/timer.h)(0x5C18CB60)
+I (trng\../GLCD/GLCD.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E9122)
+F (.\trng\lib_adc.c)(0x61606981)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\lib_adc.o --omf_browse .\outputs\lib_adc.crf --depend .\outputs\lib_adc.d)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (trng\adc.h)(0x61606981)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+F (.\RIT\IRQ_RIT.c)(0x61606C24)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\irq_rit.o --omf_browse .\outputs\irq_rit.crf --depend .\outputs\irq_rit.d)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (RIT\RIT.h)(0x5FF6F818)
+I (RIT\../timer/timer.h)(0x5C18CB60)
+I (RIT\../GLCD/GLCD.h)(0x6145B152)
+I (RIT\../trng/adc.h)(0x61606981)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
+I (.\CAN\headers\highcan.h)(0x6145B152)
+I (.\CAN\Drivers\include\lpc17xx_can.h)(0x6145B152)
+I (.\CAN\Drivers\include\lpc_types.h)(0x6145B152)
+I (.\CAN\headers\./can.h)(0x6145B152)
+I (RIT\../security/security.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
+I (RIT\../security/sha256.h)(0x6145B152)
+I (RIT\../security/aes.h)(0x6145B152)
+I (RIT\../security/des.h)(0x6145B152)
+F (.\RIT\lib_RIT.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\lib_rit.o --omf_browse .\outputs\lib_rit.crf --depend .\outputs\lib_rit.d)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (RIT\RIT.h)(0x5FF6F818)
+F (.\RIT\RIT.h)(0x5FF6F818)()
+F (.\joystick\funct_joystick.c)(0x61549685)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\funct_joystick.o --omf_browse .\outputs\funct_joystick.crf --depend .\outputs\funct_joystick.d)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (joystick\joystick.h)(0x5FF6F818)
+F (.\joystick\joystick.h)(0x5FF6F818)()
+F (.\joystick\lib_joystick.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\CanProva1 -I .\CAN\Drivers\include -I .\CAN\headers -I .\Core\Include -I .\security -I .\Core\CM3\CoreSupport\ -I .\PRNG\adc-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-ID:\Programmi\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="533" -DLPC175x_6x -DDEBUG-o .\outputs\lib_joystick.o --omf_browse .\outputs\lib_joystick.crf --depend .\outputs\lib_joystick.d)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6145B152)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6145B152)
+I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (joystick\joystick.h)(0x5FF6F818)

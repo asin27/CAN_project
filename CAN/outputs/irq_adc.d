@@ -1,0 +1,14 @@
+.\outputs\irq_adc.o: trng\IRQ_adc.c
+.\outputs\irq_adc.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h
+.\outputs\irq_adc.o: .\Core\CM3\CoreSupport\core_cm3.h
+.\outputs\irq_adc.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outputs\irq_adc.o: .\Core\CM3\CoreSupport\core_cmInstr.h
+.\outputs\irq_adc.o: .\Core\CM3\CoreSupport\core_cmFunc.h
+.\outputs\irq_adc.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\outputs\irq_adc.o: trng\adc.h
+.\outputs\irq_adc.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\outputs\irq_adc.o: .\PRNG\adc\../led/led.h
+.\outputs\irq_adc.o: trng\../timer/timer.h
+.\outputs\irq_adc.o: trng\../GLCD/GLCD.h
+.\outputs\irq_adc.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\outputs\irq_adc.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

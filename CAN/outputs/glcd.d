@@ -1,0 +1,10 @@
+.\outputs\glcd.o: GLCD\GLCD.c
+.\outputs\glcd.o: GLCD\GLCD.h
+.\outputs\glcd.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
+.\outputs\glcd.o: .\Core\CM3\CoreSupport\core_cm3.h
+.\outputs\glcd.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outputs\glcd.o: .\Core\CM3\CoreSupport\core_cmInstr.h
+.\outputs\glcd.o: .\Core\CM3\CoreSupport\core_cmFunc.h
+.\outputs\glcd.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\outputs\glcd.o: GLCD\AsciiLib.h
+.\outputs\glcd.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

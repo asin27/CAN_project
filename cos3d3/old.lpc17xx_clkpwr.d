@@ -1,0 +1,9 @@
+.\old.lpc17xx_clkpwr.o: CAN\OLD.lpc17xx_clkpwr.c
+.\old.lpc17xx_clkpwr.o: .\CAN.\Drivers.\include\lpc17xx_clkpwr.h
+.\old.lpc17xx_clkpwr.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
+.\old.lpc17xx_clkpwr.o: .\Core.\CM3.\CoreSupport\core_cm3.h
+.\old.lpc17xx_clkpwr.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\old.lpc17xx_clkpwr.o: .\Core.\CM3.\CoreSupport\core_cmInstr.h
+.\old.lpc17xx_clkpwr.o: .\Core.\CM3.\CoreSupport\core_cmFunc.h
+.\old.lpc17xx_clkpwr.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\old.lpc17xx_clkpwr.o: .\CAN.\Drivers.\include\lpc_types.h

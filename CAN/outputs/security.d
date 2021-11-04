@@ -1,0 +1,9 @@
+.\outputs\security.o: security\security.c
+.\outputs\security.o: security\security.h
+.\outputs\security.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\outputs\security.o: security\sha256.h
+.\outputs\security.o: security\aes.h
+.\outputs\security.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outputs\security.o: security\des.h
+.\outputs\security.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\outputs\security.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
