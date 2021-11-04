@@ -1,0 +1,10 @@
+.\irq_timer.o: timer\IRQ_timer.c
+.\irq_timer.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h
+.\irq_timer.o: .\Core\CM3\CoreSupport\core_cm3.h
+.\irq_timer.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\irq_timer.o: .\Core\CM3\CoreSupport\core_cmInstr.h
+.\irq_timer.o: .\Core\CM3\CoreSupport\core_cmFunc.h
+.\irq_timer.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\irq_timer.o: timer\timer.h
+.\irq_timer.o: timer\../led/led.h
+.\irq_timer.o: timer\../GLCD/GLCD.h
