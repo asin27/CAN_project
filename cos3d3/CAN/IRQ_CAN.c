@@ -50,7 +50,6 @@ void IRQ_CAN(int canBus){
 			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) finestrino);
 			for(int i=0; i<100; i++);
 			
-			
 			muovi_finestrini(finestrino[1], (float) finestrino[0] /12);
 			
 			//GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
