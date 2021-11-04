@@ -20,3 +20,6 @@
 .\sample.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
 .\sample.o: .\security\sha256.h
 .\sample.o: .\security\aes.h
+.\sample.o: RIT/RIT.h
+.\sample.o: trng/adc.h
+.\sample.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h

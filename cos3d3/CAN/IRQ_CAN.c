@@ -36,12 +36,12 @@ void IRQ_CAN(int canBus){
 	
 	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
 		hCAN_recMessage[hCAN_lenght] = 0;
-		GUI_Text(10, 50, (uint8_t*) "criptato: ", Black, Yellow);
-		GUI_Text(10, 70, (uint8_t*) hCAN_recMessage, Black, Yellow);
+		//GUI_Text(10, 50, (uint8_t*) "criptato: ", Black, Yellow);
+		//GUI_Text(10, 70, (uint8_t*) hCAN_recMessage, Black, Yellow);
 		
 		
 		if( hCAN_recID == 0x1 ){
-			GUI_Text(10, 120, (uint8_t*) "livello finestrino: ", Black, Yellow);
+			//GUI_Text(10, 120, (uint8_t*) "livello finestrino: ", Black, Yellow);
 			
 			for(int i=0;i<16;i++)
 				finestrino[i] = hCAN_recMessage[i];
@@ -58,7 +58,7 @@ void IRQ_CAN(int canBus){
 				finestrino[0] = '1';
 			}
 			
-			GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
+			//GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
 		}
 		
 		if( hCAN_recID == 0x2 ){ //luci
@@ -71,24 +71,24 @@ void IRQ_CAN(int canBus){
 			hCAN_recMessage[6] = 0;
 			
 			//frecce
-			if(hCAN_recMessage[0] != 0) 
+			if(hCAN_recMessage[0] != '0') 
 				Set_freccia(HAZARD);
-			else if(hCAN_recMessage[1] != 0)
+			else if(hCAN_recMessage[1] != '0')
 				Set_freccia(FRECCIA_SX);
-			else if(hCAN_recMessage[2] != 0)
+			else if(hCAN_recMessage[2] != '0')
 				Set_freccia(FRECCIA_DX);
 			else
 				Set_freccia(NESSUNA);
 			// luci
-			if(hCAN_recMessage[3] != 0)
+			if(hCAN_recMessage[3] != '0')
 				Set_fari(ANABBAGLIANTI);
-			else if(hCAN_recMessage[4] != 0)
+			else if(hCAN_recMessage[4] != '0')
 				Set_fari(ABBAGLIANTI);
 			else 
 				Set_fari(SPENTI);
 			
 			//freno
-			if(hCAN_recMessage[5] != 0)
+			if(hCAN_recMessage[5] != '0')
 				Set_freno(INSERITO);
 			else 
 				Set_freno(NON_INSERITO);
@@ -98,7 +98,7 @@ void IRQ_CAN(int canBus){
 	}
 	
 	if(hCAN_arbitrationLost(canBus)){
-		GUI_Text(0, 0, (uint8_t*) "ARBITRATION LOST! SOMEONE IS TRASMIITTING", Yellow, Red);
+		//GUI_Text(0, 0, (uint8_t*) "ARBITRATION LOST! SOMEONE IS TRASMIITTING", Yellow, Red);
 	};
 	
 }

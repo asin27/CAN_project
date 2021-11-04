@@ -29,6 +29,8 @@
 #include "math.h"
 #include "highcan.h"
 #include "security.h"
+#include "RIT/RIT.h"
+#include "trng/adc.h"
 
 #ifdef SIMULATOR
 extern uint8_t ScaleFlag; // <- ScaleFlag needs to visible in order for the emulator to find the symbol (can be placed also inside system_LPC17xx.h but since it is RO, it needs more work)
@@ -42,16 +44,20 @@ uint8_t key[16] = {'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', '
 uint8_t iv[16] = {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'};
 
 struct AES_ctx ctx_dec[2];
+struct AES_ctx keyctx;
 int main(void)
 {
 	SystemInit();  												/* System Initialization (i.e., PLL)  */
+	init_RIT(0x004c4b40);
+	enable_RIT();
+	ADC_init();
 	hCAN_init(1, CAN_1Mbps);
 	hCAN_setID(0xa);
-
 	LCD_Initialization();
 	ctx_dec[0] = AES_init(key, iv);
 	ctx_dec[1] = AES_init(key, iv);
-  
+  keyctx = AES_init(key, iv);
+	
 //	TP_Init();
 //	TouchPanel_Calibrate();
 	
