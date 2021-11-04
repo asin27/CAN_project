@@ -39,7 +39,7 @@ void IRQ_CAN(int canBus){
 		//GUI_Text(10, 50, (uint8_t*) "criptato: ", Black, Yellow);
 		//GUI_Text(10, 70, (uint8_t*) hCAN_recMessage, Black, Yellow);
 		
-		
+		//finestrino
 		if( hCAN_recID == 0x1 ){
 			//GUI_Text(10, 120, (uint8_t*) "livello finestrino: ", Black, Yellow);
 			
@@ -50,18 +50,14 @@ void IRQ_CAN(int canBus){
 			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) finestrino);
 			for(int i=0; i<100; i++);
 			
-			finestrino[1] = finestrino[0] + '0';
-			finestrino[0] = '0';
-			finestrino[2] = 0;
-			if(finestrino[1] > 9 + '0'){
-				finestrino[1] = finestrino[1] - 10;
-				finestrino[0] = '1';
-			}
+			
+			muovi_finestrini(finestrino[1], (float) finestrino[0] /12);
 			
 			//GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
 		}
 		
-		if( hCAN_recID == 0x2 ){ //luci
+		//luci 
+		if( hCAN_recID == 0x2 ){
 			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) hCAN_recMessage);
 			for(int i=0; i<100; i++);
 			//GUI_Text(10, 180, (uint8_t*) "luci: ", Black, Yellow);
