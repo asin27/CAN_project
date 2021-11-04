@@ -58,7 +58,7 @@ int main (void) {
 	init_RIT(0x004C4B40);									/* RIT Initialization 50 msec       	*/
 	enable_RIT();													/* RIT enabled												*/
 	ADC_init();
-	hCAN_init(1, CAN_1Mbps);
+	hCAN_init(1, CAN_5Kbps);
 	hCAN_setID(2);
 	
 	ctx = AES_init(keyAES, ivAES);

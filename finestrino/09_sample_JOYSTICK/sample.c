@@ -53,7 +53,7 @@ int main (void) {
 	SystemInit();  												/* System Initialization (i.e., PLL)  */
   LED_init();                           /* LED Initialization                 */
   BUTTON_init();												/* BUTTON Initialization              */
-	hCAN_init(1, CAN_1Mbps);
+	hCAN_init(1, CAN_5Kbps);
 	hCAN_setID(0x1);
 	joystick_init();											/* Joystick Initialization            */
 	init_RIT(0x004C4B40);//init_RIT(0x004C4B40);			/* RIT Initialization 50 msec       	*/
