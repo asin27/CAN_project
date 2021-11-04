@@ -7,7 +7,7 @@
 
 void IRQ_CAN(int canBus);
 
-extern struct AES_ctx ctx_dec[2];
+extern struct AES_ctx ctx_dec[3];
 
 void CAN_IRQHandler (void)
 {
@@ -50,7 +50,7 @@ void IRQ_CAN(int canBus){
 			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) finestrino);
 			for(int i=0; i<100; i++);
 			
-			muovi_finestrini(finestrino[1], (float) finestrino[0] /12);
+			set_finestrini(finestrino[1], (float) finestrino[0] /12);
 			
 			//GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
 		}
@@ -75,9 +75,9 @@ void IRQ_CAN(int canBus){
 			else
 				Set_freccia(NESSUNA);
 			// luci
-			if(hCAN_recMessage[3] != '0')
+			if(hCAN_recMessage[4] != '0')
 				Set_fari(ANABBAGLIANTI);
-			else if(hCAN_recMessage[4] != '0')
+			else if(hCAN_recMessage[3] != '0')
 				Set_fari(ABBAGLIANTI);
 			else 
 				Set_fari(SPENTI);
@@ -89,7 +89,22 @@ void IRQ_CAN(int canBus){
 				Set_freno(NON_INSERITO);
 			//GUI_Text(10, 200, (uint8_t*) hCAN_recMessage, Black, Yellow);
 		}
-		
+		//freno-acceleratore
+		if( hCAN_recID == 0x3 ){
+			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) hCAN_recMessage);
+			for(int i=0; i<100; i++);
+			//GUI_Text(10, 180, (uint8_t*) "luci: ", Black, Yellow);
+			
+			//frecce
+			if(hCAN_recMessage[0] != 0){ //freno
+				if(hCAN_recMessage[0] > getAcceleratore())
+					Set_acceleratore(0);
+				else
+					Set_acceleratore(hCAN_recMessage[0] - getAcceleratore());
+			}
+			else if(hCAN_recMessage[2] != 0) //acceleratore
+				Set_acceleratore(hCAN_recMessage[2]);
+		}
 	}
 	
 	if(hCAN_arbitrationLost(canBus)){

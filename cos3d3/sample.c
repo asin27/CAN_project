@@ -43,7 +43,7 @@ extern uint8_t ScaleFlag; // <- ScaleFlag needs to visible in order for the emul
 uint8_t key[16] = {'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'};
 uint8_t iv[16] = {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'};
 
-struct AES_ctx ctx_dec[2];
+struct AES_ctx ctx_dec[3];
 struct AES_ctx keyctx;
 int main(void)
 {
@@ -51,11 +51,12 @@ int main(void)
 	init_RIT(0x004c4b40);
 	enable_RIT();
 	ADC_init();
-	hCAN_init(1, CAN_1Mbps);
+	hCAN_init(1, CAN_5Kbps);
 	hCAN_setID(0xa);
 	LCD_Initialization();
 	ctx_dec[0] = AES_init(key, iv);
 	ctx_dec[1] = AES_init(key, iv);
+	ctx_dec[2] = AES_init(key, iv);
   keyctx = AES_init(key, iv);
 	
 //	TP_Init();
@@ -63,8 +64,9 @@ int main(void)
 	
 	LCD_Clear(White);
 	
-	init_timer(0, 0x1312D0 ); 			//20fps			
-	//init_timer(0, 0x4C4B40 );				//5fps
+	//init_timer(0, 0x1312D0 ); 			//20fps			
+	init_timer(0, 0x2625a0); 					//10fps
+	//init_timer(0, 0x196e6a); //15
 	//init_timer(0, 0x0F4240 );				//25fps
 	
 	enable_timer(0);
