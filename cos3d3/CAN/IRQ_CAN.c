@@ -3,10 +3,11 @@
 #include "../GLCD/GLCD.h"
 #include <security.h>
 #include "../trng/adc.h"
+#include "../cos3d.h"
 
 void IRQ_CAN(int canBus);
 
-/*extern */struct AES_ctx ctx_dec[2];
+extern struct AES_ctx ctx_dec[2];
 
 void CAN_IRQHandler (void)
 {
@@ -60,15 +61,38 @@ void IRQ_CAN(int canBus){
 			GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
 		}
 		
-		if( hCAN_recID == 0x2 ){
+		if( hCAN_recID == 0x2 ){ //luci
 			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) hCAN_recMessage);
 			for(int i=0; i<100; i++);
-			GUI_Text(10, 180, (uint8_t*) "luci: ", Black, Yellow);
+			//GUI_Text(10, 180, (uint8_t*) "luci: ", Black, Yellow);
 			for(int i=0; i<6; i++){
 				hCAN_recMessage[i] += '0';
 			}
 			hCAN_recMessage[6] = 0;
-			GUI_Text(10, 200, (uint8_t*) hCAN_recMessage, Black, Yellow);
+			
+			//frecce
+			if(hCAN_recMessage[0] != 0) 
+				Set_freccia(HAZARD);
+			else if(hCAN_recMessage[1] != 0)
+				Set_freccia(FRECCIA_SX);
+			else if(hCAN_recMessage[2] != 0)
+				Set_freccia(FRECCIA_DX);
+			else
+				Set_freccia(NESSUNA);
+			// luci
+			if(hCAN_recMessage[3] != 0)
+				Set_fari(ANABBAGLIANTI);
+			else if(hCAN_recMessage[4] != 0)
+				Set_fari(ABBAGLIANTI);
+			else 
+				Set_fari(SPENTI);
+			
+			//freno
+			if(hCAN_recMessage[5] != 0)
+				Set_freno(INSERITO);
+			else 
+				Set_freno(NON_INSERITO);
+			//GUI_Text(10, 200, (uint8_t*) hCAN_recMessage, Black, Yellow);
 		}
 		
 	}

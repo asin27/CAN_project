@@ -12,3 +12,11 @@
 .\sample.o: timer/timer.h
 .\sample.o: cos3d.h
 .\sample.o: C:\Keil\ARM\ARMCC\Bin\..\include\math.h
+.\sample.o: .\CAN\headers\highcan.h
+.\sample.o: .\CAN\Drivers\include\lpc17xx_can.h
+.\sample.o: .\CAN\Drivers\include\lpc_types.h
+.\sample.o: .\CAN\headers\./can.h
+.\sample.o: .\security\security.h
+.\sample.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\sample.o: .\security\sha256.h
+.\sample.o: .\security\aes.h

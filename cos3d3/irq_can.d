@@ -18,3 +18,4 @@
 .\irq_can.o: .\security\aes.h
 .\irq_can.o: CAN\../trng/adc.h
 .\irq_can.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
+.\irq_can.o: CAN\../cos3d.h
