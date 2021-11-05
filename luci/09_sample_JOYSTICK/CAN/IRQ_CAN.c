@@ -50,7 +50,7 @@ void IRQ_CAN(int canBus){
 				clear_box(45, 180, Red);
 			}
 			AES(&ctx,  (unsigned char *) msg);
-			while(hCAN_sendMessage(1, (char *) msg, 16) != hCAN_SUCCESS);
+			//while(hCAN_sendMessage(1, (char *) msg, 16) != hCAN_SUCCESS);
 			AES(&dec_ctx, (unsigned char *) msg);
 			
 		}
@@ -58,6 +58,11 @@ void IRQ_CAN(int canBus){
 	
 	if(hCAN_arbitrationLost(canBus)){
 	
-	};
+	}
+	
+	if(hCAN_busError(canBus)){
+		GUI_Text(0, 0, (uint8_t*)"ERROR!!!!", White, Blue);
+	}
+	
 	
 }
