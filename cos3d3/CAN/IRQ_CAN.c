@@ -4,6 +4,7 @@
 #include <security.h>
 #include "../trng/adc.h"
 #include "../cos3d.h"
+#include <stdio.h>
 
 void IRQ_CAN(int canBus);
 
@@ -31,7 +32,8 @@ void CAN_IRQHandler (void)
 }
 
 void IRQ_CAN(int canBus){
-	
+	char buf1[20];
+	char buf2[20];
 	unsigned char finestrino[16] = {0};
 	
 	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
@@ -93,17 +95,21 @@ void IRQ_CAN(int canBus){
 		if( hCAN_recID == 0x3 ){
 			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) hCAN_recMessage);
 			for(int i=0; i<100; i++);
-			//GUI_Text(10, 180, (uint8_t*) "luci: ", Black, Yellow);
-			
-			//frecce
-			if(hCAN_recMessage[0] != 0){ //freno
-				if(hCAN_recMessage[0] > getAcceleratore())
-					Set_acceleratore(0);
-				else
-					Set_acceleratore(hCAN_recMessage[0] - getAcceleratore());
+			if(hCAN_recMessage[15] != 0xa){
+				GUI_Text(80, 280, (uint8_t*) "crypto troubles!!!", Black, Yellow);
 			}
-			else if(hCAN_recMessage[2] != 0) //acceleratore
-				Set_acceleratore(hCAN_recMessage[2]);
+			else{
+				sprintf(buf1, "acceleratore %3d", hCAN_recMessage[2]);
+				sprintf(buf2, "freno %3d", hCAN_recMessage[0]);
+				//GUI_Text(80, 280, (uint8_t*) buf1, Black, Yellow);
+				//GUI_Text(80, 260, (uint8_t*) buf2, Black, Yellow);
+				
+				int newAcc = hCAN_recMessage[2] - hCAN_recMessage[0];
+				if(newAcc < 0) newAcc = 0;
+				sprintf(buf1, "%3d %3d %3d", hCAN_recMessage[2], hCAN_recMessage[0], newAcc);
+				GUI_Text(80, 260, (uint8_t*) buf1, Black, Yellow);
+				Set_acceleratore(newAcc);
+			}
 		}
 	}
 	

@@ -352,8 +352,8 @@ void drawSegnaletica(void) {
 			EraseSprite(posizioniX[1],posizioneY,tipi_di_freccia[stato_freccia-1],30,30);
 		}
 	
-	sprintf(buffer,"fa=%d,fr=%d,pa=%.2f", fari, freccia, target_finestrini[0]);//freno_parcheggio);
-	GUI_Text(posizioniX[1]-20,posizioneY-30,buffer,Black,White);
+	sprintf(buffer,"fa=%d,fr=%d f0=%.2f f1=%.2f f2=%.2f f3=%2.f", fari, freccia, target_finestrini[0], target_finestrini[1], target_finestrini[2], target_finestrini[3]);//freno_parcheggio);
+	GUI_Text(posizioniX[1]-120,posizioneY-280,buffer,Black,White);
 	
 	if (stato_freno_parcheggio != freno_parcheggio) {
 		EraseSprite(posizioniX[2],posizioneY,frenoamano,30,30);
