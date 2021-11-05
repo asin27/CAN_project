@@ -4,10 +4,11 @@
 #include <security.h>
 #include "../trng/adc.h"
 #include "../cos3d.h"
+#include <stdio.h>
 
 void IRQ_CAN(int canBus);
 
-extern struct AES_ctx ctx_dec[2];
+extern struct AES_ctx ctx_dec[3];
 
 void CAN_IRQHandler (void)
 {
@@ -31,7 +32,8 @@ void CAN_IRQHandler (void)
 }
 
 void IRQ_CAN(int canBus){
-	
+	char buf1[20];
+	char buf2[20];
 	unsigned char finestrino[16] = {0};
 	
 	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
@@ -50,7 +52,7 @@ void IRQ_CAN(int canBus){
 			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) finestrino);
 			for(int i=0; i<100; i++);
 			
-			muovi_finestrini(finestrino[1], (float) finestrino[0] /12);
+			set_finestrini(finestrino[1], (float) finestrino[0] /12);
 			
 			//GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
 		}
@@ -75,9 +77,9 @@ void IRQ_CAN(int canBus){
 			else
 				Set_freccia(NESSUNA);
 			// luci
-			if(hCAN_recMessage[3] != '0')
+			if(hCAN_recMessage[4] != '0')
 				Set_fari(ANABBAGLIANTI);
-			else if(hCAN_recMessage[4] != '0')
+			else if(hCAN_recMessage[3] != '0')
 				Set_fari(ABBAGLIANTI);
 			else 
 				Set_fari(SPENTI);
@@ -89,7 +91,26 @@ void IRQ_CAN(int canBus){
 				Set_freno(NON_INSERITO);
 			//GUI_Text(10, 200, (uint8_t*) hCAN_recMessage, Black, Yellow);
 		}
-		
+		//freno-acceleratore
+		if( hCAN_recID == 0x3 ){
+			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) hCAN_recMessage);
+			for(int i=0; i<100; i++);
+			if(hCAN_recMessage[15] != 0xa){
+				GUI_Text(80, 280, (uint8_t*) "crypto troubles!!!", Black, Yellow);
+			}
+			else{
+				sprintf(buf1, "acceleratore %3d", hCAN_recMessage[2]);
+				sprintf(buf2, "freno %3d", hCAN_recMessage[0]);
+				//GUI_Text(80, 280, (uint8_t*) buf1, Black, Yellow);
+				//GUI_Text(80, 260, (uint8_t*) buf2, Black, Yellow);
+				
+				int newAcc = hCAN_recMessage[2] - hCAN_recMessage[0];
+				if(newAcc < 0) newAcc = 0;
+				sprintf(buf1, "%3d %3d %3d", hCAN_recMessage[2], hCAN_recMessage[0], newAcc);
+				GUI_Text(80, 260, (uint8_t*) buf1, Black, Yellow);
+				Set_acceleratore(newAcc);
+			}
+		}
 	}
 	
 	if(hCAN_arbitrationLost(canBus)){

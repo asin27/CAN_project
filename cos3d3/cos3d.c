@@ -96,7 +96,6 @@ vector3f create_vec3f(float x, float y, float z) {
 	return v;
 }
 
-static int target_finestrini[4];
 void anima_finestrini() {
 	static int f[4] = {1, 1, 1, 1};
 	int i;
@@ -321,6 +320,9 @@ void Set_freno(enum e_freno v) {
 void Set_acceleratore(int v) {
 	velocita = v;
 }
+int getAcceleratore(){
+	return velocita;
+}
 
 void drawSegnaletica(void) {
 	int posizioniX[] = {85, 85+35, 85+35*2, 85+35*3};
@@ -345,10 +347,13 @@ void drawSegnaletica(void) {
 		
 		blink_freccia = (blink_freccia+1)%periodo_freccia;
 		stato_freccia = freccia;
-	} 
+	}
+		else{
+			EraseSprite(posizioniX[1],posizioneY,tipi_di_freccia[stato_freccia-1],30,30);
+		}
 	
-	sprintf(buffer,"fa=%d,fr=%d,pa=%d", fari, freccia, freno_parcheggio);
-	GUI_Text(posizioniX[1],posizioneY-30,buffer,Black,White);
+	sprintf(buffer,"fa=%d,fr=%d f0=%.2f f1=%.2f f2=%.2f f3=%2.f", fari, freccia, target_finestrini[0], target_finestrini[1], target_finestrini[2], target_finestrini[3]);//freno_parcheggio);
+	GUI_Text(posizioniX[1]-120,posizioneY-280,buffer,Black,White);
 	
 	if (stato_freno_parcheggio != freno_parcheggio) {
 		EraseSprite(posizioniX[2],posizioneY,frenoamano,30,30);
