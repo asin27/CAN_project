@@ -3,7 +3,7 @@
 /* lib_adc.c */
 void ADC_init (void);
 void ADC_start_conversion (void);
-unsigned char* ADC_generate_random(void);
+unsigned char	ADC_generate_random(void);
 
 
 /* IRQ_adc.c */

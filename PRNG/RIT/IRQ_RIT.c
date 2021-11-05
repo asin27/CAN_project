@@ -12,7 +12,6 @@
 #include "../led/led.h"
 #include "../GLCD/GLCD.h"
 #include "../button_EXINT/button.h"
-#include "../timer/timer.h"
 #include "../TouchPanel/TouchPanel.h"
 
 /******************************************************************************

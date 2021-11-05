@@ -13,5 +13,4 @@
 .\irq_rit.o: RIT\../led/led.h
 .\irq_rit.o: RIT\../GLCD/GLCD.h
 .\irq_rit.o: RIT\../button_EXINT/button.h
-.\irq_rit.o: RIT\../timer/timer.h
 .\irq_rit.o: RIT\../TouchPanel/TouchPanel.h

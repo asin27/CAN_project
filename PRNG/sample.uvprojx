@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Core;.\CAN\headers;.\CAN\drivers\include;.\security</IncludePath>
+              <IncludePath>.\Core;.\CAN\headers;.\CAN\drivers\include;.\..\security</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -476,26 +476,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>joystick</GroupName>
-          <Files>
-            <File>
-              <FileName>funct_joystick.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\joystick\funct_joystick.c</FilePath>
-            </File>
-            <File>
-              <FileName>joystick.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\joystick\joystick.h</FilePath>
-            </File>
-            <File>
-              <FileName>lib_joystick.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\joystick\lib_joystick.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>GLCD</GroupName>
           <Files>
             <File>
@@ -576,41 +556,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>security</GroupName>
-          <Files>
-            <File>
-              <FileName>aes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\security\aes.c</FilePath>
-            </File>
-            <File>
-              <FileName>aes.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\security\aes.h</FilePath>
-            </File>
-            <File>
-              <FileName>security.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\security\security.c</FilePath>
-            </File>
-            <File>
-              <FileName>security.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\security\security.h</FilePath>
-            </File>
-            <File>
-              <FileName>sha256.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\security\sha256.c</FilePath>
-            </File>
-            <File>
-              <FileName>sha256.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\security\sha256.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>trng</GroupName>
           <Files>
             <File>
@@ -627,6 +572,61 @@
               <FileName>lib_adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\trng\lib_adc.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>timer</GroupName>
+          <Files>
+            <File>
+              <FileName>IRQ_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\timer\IRQ_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lib_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\timer\lib_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\timer\timer.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>security</GroupName>
+          <Files>
+            <File>
+              <FileName>aes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\security\aes.c</FilePath>
+            </File>
+            <File>
+              <FileName>aes.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\security\aes.h</FilePath>
+            </File>
+            <File>
+              <FileName>security.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\security\security.c</FilePath>
+            </File>
+            <File>
+              <FileName>security.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\security\security.h</FilePath>
+            </File>
+            <File>
+              <FileName>sha256.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\security\sha256.c</FilePath>
+            </File>
+            <File>
+              <FileName>sha256.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\security\sha256.h</FilePath>
             </File>
           </Files>
         </Group>

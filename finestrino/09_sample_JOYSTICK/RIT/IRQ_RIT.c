@@ -100,7 +100,7 @@ void RIT_IRQHandler (void)
 						disable_timer(0);
 						disable_timer(1);
 						drawLineOfSquares(12 - fLevel[selected], White);
-						if(fLevel>0){
+						if(fLevel[selected]>0){
 							fLevel[selected]--;
 							
 						}
@@ -108,7 +108,7 @@ void RIT_IRQHandler (void)
 						break;
 				case 10:
 					drawLineOfSquares(12 - fLevel[selected], White);
-					if(fLevel>0)
+					if(fLevel[selected]>0)
 						fLevel[selected]--;
 
 					cnt++;

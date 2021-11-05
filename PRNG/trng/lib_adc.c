@@ -1,7 +1,7 @@
 #include "lpc17xx.h"
-#include "adc.h"
+#include "../trng/adc.h"
 
-unsigned char AD_current[16];
+unsigned char AD_current;
 
 /*----------------------------------------------------------------------------
   Function that initializes ADC
@@ -31,6 +31,6 @@ void ADC_start_conversion (void) {
 	LPC_ADC->ADCR |=  (1<<24);            /* Start A/D Conversion 				*/
 }			
 
-unsigned char* ADC_generate_random(void){
+unsigned char ADC_generate_random(void){
 	return AD_current;
 }

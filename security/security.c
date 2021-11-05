@@ -3,7 +3,6 @@
 //#include <stdlib.h>
 #include <string.h>
 #include "aes.h"
-#include "des.h"
 
 void digest(unsigned char *data, unsigned char* key, unsigned char *final){
     SHA256_CTX x1;

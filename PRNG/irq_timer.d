@@ -7,6 +7,12 @@
 .\irq_timer.o: C:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h
 .\irq_timer.o: C:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h
 .\irq_timer.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\irq_timer.o: timer\../trng/adc.h
+.\irq_timer.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
 .\irq_timer.o: timer\timer.h
 .\irq_timer.o: timer\../led/led.h
 .\irq_timer.o: timer\../GLCD/GLCD.h
+.\irq_timer.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\irq_timer.o: .\CAN\headers\CAN.h
+.\irq_timer.o: .\CAN\drivers\include\lpc17xx_can.h
+.\irq_timer.o: .\CAN\drivers\include\lpc_types.h

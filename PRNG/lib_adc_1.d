@@ -7,5 +7,5 @@
 .\lib_adc_1.o: C:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h
 .\lib_adc_1.o: C:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h
 .\lib_adc_1.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
-.\lib_adc_1.o: trng\adc.h
+.\lib_adc_1.o: trng\../trng/adc.h
 .\lib_adc_1.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h

@@ -9,6 +9,7 @@
 .\irq_adc_1.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\irq_adc_1.o: trng\adc.h
 .\irq_adc_1.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
+.\irq_adc_1.o: trng\../led/led.h
 .\irq_adc_1.o: trng\../timer/timer.h
 .\irq_adc_1.o: trng\../GLCD/GLCD.h
 .\irq_adc_1.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdio.h
