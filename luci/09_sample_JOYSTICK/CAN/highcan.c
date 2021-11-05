@@ -32,10 +32,11 @@ int hCAN_init(int peripheral, int speed){
 	CAN_internalPrioMode(can, CAN_PRIO_FST);
 	can->MOD &= ~0x1; // normal mode
 	
-	//Enable Interrupt
+	//Enable Interrupt (UM10360 16.7.4)
 	CAN_IRQCmd(can, CANINT_RIE, ENABLE); // receive message 
 	CAN_IRQCmd(can, CANINT_ALIE, ENABLE); // arbitration lost
-	CAN_IRQCmd(can, CANINT_EPIE, ENABLE);
+	CAN_IRQCmd(can, CANINT_EPIE, ENABLE); // Error passive interrupt
+	CAN_IRQCmd(can, CANINT_BEIE, ENABLE); // Buss Error interrupt
 
 	NVIC_EnableIRQ(CAN_IRQn); // enable interrupt
 	
@@ -300,6 +301,19 @@ inline int hCAN_arbitrationLost(int canBus){
 	if(canBus == 1) can = LPC_CAN1;
 	else can = LPC_CAN2;
 	
-	if( (can->ICR & CAN_ICR_ALI) != 0)
+	if( (can->ICR & CAN_ICR_ALI) != 0){
 		busMine[canBus-1] = 0;
+		return 1;
+	}
+	return 0;
+}
+
+inline int hCAN_busError(int canBus){
+		LPC_CAN_TypeDef *can;
+	if(canBus == 1) can = LPC_CAN1;
+	else can = LPC_CAN2;
+	
+	if( (can->ICR & CAN_ICR_ALI) != 0)
+		return 1;
+	return 0;
 }

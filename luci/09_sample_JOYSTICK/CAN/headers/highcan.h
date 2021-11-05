@@ -46,6 +46,6 @@ int hCAN_sendMessage(int peripheral, char *buffer, int lenght);
 int hCAN_receiveMessage(int peripheral);
 
 int hCAN_arbitrationLost(int canBus);
-
+int hCAN_busError(int canBus);
 
 #endif // HIGH_CAN_H

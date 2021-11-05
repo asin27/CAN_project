@@ -316,11 +316,11 @@ void RIT_IRQHandler (void)
 		}
 	}
 	
-	if(k3!=0){ 
-		if((LPC_GPIO2->FIOPIN & (1<<10)) == 0){	/* breaks light INT0 pressed */
+	/*if(k3!=0){ 
+		if((LPC_GPIO2->FIOPIN & (1<<10)) == 0){	/* breaks light INT0 pressed *
 			k3++;				
 			switch(k3){
-				case 2:				/* pay attention here: please see slides 19_ to understand value 2 */
+				case 2:				/* pay attention here: please see slides 19_ to understand value 2 *
 					LED_On(4);
 					breakLights=1;
 					msg[5] = breakLights;
@@ -334,7 +334,7 @@ void RIT_IRQHandler (void)
 					break;
 			}
 		}
-		else {	/* button released */
+		else {	/* button released *
 			if (k3 > 2){
 				LED_Off(4);
 				breakLights=0;
@@ -345,10 +345,10 @@ void RIT_IRQHandler (void)
 				k3 = 0;
 			}
 			
-			NVIC_EnableIRQ(EINT1_IRQn);							 /* enable Button interrupts			*/
-			LPC_PINCON->PINSEL4    |= (1 << 20);     /* External interrupt 0 pin selection */
+			NVIC_EnableIRQ(EINT1_IRQn);							 /* enable Button interrupts			*
+			LPC_PINCON->PINSEL4    |= (1 << 20);     /* External interrupt 0 pin selection *
 		}
-	}
+	} */
 	
   LPC_RIT->RICTRL |= 0x1;	/* clear interrupt flag */
 	
@@ -358,7 +358,9 @@ void RIT_IRQHandler (void)
 				//DES3((unsigned char*)msg, key, ENCRYPT);
 				//AES_state(&ctx, (unsigned char*)msg, &lock);
 				AES(&ctx,  (unsigned char *) msg);
+				
 				hCAN_sendMessage(1, (char *) msg, 16);
+				
 				AES(&dec_ctx, (unsigned char *) msg);
 				lock = 1;
 			}
