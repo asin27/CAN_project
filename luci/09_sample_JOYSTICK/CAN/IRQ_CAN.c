@@ -3,6 +3,7 @@
 #include "../security/security.h"
 #include "../GLCD/GLCD.h"
 #include "../drawing/draw.h"
+#include "../Keep Alive/keep_alive.h"
 
 extern char msg[16];
 extern struct AES_ctx break_dec_ctx;
@@ -44,6 +45,11 @@ void IRQ_CAN_RECEIVE(int canBus){
 	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone[canBus-1]){
 		hCAN_recMessage[canBus-1][hCAN_lenght[canBus-1]] = 0;
 		
+		// check for keep alive message
+		if(checkMsg(hCAN_recMessage[canBus-1], hCAN_recID[canBus-1]))
+			return;
+		
+		// otherwise other messages
 		if( hCAN_recID[canBus-1] == 0x3 ){
 			
 			for(int i=0;i<16;i++)
@@ -59,9 +65,6 @@ void IRQ_CAN_RECEIVE(int canBus){
 				msg[5] = 0;
 				clear_box(45, 180, Red);
 			}
-			//AES(&ctx,  (unsigned char *) msg);
-			//while(hCAN_sendMessage(1, (char *) msg, 16) != hCAN_SUCCESS);
-			//AES(&dec_ctx, (unsigned char *) msg);
 			
 		}
 	}

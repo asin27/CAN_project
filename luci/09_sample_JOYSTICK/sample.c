@@ -26,6 +26,8 @@
 #include "drawing/draw.h"
 #include "highcan.h"
 #include "../security/security.h"
+#include "Keep Alive/keep_alive.h"
+
 
 #ifdef SIMULATOR
 extern uint8_t ScaleFlag; // <- ScaleFlag needs to visible in order for the emulator to find the symbol (can be placed also inside system_LPC17xx.h but since it is RO, it needs more work)
@@ -61,8 +63,9 @@ int main (void) {
 	
 	hCAN_init(1, CAN_5Kbps);
 	hCAN_setID(2);
-	
 	hCAN_init(2, CAN_5Kbps);
+	
+	alive_timer_init(3);
 	
 	ctx = AES_init(keyAES, ivAES);
 	dec_ctx = AES_init(keyAES, ivAES);
