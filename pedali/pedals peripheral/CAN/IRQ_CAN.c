@@ -1,7 +1,7 @@
 #include "lpc17xx.h"
 #include "./highcan.h"
 #include "../GLCD/GLCD.h"
-#include <../security/security.h>
+#include <security/security.h>
 
 static unsigned char keyDgst[32] = {0};
 static unsigned char ivDgst[32] = {0};

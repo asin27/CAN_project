@@ -10,10 +10,10 @@
 .\irq_timer.o: timer\timer.h
 .\irq_timer.o: timer\../led/led.h
 .\irq_timer.o: timer\../GLCD/GLCD.h
-.\irq_timer.o: timer\../security/security.h
+.\irq_timer.o: ..\..\shared_libraries\security/security.h
 .\irq_timer.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\irq_timer.o: timer\../security/sha256.h
-.\irq_timer.o: timer\../security/aes.h
+.\irq_timer.o: ..\..\shared_libraries\security/sha256.h
+.\irq_timer.o: ..\..\shared_libraries\security/aes.h
 .\irq_timer.o: .\CAN\headers\highcan.h
 .\irq_timer.o: .\CAN\Drivers\include\lpc17xx_can.h
 .\irq_timer.o: .\CAN\Drivers\include\lpc_types.h
