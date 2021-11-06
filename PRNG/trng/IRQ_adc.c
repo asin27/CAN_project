@@ -10,7 +10,6 @@
 
 #include "lpc17xx.h"
 #include "adc.h"
-#include "../led/led.h"
 #include "../timer/timer.h"
 #include "../GLCD/GLCD.h"
 #include <stdio.h>

@@ -5,9 +5,12 @@
 #include "../trng/adc.h"
 
 void IRQ_CAN(int canBus);
-
+extern int good, bad; //declared static in IRQ_timer
+extern struct AES_ctx ctx; //declared in main
+extern struct AES_ctx ack_ctx[4]; //declared in main 
+extern int generated; //declared in IRQ_timer
 //extern unsigned char key[3][8];
-extern struct AES_ctx ctx_dec[2];
+//extern struct AES_ctx ctx_dec[2];
 
 void CAN_IRQHandler (void)
 {
@@ -36,42 +39,23 @@ void IRQ_CAN(int canBus){
 	
 	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
 		hCAN_recMessage[hCAN_lenght] = 0;
-		GUI_Text(10, 50, (uint8_t*) "criptato: ", Black, Yellow);
-		GUI_Text(10, 70, (uint8_t*) hCAN_recMessage, Black, Yellow);
-		
-		
-		if( hCAN_recID == 0x1 ){
-			GUI_Text(10, 120, (uint8_t*) "livello finestrino: ", Black, Yellow);
-			
-			for(int i=0;i<16;i++)
-				finestrino[i] = hCAN_recMessage[i];
-			
-			//DES3((unsigned char*) finestrino, key, DECRYPT);
-			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) finestrino);
-			for(int i=0; i<100; i++);
-			
-			finestrino[1] = finestrino[0] + '0';
-			finestrino[0] = '0';
-			finestrino[2] = 0;
-			if(finestrino[1] > 9 + '0'){
-				finestrino[1] = finestrino[1] - 10;
-				finestrino[0] = '1';
-			}
-			
-			GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
+		if(hCAN_lenght == 8 && generated){
+			AES(&ack_ctx[hCAN_recID == 0xa ? 3 : hCAN_recID -1], (uint8_t *) hCAN_recMessage);
+			if(hCAN_recMessage[0] == hCAN_recMessage[1] == 1)
+				good++;
+			else 
+				bad++;
+			/*switch(hCAN_recID){
+				case 1: //finestrino
+					break;
+				case 2: //luci
+					break;
+				case 3: //pedali
+					break;
+				case 0xa: //dashboard
+					break;
+			}*/
 		}
-		
-		if( hCAN_recID == 0x2 ){
-			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) hCAN_recMessage);
-			for(int i=0; i<100; i++);
-			GUI_Text(10, 180, (uint8_t*) "luci: ", Black, Yellow);
-			for(int i=0; i<6; i++){
-				hCAN_recMessage[i] += '0';
-			}
-			hCAN_recMessage[6] = 0;
-			GUI_Text(10, 200, (uint8_t*) hCAN_recMessage, Black, Yellow);
-		}
-		
 	}
 	
 	if(hCAN_arbitrationLost(canBus)){

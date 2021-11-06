@@ -10,10 +10,10 @@
 #include "lpc17xx.h"
 #include "../trng/adc.h"
 #include "timer.h"
-#include "../led/led.h"
 #include "../GLCD/GLCD.h"
 #include <stdio.h>
-#include "CAN.h"
+#include <security.h>
+#include "highcan.h"
 
 
 /******************************************************************************
@@ -30,9 +30,19 @@ int blink_mask = 0xFF;
 
 extern int check;
 extern unsigned char AD_current;
+extern struct AES_ctx ctx;
+extern struct AES_ctx ack_ctx[4]; //declared in main 
+extern uint8_t oldKey[16];
+extern uint8_t oldIv[16];
 extern uint8_t eKey[16];
 extern uint8_t iv[16];
 extern uint8_t sCode;
+extern uint8_t hK[32];
+extern uint8_t hIv[32];
+extern uint8_t finalMessage[96];
+int good = 0, bad = 0;
+int generated = 0;
+
 int ready = 0;
 
 void keyGeneration(){
@@ -68,11 +78,55 @@ void keyGeneration(){
 }
 
 
+
+
+
+
+void prepareMessage(){
+	for(int i=0; i<32; i++)
+		finalMessage[i] = hK[i];
+	for(int i=32; i<48; i++)
+		finalMessage[i] = eKey[i-32];
+	for(int i=48; i<80; i++)
+		finalMessage[i] = hIv[i-48];
+	for(int i=80; i<96; i++)
+		finalMessage[i] = iv[i-80];
+}
+
+
 void TIMER0_IRQHandler (void)
 {
+	do{
 	keyGeneration();
 	
-	//do handshake here
+	//prepare ack_ctx(s)
+	for(int i = 0; i<4; i++)
+		ack_ctx[i] = AES_init(eKey, iv);
+		
+	//auth then enc
+	AES(&ctx, eKey);
+	AES(&ctx, iv);
+	digest(eKey, oldKey, hK);
+	digest(iv, oldKey, hIv); 
+	//do handshake here 
+	//send digests then keys
+	
+	prepareMessage();
+	generated = 1;
+		
+	while(hCAN_sendMessage(1, (char *) finalMessage, 96)!= hCAN_SUCCESS); //hK | k | hIv | iv
+
+	while(good < 1 || bad != 0);	
+		
+	generated = 0;
+		
+	}while(bad != 0);
+	
+	//updating keys
+	for(int i = 0; i<16; i++){
+		oldKey[i] = eKey[i];
+		oldIv[i] = iv[i];
+	}
 	
   LPC_TIM0->IR = 1;			/* clear interrupt flag */
   return;

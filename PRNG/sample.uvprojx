@@ -416,66 +416,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>led</GroupName>
-          <Files>
-            <File>
-              <FileName>funct_led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\led\funct_led.c</FilePath>
-            </File>
-            <File>
-              <FileName>lib_led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\led\lib_led.c</FilePath>
-            </File>
-            <File>
-              <FileName>led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\led\led.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>button_EINT</GroupName>
-          <Files>
-            <File>
-              <FileName>button.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\button_EXINT\button.h</FilePath>
-            </File>
-            <File>
-              <FileName>IRQ_button.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\button_EXINT\IRQ_button.c</FilePath>
-            </File>
-            <File>
-              <FileName>lib_button.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\button_EXINT\lib_button.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>RIT</GroupName>
-          <Files>
-            <File>
-              <FileName>IRQ_RIT.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\RIT\IRQ_RIT.c</FilePath>
-            </File>
-            <File>
-              <FileName>lib_RIT.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\RIT\lib_RIT.c</FilePath>
-            </File>
-            <File>
-              <FileName>RIT.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\RIT\RIT.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>GLCD</GroupName>
           <Files>
             <File>
@@ -507,21 +447,6 @@
               <FileName>HzLib.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\GLCD\HzLib.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>TouchPanel</GroupName>
-          <Files>
-            <File>
-              <FileName>TouchPanel.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\TouchPanel\TouchPanel.c</FilePath>
-            </File>
-            <File>
-              <FileName>TouchPanel.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\TouchPanel\TouchPanel.h</FilePath>
             </File>
           </Files>
         </Group>

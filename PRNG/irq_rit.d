@@ -8,9 +8,3 @@
 .\irq_rit.o: C:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h
 .\irq_rit.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\irq_rit.o: RIT\RIT.h
-.\irq_rit.o: RIT\../adc/adc.h
-.\irq_rit.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
-.\irq_rit.o: RIT\../led/led.h
-.\irq_rit.o: RIT\../GLCD/GLCD.h
-.\irq_rit.o: RIT\../button_EXINT/button.h
-.\irq_rit.o: RIT\../TouchPanel/TouchPanel.h

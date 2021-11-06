@@ -10,9 +10,13 @@
 .\irq_timer.o: timer\../trng/adc.h
 .\irq_timer.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
 .\irq_timer.o: timer\timer.h
-.\irq_timer.o: timer\../led/led.h
 .\irq_timer.o: timer\../GLCD/GLCD.h
 .\irq_timer.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdio.h
-.\irq_timer.o: .\CAN\headers\CAN.h
+.\irq_timer.o: .\..\security\security.h
+.\irq_timer.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\irq_timer.o: .\..\security\sha256.h
+.\irq_timer.o: .\..\security\aes.h
+.\irq_timer.o: .\CAN\headers\highcan.h
 .\irq_timer.o: .\CAN\drivers\include\lpc17xx_can.h
 .\irq_timer.o: .\CAN\drivers\include\lpc_types.h
+.\irq_timer.o: .\CAN\headers\./can.h

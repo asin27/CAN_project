@@ -10,20 +10,25 @@
  *----------------------------------------------------------------------------*/
                   
 #include <stdio.h>
-#include "LPC17xx.H"                    /* LPC17xx definitions                */
-#include "led/led.h"
+#include "LPC17xx.H"      
 #include "timer/timer.h"
-#include "RIT/RIT.h"
 #include "trng/adc.h"
-#include "CAN.h"
+#include "highcan.h"
 #include "GLCD/GLCD.h"
 #include "TouchPanel/TouchPanel.h"
 #include <security.h>
 
 struct AES_ctx ctx;
+struct AES_ctx ack_ctx[4];
 uint8_t eKey[16] = "AAAAAAAAAAAAAAAA";
 uint8_t iv[16] = "BBBBBBBBBBBBBBBB";
+uint8_t oldKey[16] = "AAAAAAAAAAAAAAAA";
+uint8_t oldIv[16] = "BBBBBBBBBBBBBBBB";
 uint8_t sCode = 0xa;
+
+uint8_t hK[32];
+uint8_t hIv[32];
+uint8_t finalMessage[96];
 
 /*----------------------------------------------------------------------------
   Main Program
@@ -35,6 +40,8 @@ int main (void) {
 	LCD_Initialization();
 	LCD_Clear(Blue);
 	ADC_init();
+	hCAN_init(1, CAN_5Kbps);
+	hCAN_setID(0x4);
 	
 	ctx = AES_init(eKey, iv);
 	
