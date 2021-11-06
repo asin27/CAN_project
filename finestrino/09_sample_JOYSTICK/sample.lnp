@@ -12,9 +12,6 @@
 ".\lib_joystick.o"
 ".\irq_timer.o"
 ".\lib_timer.o"
-".\asciilib.o"
-".\glcd.o"
-".\hzlib.o"
 ".\irq_can.o"
 ".\can.o"
 ".\highcan.o"
@@ -23,6 +20,9 @@
 ".\aes.o"
 ".\security.o"
 ".\sha256.o"
+".\asciilib.o"
+".\glcd.o"
+".\hzlib.o"
 --strict --scatter ".\sample.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

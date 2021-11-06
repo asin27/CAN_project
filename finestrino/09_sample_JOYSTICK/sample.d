@@ -11,7 +11,7 @@
 .\sample.o: timer/timer.h
 .\sample.o: RIT/RIT.h
 .\sample.o: joystick/joystick.h
-.\sample.o: GLCD/GLCD.h
+.\sample.o: .\..\..\shared_libraries\GLCD/GLCD.h
 .\sample.o: .\..\..\shared_libraries\security/security.h
 .\sample.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
 .\sample.o: .\..\..\shared_libraries\security/sha256.h

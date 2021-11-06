@@ -424,19 +424,9 @@
               <FilePath>.\GLCD\AsciiLib.c</FilePath>
             </File>
             <File>
-              <FileName>AsciiLib.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\GLCD\AsciiLib.h</FilePath>
-            </File>
-            <File>
               <FileName>GLCD.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\GLCD\GLCD.c</FilePath>
-            </File>
-            <File>
-              <FileName>GLCD.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\GLCD\GLCD.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,6 +1,6 @@
 #include "lpc17xx.h"
-#include "./highcan.h"
-#include "../GLCD/GLCD.h"
+#include "highcan.h"
+#include "GLCD/GLCD.h"
 #include "security/security.h"
 
 void IRQ_CAN(int canBus);

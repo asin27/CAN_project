@@ -8,7 +8,7 @@
 .\irq_rit.o: RIT\RIT.h
 .\irq_rit.o: RIT\../led/led.h
 .\irq_rit.o: RIT\../timer/timer.h
-.\irq_rit.o: RIT\../GLCD/GLCD.h
+.\irq_rit.o: .\..\..\shared_libraries\GLCD/GLCD.h
 .\irq_rit.o: .\..\..\shared_libraries\CAN\headers\highcan.h
 .\irq_rit.o: .\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
 .\irq_rit.o: .\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
