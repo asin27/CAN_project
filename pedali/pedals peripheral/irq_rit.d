@@ -11,6 +11,6 @@
 .\irq_rit.o: RIT\../adc/adc.h
 .\irq_rit.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\irq_rit.o: RIT\../led/led.h
-.\irq_rit.o: ..\..\shared_libraries\GLCD/GLCD.h
+.\irq_rit.o: RIT\../GLCD/GLCD.h
 .\irq_rit.o: RIT\../button_EXINT/button.h
 .\irq_rit.o: RIT\../TouchPanel/TouchPanel.h

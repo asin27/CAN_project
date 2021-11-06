@@ -1,0 +1,12 @@
+.\old.lpc17xx_can.o: ..\..\shared_libraries\CAN\OLD.lpc17xx_can.c
+.\old.lpc17xx_can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
+.\old.lpc17xx_can.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
+.\old.lpc17xx_can.o: D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h
+.\old.lpc17xx_can.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\old.lpc17xx_can.o: D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h
+.\old.lpc17xx_can.o: D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h
+.\old.lpc17xx_can.o: D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h
+.\old.lpc17xx_can.o: D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h
+.\old.lpc17xx_can.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\old.lpc17xx_can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
+.\old.lpc17xx_can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_clkpwr.h

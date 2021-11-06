@@ -1,6 +1,6 @@
 #include "lpc17xx.h"
 #include "CAN/headers/highcan.h"
-#include "GLCD/GLCD.h"
+#include "../GLCD/GLCD.h"
 #include <security/security.h>
 
 static unsigned char keyDgst[32] = {0};
@@ -44,8 +44,8 @@ void IRQ_CAN(int canBus){
 	char res[32] = {0};
 	int okKey = 0, okIv = 0; 
 	
-	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone[canBus-1]){
-		hCAN_recMessage[canBus-1][hCAN_lenght[canBus-1]] = 0;
+	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
+		hCAN_recMessage[hCAN_lenght] = 0;
 		
 		
 		if( hCAN_recID == 0x4 ){

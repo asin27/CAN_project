@@ -10,6 +10,6 @@
 .\irq_adc.o: adc\adc.h
 .\irq_adc.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\irq_adc.o: adc\../led/led.h
-.\irq_adc.o: ..\..\shared_libraries\GLCD/GLCD.h
+.\irq_adc.o: adc\../GLCD/GLCD.h
 .\irq_adc.o: adc\../peripheral.h
 .\irq_adc.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

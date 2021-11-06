@@ -8,7 +8,7 @@
 .\peripheral.o: D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h
 .\peripheral.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\peripheral.o: peripheral.h
-.\peripheral.o: GLCD/GLCD.h
+.\peripheral.o: ./GLCD/GLCD.h
 .\peripheral.o: CAN/headers/highcan.h
 .\peripheral.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
 .\peripheral.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h

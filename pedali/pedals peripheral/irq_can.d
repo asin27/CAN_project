@@ -11,7 +11,7 @@
 .\irq_can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
 .\irq_can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
 .\irq_can.o: ..\..\shared_libraries\CAN/headers/./can.h
-.\irq_can.o: ..\..\shared_libraries\GLCD/GLCD.h
+.\irq_can.o: CAN\../GLCD/GLCD.h
 .\irq_can.o: ..\..\shared_libraries\security/security.h
 .\irq_can.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\irq_can.o: ..\..\shared_libraries\security/sha256.h

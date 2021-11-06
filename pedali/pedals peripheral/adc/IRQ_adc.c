@@ -11,7 +11,7 @@
 #include "lpc17xx.h"
 #include "adc.h"
 #include "../led/led.h"
-#include "GLCD/GLCD.h"
+#include "../GLCD/GLCD.h"
 #include "../peripheral.h"
 #include <stdio.h>
 

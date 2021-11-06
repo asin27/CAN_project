@@ -1,4 +1,4 @@
-.\lpc17xx_can.o: ..\..\shared_libraries\CAN\Drivers\source\lpc17xx_can.c
+.\lpc17xx_can.o: CAN\Drivers\source\lpc17xx_can.c
 .\lpc17xx_can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
 .\lpc17xx_can.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
 .\lpc17xx_can.o: D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h

@@ -579,14 +579,14 @@
               <FilePath>..\..\shared_libraries\CAN\highcan.c</FilePath>
             </File>
             <File>
-              <FileName>lpc17xx_can.c</FileName>
+              <FileName>OLD.lpc17xx_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\shared_libraries\CAN\Drivers\source\lpc17xx_can.c</FilePath>
+              <FilePath>..\..\shared_libraries\CAN\OLD.lpc17xx_can.c</FilePath>
             </File>
             <File>
-              <FileName>lpc17xx_clkpwr.c</FileName>
+              <FileName>OLD.lpc17xx_clkpwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\shared_libraries\CAN\Drivers\source\lpc17xx_clkpwr.c</FilePath>
+              <FilePath>..\..\shared_libraries\CAN\OLD.lpc17xx_clkpwr.c</FilePath>
             </File>
           </Files>
         </Group>
