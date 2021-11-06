@@ -25,6 +25,7 @@
 #define hCAN_SOT (0x1 << 10)
 #define hCAN_MAX_LENGHT (int) (1 << 5)
 #define hCAN_ENUM (0xF << 6)
+#define hCAN_ENUM_L 6
 #define hCAN_FIRST_ENUM_BIT 6
 #define hCAN_FIRST_ID_BIT 0
 //SOT ---ENUM---- 

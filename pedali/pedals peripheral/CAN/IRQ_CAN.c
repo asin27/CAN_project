@@ -3,17 +3,27 @@
 #include "../GLCD/GLCD.h"
 #include <../security/security.h>
 
+static unsigned char keyDgst[32] = {0};
+static unsigned char ivDgst[32] = {0};
+static unsigned char newKey[16] = {0};
+static unsigned char newIv[16] = {0};
 
 void IRQ_CAN(int canBus);
 
-extern unsigned char key[3][8];
-extern struct AES_ctx ctx_dec[2];
+extern struct AES_ctx ctx_dec;
+extern struct AES_ctx newParam_dec;
+extern struct AES_ctx ctx;
+extern struct AES_ctx ack;
+
+extern uint8_t key_aes[16];
+extern uint8_t iv[16];
+
 
 void CAN_IRQHandler (void)
 {
 	int32_t icr = LPC_CAN1->ICR; // clear the interrupt
 	
-//	if( (icr & CAN_ICR_EPI) != 0 )
+//	if ( (icr & CAN_ICR_EPI) != 0 )
 //		GUI_Text(0, 20*counter++, (uint8_t*) "EPI ERROR!", Black, Yellow);
 	
 	int canBus = 0;
@@ -26,51 +36,70 @@ void CAN_IRQHandler (void)
 }
 
 void IRQ_CAN(int canBus){
-	/*
-	unsigned char finestrino[16] = {0};
+	
+	extern unsigned char keyDgst[32];
+	extern unsigned char ivDgst[32];
+	extern unsigned char newKey[16];
+	extern unsigned char newIv[16];
+	char res[32] = {0};
+	int okKey = 0, okIv = 0; 
 	
 	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
 		hCAN_recMessage[hCAN_lenght] = 0;
-		GUI_Text(10, 50, (uint8_t*) "criptato: ", Black, Yellow);
-		GUI_Text(10, 70, (uint8_t*) hCAN_recMessage, Black, Yellow);
 		
 		
-		if( hCAN_recID == 0x1 ){
-			GUI_Text(10, 120, (uint8_t*) "livello finestrino: ", Black, Yellow);
+		if( hCAN_recID == 0x4 ){
+			//GUI_Text(10, 120, (uint8_t*) "livello finestrino: ", Black, Yellow);
 			
-			for(int i=0;i<16;i++)
-				finestrino[i] = hCAN_recMessage[i];
+			for(int i=0;i<32;i++)
+				keyDgst[i] = hCAN_recMessage[i];
+
 			
-			//DES3((unsigned char*) finestrino, key, DECRYPT);
-			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) finestrino);
+			for(int i=32;i<48;i++)
+				newKey[i-32] = hCAN_recMessage[i];
+			
+			for(int i=48;i<80;i++)
+				ivDgst[i-48] = hCAN_recMessage[i];
+			
+			for(int i=80;i<96;i++)
+				newIv[i-80] = hCAN_recMessage[i];
+			
+			if (!verify_digest(newKey, key_aes, keyDgst)){
+					 GUI_Text(10, 120, (uint8_t*) "Errore verifica KEY", Black, Yellow);
+			} else {
+					AES(&newParam_dec, newKey, 16);
+					okKey = res[0] = 1;
+			}
+			if (!verify_digest(newIv, key_aes, ivDgst)){
+					 GUI_Text(20, 120, (uint8_t*) "Errore verifica IV", Black, Yellow);
+			} else {
+					AES(&newParam_dec, newIv, 16);
+					okIv = res[1] = 1;
+			}
+			if (okKey && okIv){
+					ctx_dec = AES_init(newKey, newIv);
+					ctx = AES_init(newKey, newIv);
+					newParam_dec = AES_init(newKey, newIv);
+					ack = AES_init(newKey, newIv);
+					AES(&ack, (uint8_t *)res, 32);
+					while(hCAN_sendMessage(1, (char *) res, 32)!=hCAN_SUCCESS);
+			} else {
+					while(hCAN_sendMessage(1, (char *) res, 32)!=hCAN_SUCCESS);
+			}
+		
+		
 			for(int i=0; i<100; i++);
 			
-			finestrino[1] = finestrino[0] + '0';
-			finestrino[0] = '0';
-			finestrino[2] = 0;
-			if(finestrino[1] > 9 + '0'){
-				finestrino[1] = finestrino[1] - 10;
-				finestrino[0] = '1';
-			}
 			
-			GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
+			//GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
 		}
 		
-		if( hCAN_recID == 0x2 ){
-			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) hCAN_recMessage);
-			for(int i=0; i<100; i++);
-			GUI_Text(10, 180, (uint8_t*) "luci: ", Black, Yellow);
-			for(int i=0; i<6; i++){
-				hCAN_recMessage[i] += '0';
-			}
-			hCAN_recMessage[6] = 0;
-			GUI_Text(10, 200, (uint8_t*) hCAN_recMessage, Black, Yellow);
-		}
+		
 		
 	}
 	
 	if(hCAN_arbitrationLost(canBus)){
 		GUI_Text(0, 0, (uint8_t*) "ARBITRATION LOST! SOMEONE IS TRASMIITTING", Yellow, Red);
 	};
-	*/
+	
 }

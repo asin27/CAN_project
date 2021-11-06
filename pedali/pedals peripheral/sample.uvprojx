@@ -636,6 +636,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>timer</GroupName>
+          <Files>
+            <File>
+              <FileName>IRQ_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\timer\IRQ_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lib_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\timer\lib_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\timer\timer.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
