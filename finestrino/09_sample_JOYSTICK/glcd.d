@@ -1,10 +1,10 @@
-.\glcd.o: GLCD\GLCD.c
-.\glcd.o: GLCD\GLCD.h
-.\glcd.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
+.\glcd.o: ..\..\shared_libraries\GLCD\GLCD.c
+.\glcd.o: ..\..\shared_libraries\GLCD\GLCD.h
+.\glcd.o: C:\Users\clem-\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
 .\glcd.o: .\Core\CM3\CoreSupport\core_cm3.h
-.\glcd.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\glcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\glcd.o: .\Core\CM3\CoreSupport\core_cmInstr.h
 .\glcd.o: .\Core\CM3\CoreSupport\core_cmFunc.h
-.\glcd.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
-.\glcd.o: GLCD\AsciiLib.h
-.\glcd.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
+.\glcd.o: C:\Users\clem-\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\glcd.o: ..\..\shared_libraries\GLCD\AsciiLib.h
+.\glcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

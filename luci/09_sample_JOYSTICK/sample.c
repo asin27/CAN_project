@@ -26,7 +26,7 @@
 #include "drawing/draw.h"
 #include "highcan.h"
 #include "../security/security.h"
-#include "Keep Alive/keep_alive.h"
+#include "keep_alive/keep_alive.h"
 
 
 #ifdef SIMULATOR

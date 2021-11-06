@@ -45,7 +45,7 @@ int checkMsg(char *buff, int id){
 	return keep_alive_msg;
 }
 
-void TIMER2_IRQHandler (void){
+void TIMER3_IRQHandler (void){
 	static int phase = 0;
 	int n_disconnected = 0;
 

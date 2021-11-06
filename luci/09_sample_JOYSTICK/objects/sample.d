@@ -19,3 +19,12 @@
 .\objects\sample.o: TouchPanel/TouchPanel.h
 .\objects\sample.o: drawing/draw.h
 .\objects\sample.o: drawing/../led/led.h
+.\objects\sample.o: ..\..\shared_libraries\CAN\headers\highcan.h
+.\objects\sample.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
+.\objects\sample.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
+.\objects\sample.o: ..\..\shared_libraries\CAN\headers\./can.h
+.\objects\sample.o: .\Core\../security/security.h
+.\objects\sample.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\sample.o: .\Core\../security/sha256.h
+.\objects\sample.o: .\Core\../security/aes.h
+.\objects\sample.o: ..\..\shared_libraries\keep_alive/keep_alive.h

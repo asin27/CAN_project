@@ -28,7 +28,7 @@
 #include "cos3d.h"
 #include "math.h"
 #include "highcan.h"
-#include "security.h"
+#include "security/security.h"
 #include "RIT/RIT.h"
 #include "trng/adc.h"
 

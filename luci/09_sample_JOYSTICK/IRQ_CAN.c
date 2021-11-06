@@ -1,81 +1,84 @@
 #include "lpc17xx.h"
 #include "./highcan.h"
+#include <security/security.h>
 #include "../GLCD/GLCD.h"
-#include <security.h>
-#include "../trng/adc.h"
+#include "../drawing/draw.h"
+#include <keep_alive/keep_alive.h>
 
-void IRQ_CAN(int canBus);
+extern char msg[16];
+extern struct AES_ctx break_dec_ctx;
+extern struct AES_ctx dec_ctx;
+extern struct AES_ctx ctx;
 
-extern unsigned char key[3][8];
-extern struct AES_ctx ctx_dec[2];
+extern uint8_t lock;
+
+void IRQ_CAN_RECEIVE(int canBus);
+void IRQ_CAN_BEI_HANDLER(LPC_CAN_TypeDef * can);
+void IRQ_CAN_ALI_HANDLER(LPC_CAN_TypeDef * can);
 
 void CAN_IRQHandler (void)
 {
 	int32_t icr = LPC_CAN1->ICR; // clear the interrupt
+	LPC_CAN_TypeDef *can = LPC_CAN1;
 	
-//	if( (icr & CAN_ICR_EPI) != 0 )
-//		GUI_Text(0, 20*counter++, (uint8_t*) "EPI ERROR!", Black, Yellow);
-	
-	int canBus = 0;
-	if( (LPC_CAN1->GSR & 1) == 1) canBus = 1;
-	//else if( (LPC_CAN2->GSR & 1) == 1) canBus = 2;
-	
-	if(canBus != 0)
-		IRQ_CAN(canBus);
-	
-	
-	//uint8_t c[2];
- 	//c[0] = ADC_generate_random();
-	//[1] = 0;
-	//GUI_Text(10, 240, c, Black, Yellow);
-}
-
-void IRQ_CAN(int canBus){
-	
-	unsigned char finestrino[16] = {0};
-	
-	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
-		hCAN_recMessage[hCAN_lenght] = 0;
-		GUI_Text(10, 50, (uint8_t*) "criptato: ", Black, Yellow);
-		GUI_Text(10, 70, (uint8_t*) hCAN_recMessage, Black, Yellow);
+	for(int i=1; i<=2; i++){
+		if(i==1) can = LPC_CAN1;
+		else if(i==2) can = LPC_CAN2;
 		
+		int canBusReceive = 0;
+		if( (can->GSR & 1) == 1) IRQ_CAN_RECEIVE(i);
 		
-		if( hCAN_recID == 0x1 ){
-			GUI_Text(10, 120, (uint8_t*) "livello finestrino: ", Black, Yellow);
-			
-			for(int i=0;i<16;i++)
-				finestrino[i] = hCAN_recMessage[i];
-			
-			//DES3((unsigned char*) finestrino, key, DECRYPT);
-			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) finestrino);
-			for(int i=0; i<100; i++);
-			
-			finestrino[1] = finestrino[0] + '0';
-			finestrino[0] = '0';
-			finestrino[2] = 0;
-			if(finestrino[1] > 9 + '0'){
-				finestrino[1] = finestrino[1] - 10;
-				finestrino[0] = '1';
-			}
-			
-			GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
-		}
+		// Bus Error Interrupt
+		if( (icr & CAN_ICR_BEI) != 0)
+			IRQ_CAN_BEI_HANDLER(can);
 		
-		if( hCAN_recID == 0x2 ){
-			AES(&ctx_dec[hCAN_recID-1], (unsigned char*) hCAN_recMessage);
-			for(int i=0; i<100; i++);
-			GUI_Text(10, 180, (uint8_t*) "luci: ", Black, Yellow);
-			for(int i=0; i<6; i++){
-				hCAN_recMessage[i] += '0';
-			}
-			hCAN_recMessage[6] = 0;
-			GUI_Text(10, 200, (uint8_t*) hCAN_recMessage, Black, Yellow);
-		}
+		// Arbitration lost interrupt
+		if( (icr & CAN_ICR_ALI) != 0 )
+			IRQ_CAN_ALI_HANDLER(can);
 		
 	}
+}
+
+void IRQ_CAN_RECEIVE(int canBus){
+	char b[16] = {0};
 	
-	if(hCAN_arbitrationLost(canBus)){
-		GUI_Text(0, 0, (uint8_t*) "ARBITRATION LOST! SOMEONE IS TRASMIITTING", Yellow, Red);
-	};
+	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone[canBus-1]){
+		hCAN_recMessage[canBus-1][hCAN_lenght[canBus-1]] = 0;
+		
+		// check for keep alive message
+		if(checkMsg(hCAN_recMessage[canBus-1], hCAN_recID[canBus-1]))
+			return;
+		
+		// otherwise other messages
+		if( hCAN_recID[canBus-1] == 0x3 ){
+			
+			for(int i=0;i<16;i++)
+				b[i] = hCAN_recMessage[canBus-1][i];
+			
+			//DES3((unsigned char*) finestrino, key, DECRYPT);
+			AES(&break_dec_ctx, (unsigned char*) b, 16);
+			
+			if (b[0] > 0) {
+				msg[5] = 1;
+				clear_box(45, 180, Green);
+			} else {
+				msg[5] = 0;
+				clear_box(45, 180, Red);
+			}
+			
+		}
+	}
 	
+}
+
+void IRQ_CAN_BEI_HANDLER(LPC_CAN_TypeDef* can){
+	CAN_resetTXERR(can);
+	CAN_abortTransmission(can);
+	hCAN_ActiveError = hCAN_ERR_BUS_ERROR;
+}
+
+void IRQ_CAN_ALI_HANDLER(LPC_CAN_TypeDef* can){
+	CAN_resetTXERR(can);
+	CAN_abortTransmission(can);
+	hCAN_ActiveError = hCAN_ERR_COLLISION;
 }
