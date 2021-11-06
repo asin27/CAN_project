@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\CAN\headers;.\Core;.\CAN\Drivers\include</IncludePath>
+              <IncludePath>.\CAN\headers;.\Core;.\CAN\Drivers\include;..\..\shared_libraries</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
