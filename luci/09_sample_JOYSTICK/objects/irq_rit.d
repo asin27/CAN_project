@@ -18,7 +18,3 @@
 .\objects\irq_rit.o: RIT\../security/sha256.h
 .\objects\irq_rit.o: RIT\../security/aes.h
 .\objects\irq_rit.o: RIT\../security/des.h
-.\objects\irq_rit.o: .\CAN\headers\highcan.h
-.\objects\irq_rit.o: .\CAN\Drivers\include\lpc17xx_can.h
-.\objects\irq_rit.o: .\CAN\Drivers\include\lpc_types.h
-.\objects\irq_rit.o: .\CAN\headers\./can.h

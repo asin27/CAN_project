@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>SIMULATOR</Define>
+              <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Core;.\CAN\headers;.\CAN\Drivers\include</IncludePath>
+              <IncludePath>.\Core;..\..\shared_libraries\CAN\headers;..\..\shared_libraries\CAN\Drivers\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -599,16 +599,6 @@
           <GroupName>CAN</GroupName>
           <Files>
             <File>
-              <FileName>can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\CAN\can.c</FilePath>
-            </File>
-            <File>
-              <FileName>highcan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\CAN\highcan.c</FilePath>
-            </File>
-            <File>
               <FileName>IRQ_CAN.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\CAN\IRQ_CAN.c</FilePath>
@@ -657,6 +647,21 @@
               <FileName>aes.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\security\aes.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Keep Alive</GroupName>
+          <Files>
+            <File>
+              <FileName>keep_alive.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Keep alive\keep_alive.h</FilePath>
+            </File>
+            <File>
+              <FileName>keep_alive.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Keep alive\keep_alive.c</FilePath>
             </File>
           </Files>
         </Group>
