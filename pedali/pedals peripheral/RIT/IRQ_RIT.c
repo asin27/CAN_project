@@ -10,7 +10,7 @@
 #include "lpc17xx.h"
 #include "RIT.h"
 #include "../led/led.h"
-#include "../GLCD/GLCD.h"
+#include "GLCD/GLCD.h"
 #include "../button_EXINT/button.h"
 #include "../TouchPanel/TouchPanel.h"
 
@@ -76,7 +76,7 @@ void RIT_IRQHandler (void)
 					breaks = 0;
 					gas = 1;
 					GUI_Text(50, 292,(unsigned char *) "Gas", White, Blue);
-					GUI_Text(155, 292, (unsigned char *)"Brake", writ, bgnd);
+					GUI_Text(155, 292, (unsigned char *)"Brake", White, Grey);
 
 					break;
 				default:
@@ -100,7 +100,7 @@ void RIT_IRQHandler (void)
 					//brake = 1;
 					breaks = 1;
 					gas = 0;
-				GUI_Text(50, 292,(unsigned char *) "Gas", writ, bgnd);
+				GUI_Text(50, 292,(unsigned char *) "Gas", White, Grey);
 					GUI_Text(155, 292, (unsigned char *)"Brake", White, Blue);
 					break;
 				default:

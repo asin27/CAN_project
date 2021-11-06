@@ -29,99 +29,52 @@ Project File Date:  11/06/2021
 Rebuild target 'Target 1'
 assembling startup_LPC17xx.s...
 compiling core_cm3.c...
-compiling lib_led.c...
-compiling IRQ_button.c...
 compiling system_LPC17xx.c...
-compiling funct_led.c...
+compiling lib_led.c...
 compiling sample.c...
+compiling IRQ_button.c...
+compiling funct_led.c...
 compiling lib_button.c...
 compiling AsciiLib.c...
 compiling IRQ_RIT.c...
 compiling lib_RIT.c...
 compiling IRQ_adc.c...
 compiling lib_adc.c...
-compiling can.c...
-..\..\shared_libraries\CAN\can.c(2): error:  #5: cannot open source input file "../GLCD/GLCD.h": No such file or directory
-  #include "../GLCD/GLCD.h"
-..\..\shared_libraries\CAN\can.c: 0 warnings, 1 error
-compiling highcan.c...
-..\..\shared_libraries\CAN\highcan.c(3): error:  #5: cannot open source input file "../GLCD/GLCD.h": No such file or directory
-  #include "../GLCD/GLCD.h"
-..\..\shared_libraries\CAN\highcan.c: 0 warnings, 1 error
-compiling TouchPanel.c...
-compiling peripheral.c...
-compiling HzLib.c...
 compiling IRQ_CAN.c...
-compiling OLD.lpc17xx_can.c...
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(96): error:  #20: identifier "TESG2" is undefined
-  			TESG2 = NT * 9 / 10 - 1;  // Sample time at 90% of the nominal time
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1373): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1373): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1373): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1373): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1377): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1377): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1377): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1377): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1413): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1413): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1413): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1413): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1417): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1417): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1417): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1417): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1453): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1453): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1453): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1453): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataA[0])|(((CAN_Msg->dataA[1]))<<8)|((CAN_Msg->dataA[2])<<16)|((CAN_Msg->dataA[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1457): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1457): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1457): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1457): error:  #142: expression must have pointer-to-object type
-  		data = (CAN_Msg->dataB[0])|(((CAN_Msg->dataB[1]))<<8)|((CAN_Msg->dataB[2])<<16)|((CAN_Msg->dataB[3])<<24);
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1505): error:  #142: expression must have pointer-to-object type
-  			*((uint8_t *) &CAN_Msg->dataA[0])= data & 0x000000FF;
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1506): error:  #142: expression must have pointer-to-object type
-  			*((uint8_t *) &CAN_Msg->dataA[1])= (data & 0x0000FF00)>>8;;
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1507): error:  #142: expression must have pointer-to-object type
-  			*((uint8_t *) &CAN_Msg->dataA[2])= (data & 0x00FF0000)>>16;
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1508): error:  #142: expression must have pointer-to-object type
-  			*((uint8_t *) &CAN_Msg->dataA[3])= (data & 0xFF000000)>>24;
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c(1512): error:  #142: expression must have pointer-to-object type
-  			*((uint8_t *) &CAN_Msg->dataB[0])= data & 0x000000FF;
-..\..\shared_libraries\CAN\OLD.lpc17xx_can.c: 0 warnings, 30 errors
+CAN\IRQ_CAN.c(51): error:  #42: operand types are incompatible ("char *" and "int")
+  		if( hCAN_recID == 0x4 ){
+CAN\IRQ_CAN.c(55): error:  #513: a value of type "char *" cannot be assigned to an entity of type "unsigned char"
+  				keyDgst[i] = hCAN_recMessage[i];
+CAN\IRQ_CAN.c(59): error:  #513: a value of type "char *" cannot be assigned to an entity of type "unsigned char"
+  				newKey[i-32] = hCAN_recMessage[i];
+CAN\IRQ_CAN.c(62): error:  #513: a value of type "char *" cannot be assigned to an entity of type "unsigned char"
+  				ivDgst[i-48] = hCAN_recMessage[i];
+CAN\IRQ_CAN.c(65): error:  #513: a value of type "char *" cannot be assigned to an entity of type "unsigned char"
+  				newIv[i-80] = hCAN_recMessage[i];
+CAN\IRQ_CAN.c: 0 warnings, 5 errors
+compiling highcan.c...
+..\..\shared_libraries\CAN\highcan.c(167): error:  #147: declaration is incompatible with "char hCAN_recMessage[2][200]"  (declared at line 40 of "..\..\shared_libraries\CAN/headers/highcan.h")
+  char hCAN_recMessage[hCAN_BUF_LENGHT], hCAN_recID, hCAN_recDone;
+..\..\shared_libraries\CAN\highcan.c(167): error:  #147: declaration is incompatible with "char hCAN_recID[2]"  (declared at line 40 of "..\..\shared_libraries\CAN/headers/highcan.h")
+  char hCAN_recMessage[hCAN_BUF_LENGHT], hCAN_recID, hCAN_recDone;
+..\..\shared_libraries\CAN\highcan.c(167): error:  #147: declaration is incompatible with "char hCAN_recDone[2]"  (declared at line 40 of "..\..\shared_libraries\CAN/headers/highcan.h")
+  char hCAN_recMessage[hCAN_BUF_LENGHT], hCAN_recID, hCAN_recDone;
+..\..\shared_libraries\CAN\highcan.c(168): error:  #147: declaration is incompatible with "int hCAN_lenght[2]"  (declared at line 41 of "..\..\shared_libraries\CAN/headers/highcan.h")
+  int hCAN_lenght;
+..\..\shared_libraries\CAN\highcan.c: 0 warnings, 4 errors
+compiling TouchPanel.c...
+compiling HzLib.c...
+compiling peripheral.c...
+compiling can.c...
 compiling aes.c...
 compiling security.c...
 compiling sha256.c...
-compiling OLD.lpc17xx_clkpwr.c...
+compiling lpc17xx_clkpwr.c...
 compiling IRQ_timer.c...
+compiling lpc17xx_can.c...
 compiling lib_timer.c...
 compiling GLCD.c...
-".\sample.axf" - 32 Error(s), 0 Warning(s).
+".\sample.axf" - 9 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -145,7 +98,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.4.0
 Target not created.
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

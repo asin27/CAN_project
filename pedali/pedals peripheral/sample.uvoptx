@@ -864,8 +864,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\shared_libraries\CAN\OLD.lpc17xx_can.c</PathWithFileName>
-      <FilenameWithoutPath>OLD.lpc17xx_can.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\shared_libraries\CAN\Drivers\source\lpc17xx_can.c</PathWithFileName>
+      <FilenameWithoutPath>lpc17xx_can.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -876,8 +876,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\shared_libraries\CAN\OLD.lpc17xx_clkpwr.c</PathWithFileName>
-      <FilenameWithoutPath>OLD.lpc17xx_clkpwr.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\shared_libraries\CAN\Drivers\source\lpc17xx_clkpwr.c</PathWithFileName>
+      <FilenameWithoutPath>lpc17xx_clkpwr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

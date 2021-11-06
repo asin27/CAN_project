@@ -10,7 +10,7 @@
 
 #include "lpc17xx.h"
 #include "peripheral.h"
-#include "./GLCD/GLCD.h"
+#include "GLCD/GLCD.h"
 #include "CAN/headers/highcan.h"
 #include <security/security.h>
 //#include "../led/led.h"
