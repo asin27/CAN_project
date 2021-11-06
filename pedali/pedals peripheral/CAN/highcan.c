@@ -1,7 +1,7 @@
 #include <lpc17xx_can.h>
 #include <stdio.h>
 #include "../GLCD/GLCD.h"
-#include "./highcan.h"
+#include "CAN/headers/highcan.h"
 
 static int ID[2], busBlocked[2] = {0, 0};
 volatile int busMine[2];

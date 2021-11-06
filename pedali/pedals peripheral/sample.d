@@ -17,10 +17,10 @@
 .\sample.o: adc/adc.h
 .\sample.o: GLCD/GLCD.h
 .\sample.o: TouchPanel/TouchPanel.h
-.\sample.o: .\CAN\headers\highcan.h
-.\sample.o: .\CAN\Drivers\include\lpc17xx_can.h
-.\sample.o: .\CAN\Drivers\include\lpc_types.h
-.\sample.o: .\CAN\headers\./can.h
+.\sample.o: CAN/headers/highcan.h
+.\sample.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
+.\sample.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
+.\sample.o: CAN/headers/./can.h
 .\sample.o: ..\..\shared_libraries\security/security.h
 .\sample.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\sample.o: ..\..\shared_libraries\security/sha256.h

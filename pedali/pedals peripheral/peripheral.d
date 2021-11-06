@@ -9,12 +9,11 @@
 .\peripheral.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\peripheral.o: peripheral.h
 .\peripheral.o: ./GLCD/GLCD.h
-.\peripheral.o: .\CAN\headers\highcan.h
-.\peripheral.o: .\CAN\Drivers\include\lpc17xx_can.h
-.\peripheral.o: .\CAN\Drivers\include\lpc_types.h
-.\peripheral.o: .\CAN\headers\./can.h
+.\peripheral.o: CAN/headers/highcan.h
+.\peripheral.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
+.\peripheral.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
+.\peripheral.o: CAN/headers/./can.h
 .\peripheral.o: ..\..\shared_libraries\security/security.h
 .\peripheral.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\peripheral.o: ..\..\shared_libraries\security/sha256.h
 .\peripheral.o: ..\..\shared_libraries\security/aes.h
-.\peripheral.o: .\Core\../led/led.h

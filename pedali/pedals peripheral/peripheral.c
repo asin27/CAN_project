@@ -11,9 +11,9 @@
 #include "lpc17xx.h"
 #include "peripheral.h"
 #include "./GLCD/GLCD.h"
-#include "highcan.h"
+#include "CAN/headers/highcan.h"
 #include <security/security.h>
-#include "../led/led.h"
+//#include "../led/led.h"
 
 extern struct AES_ctx ctx;
 extern struct AES_ctx ctx_dec;

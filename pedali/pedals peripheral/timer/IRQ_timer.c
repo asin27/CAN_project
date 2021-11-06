@@ -12,7 +12,7 @@
 #include "../led/led.h"
 #include "../GLCD/GLCD.h"
 #include <security/security.h>
-#include "highcan.h"
+#include "CAN/headers/highcan.h"
 
 
 /******************************************************************************

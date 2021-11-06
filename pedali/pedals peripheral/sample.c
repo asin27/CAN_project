@@ -18,7 +18,7 @@
 #include "adc/adc.h"
 #include "GLCD/GLCD.h"
 #include "TouchPanel/TouchPanel.h"
-#include "highcan.h"
+#include "CAN/headers/highcan.h"
 #include <security/security.h>
 
 /*----------------------------------------------------------------------------
