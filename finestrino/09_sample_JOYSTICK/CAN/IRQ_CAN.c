@@ -23,17 +23,17 @@ void CAN_IRQHandler (void)
 
 void IRQ_CAN(int canBus){
 	
-	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
-		hCAN_recMessage[hCAN_lenght] = 0;
+	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone[canBus-1]){
+		hCAN_recMessage[canBus-1][hCAN_lenght[canBus-1]] = 0;
 		GUI_Text(10, 50, (uint8_t*) "criptato: ", Black, Yellow);
 		GUI_Text(10, 70, (uint8_t*) hCAN_recMessage, Black, Yellow);
 		
 		
-		if( hCAN_recID == 0xa ){
+		if( hCAN_recID[canBus-1] == 0xa ){
 			GUI_Text(10, 120, (uint8_t*) "nuova chiave: ", Black, Yellow);
 			
 			for(int i=0;i<16;i++)
-				new_key[i] = hCAN_recMessage[i];
+				new_key[i] = hCAN_recMessage[canBus-1][i];
 			
 			//DES3((unsigned char*) finestrino, key, DECRYPT);
 			AES(&ctx_dec_key, (unsigned char*) new_key, 16);
