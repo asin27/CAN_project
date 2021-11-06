@@ -83,7 +83,7 @@ I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
-F (.\RIT\IRQ_RIT.c)(0x61851FE7)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\irq_rit.o --omf_browse .\irq_rit.crf --depend .\irq_rit.d)
+F (.\RIT\IRQ_RIT.c)(0x6186C190)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\irq_rit.o --omf_browse .\irq_rit.crf --depend .\irq_rit.d)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -113,7 +113,7 @@ I (RIT\../adc/adc.h)(0x60AE2742)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
 F (.\RIT\RIT.h)(0x60AE2742)()
 F (.\adc\adc.h)(0x60AE2742)()
-F (.\adc\IRQ_adc.c)(0x61851EC0)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\irq_adc.o --omf_browse .\irq_adc.crf --depend .\irq_adc.d)
+F (.\adc\IRQ_adc.c)(0x6186C190)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\irq_adc.o --omf_browse .\irq_adc.crf --depend .\irq_adc.d)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -173,7 +173,7 @@ I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (TouchPanel\../TouchPanel/TouchPanel.h)(0x60AE2742)
 F (.\TouchPanel\TouchPanel.h)(0x60AE2742)()
-F (.\peripheral.c)(0x6186BC64)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\peripheral.o --omf_browse .\peripheral.crf --depend .\peripheral.d)
+F (.\peripheral.c)(0x6186C190)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\peripheral.o --omf_browse .\peripheral.crf --depend .\peripheral.d)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -193,7 +193,7 @@ I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
 I (..\..\shared_libraries\security/sha256.h)(0x6186B509)
 I (..\..\shared_libraries\security/aes.h)(0x6186B509)
 F (.\peripheral.h)(0x60AE2742)()
-F (.\CAN\IRQ_CAN.c)(0x6186BAFF)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\irq_can.o --omf_browse .\irq_can.crf --depend .\irq_can.d)
+F (.\CAN\IRQ_CAN.c)(0x6186C2A3)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\irq_can.o --omf_browse .\irq_can.crf --depend .\irq_can.d)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -202,17 +202,17 @@ I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
-I (..\..\shared_libraries\CAN/headers/highcan.h)(0x6186B4CA)
+I (..\..\shared_libraries\CAN/headers/highcan.h)(0x6186BD34)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4C9)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4C9)
-I (..\..\shared_libraries\CAN/headers/./can.h)(0x6186B4CA)
-I (CAN\../GLCD/GLCD.h)(0x60AE2742)
+I (..\..\shared_libraries\CAN/headers/./can.h)(0x6186BD34)
+I (..\..\shared_libraries\GLCD/GLCD.h)(0x6186BD34)
 I (..\..\shared_libraries\security/security.h)(0x6186B509)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
 I (..\..\shared_libraries\security/sha256.h)(0x6186B509)
 I (..\..\shared_libraries\security/aes.h)(0x6186B509)
-F (..\..\shared_libraries\CAN\can.c)(0x6186BC64)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\can.o --omf_browse .\can.crf --depend .\can.d)
-I (..\..\shared_libraries\CAN/headers/can.h)(0x6186B4CA)
+F (..\..\shared_libraries\CAN\can.c)(0x6186C190)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\can.o --omf_browse .\can.crf --depend .\can.d)
+I (..\..\shared_libraries\CAN/headers/can.h)(0x6186BD34)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -223,7 +223,8 @@ I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4C9)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4C9)
-F (..\..\shared_libraries\CAN\highcan.c)(0x6186B4CA)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\highcan.o --omf_browse .\highcan.crf --depend .\highcan.d)
+I (..\..\shared_libraries\CAN\../GLCD/GLCD.h)(0x6186BD34)
+F (..\..\shared_libraries\CAN\highcan.c)(0x6186C294)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\highcan.o --omf_browse .\highcan.crf --depend .\highcan.d)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4C9)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
@@ -235,7 +236,10 @@ I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4C9)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
-F (..\..\shared_libraries\CAN\OLD.lpc17xx_can.c)(0x6186B4CA)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\old.lpc17xx_can.o --omf_browse .\old.lpc17xx_can.crf --depend .\old.lpc17xx_can.d)
+I (..\..\shared_libraries\GLCD/GLCD.h)(0x6186BD34)
+I (..\..\shared_libraries\CAN/headers/highcan.h)(0x6186BD34)
+I (..\..\shared_libraries\CAN/headers/./can.h)(0x6186BD34)
+F (..\..\shared_libraries\CAN\Drivers\source\lpc17xx_can.c)(0x6186B4CA)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\lpc17xx_can.o --omf_browse .\lpc17xx_can.crf --depend .\lpc17xx_can.d)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4C9)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
@@ -247,7 +251,8 @@ I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4C9)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc17xx_clkpwr.h)(0x6186B4C9)
-F (..\..\shared_libraries\CAN\OLD.lpc17xx_clkpwr.c)(0x6186B4CA)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\old.lpc17xx_clkpwr.o --omf_browse .\old.lpc17xx_clkpwr.crf --depend .\old.lpc17xx_clkpwr.d)
+I (..\..\shared_libraries\CAN\Drivers\include\lpc17xx_libcfg_default.h)(0x6186B4C9)
+F (..\..\shared_libraries\CAN\Drivers\source\lpc17xx_clkpwr.c)(0x6186B4CA)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\lpc17xx_clkpwr.o --omf_browse .\lpc17xx_clkpwr.crf --depend .\lpc17xx_clkpwr.d)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc17xx_clkpwr.h)(0x6186B4C9)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
@@ -274,7 +279,7 @@ I (D:\Programmi\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
 F (..\..\shared_libraries\security\sha256.c)(0x6186B509)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\sha256.o --omf_browse .\sha256.crf --depend .\sha256.d)
 I (..\..\shared_libraries\security\sha256.h)(0x6186B509)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
-F (.\timer\IRQ_timer.c)(0x6186BAFF)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\irq_timer.o --omf_browse .\irq_timer.crf --depend .\irq_timer.d)
+F (.\timer\IRQ_timer.c)(0x6186C190)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\irq_timer.o --omf_browse .\irq_timer.crf --depend .\irq_timer.d)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -290,10 +295,10 @@ I (..\..\shared_libraries\security/security.h)(0x6186B509)
 I (D:\Programmi\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
 I (..\..\shared_libraries\security/sha256.h)(0x6186B509)
 I (..\..\shared_libraries\security/aes.h)(0x6186B509)
-I (..\..\shared_libraries\CAN/headers/highcan.h)(0x6186B4CA)
+I (..\..\shared_libraries\CAN/headers/highcan.h)(0x6186BD34)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4C9)
 I (..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4C9)
-I (..\..\shared_libraries\CAN/headers/./can.h)(0x6186B4CA)
+I (..\..\shared_libraries\CAN/headers/./can.h)(0x6186BD34)
 F (.\timer\lib_timer.c)(0x60AE2742)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I ..\..\shared_libraries\CAN\Drivers\include -I ..\..\shared_libraires\CAN\headers -I ..\..\shared_libraries\Core -I ..\..\shared_libraries-I.\RTE\_Target_1-ID:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\lib_timer.o --omf_browse .\lib_timer.crf --depend .\lib_timer.d)
 I (D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (D:\Programmi\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)

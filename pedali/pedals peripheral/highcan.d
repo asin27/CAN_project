@@ -10,3 +10,6 @@
 .\highcan.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\highcan.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
 .\highcan.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\highcan.o: ..\..\shared_libraries\GLCD/GLCD.h
+.\highcan.o: ..\..\shared_libraries\CAN/headers/highcan.h
+.\highcan.o: ..\..\shared_libraries\CAN/headers/./can.h

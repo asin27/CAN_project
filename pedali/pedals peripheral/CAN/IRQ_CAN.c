@@ -1,6 +1,6 @@
 #include "lpc17xx.h"
 #include "CAN/headers/highcan.h"
-#include "../GLCD/GLCD.h"
+#include "GLCD/GLCD.h"
 #include <security/security.h>
 
 static unsigned char keyDgst[32] = {0};
@@ -44,25 +44,25 @@ void IRQ_CAN(int canBus){
 	char res[32] = {0};
 	int okKey = 0, okIv = 0; 
 	
-	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
-		hCAN_recMessage[hCAN_lenght] = 0;
+	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone[canBus-1]){
+		hCAN_recMessage[canBus-1][hCAN_lenght[canBus-1]] = 0;
 		
 		
-		if( hCAN_recID == 0x4 ){
+		if( hCAN_recID[canBus-1] == 0x4 ){
 			//GUI_Text(10, 120, (uint8_t*) "livello finestrino: ", Black, Yellow);
 			
 			for(int i=0;i<32;i++)
-				keyDgst[i] = hCAN_recMessage[i];
+				keyDgst[i] = hCAN_recMessage[canBus-1][i];
 
 			
 			for(int i=32;i<48;i++)
-				newKey[i-32] = hCAN_recMessage[i];
+				newKey[i-32] = hCAN_recMessage[canBus-1][i];
 			
 			for(int i=48;i<80;i++)
-				ivDgst[i-48] = hCAN_recMessage[i];
+				ivDgst[i-48] = hCAN_recMessage[canBus-1][i];
 			
 			for(int i=80;i<96;i++)
-				newIv[i-80] = hCAN_recMessage[i];
+				newIv[i-80] = hCAN_recMessage[canBus-1][i];
 			
 			if (!verify_digest(newKey, key_aes, keyDgst)){
 					 GUI_Text(10, 120, (uint8_t*) "Errore verifica KEY", Black, Yellow);

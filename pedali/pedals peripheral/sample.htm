@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Nov 06 18:12:40 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Nov 06 19:00:06 2021
 <BR><P>
 <H3>Maximum Stack Usage =        812 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -554,10 +554,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PutChar
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
 </UL>
 
 <P><STRONG><a name="[64]"></a>fillRectangle</STRONG> (Thumb, 102 bytes, Stack size 40 bytes, glcd.o(.text))
@@ -667,23 +667,48 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> irq_adc.o(.text)
 </UL>
-<P><STRONG><a name="[83]"></a>CAN_bufferFrame</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, can.o(.text))
+<P><STRONG><a name="[7d]"></a>IRQ_CAN</STRONG> (Thumb, 504 bytes, Stack size 240 bytes, irq_can.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 796<LI>Call Chain = IRQ_CAN &rArr; verify_digest &rArr; digest &rArr; sha256_update &rArr; sha256_transform
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;verify_digest
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_receiveMessage
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_arbitrationLost
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_sendMessage
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_IRQHandler
+</UL>
+
+<P><STRONG><a name="[26]"></a>CAN_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, irq_can.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 812<LI>Call Chain = CAN_IRQHandler &rArr; IRQ_CAN &rArr; verify_digest &rArr; digest &rArr; sha256_update &rArr; sha256_transform
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
+</UL>
+<P><STRONG><a name="[87]"></a>CAN_bufferFrame</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = CAN_bufferFrame
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_sendMessage
 </UL>
 
-<P><STRONG><a name="[84]"></a>CAN_sendFrames</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, can.o(.text))
+<P><STRONG><a name="[88]"></a>CAN_sendFrames</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, can.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_sendMessage
 </UL>
 
-<P><STRONG><a name="[80]"></a>CAN_AF_loadSTDRangelEntry</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, can.o(.text))
+<P><STRONG><a name="[ea]"></a>CAN_abortTransmission</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, can.o(.text), UNUSED)
+
+<P><STRONG><a name="[84]"></a>CAN_AF_loadSTDRangelEntry</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CAN_AF_loadSTDRangelEntry
 </UL>
 <BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_init
 </UL>
 
-<P><STRONG><a name="[81]"></a>CAN_AF_disableEntry</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, can.o(.text))
+<P><STRONG><a name="[85]"></a>CAN_AF_disableEntry</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_AF_disableEntry
 </UL>
 <BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_init
@@ -692,12 +717,12 @@ Global Symbols
 <P><STRONG><a name="[48]"></a>hCAN_init</STRONG> (Thumb, 194 bytes, Stack size 24 bytes, highcan.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = hCAN_init &rArr; CAN_Init &rArr; can_SetBaudrate &rArr; CLKPWR_GetPCLK
 </UL>
-<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_SetAFMode
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_IRQCmd
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_internalPrioMode
-<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_AF_disableEntry
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_AF_loadSTDRangelEntry
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_SetAFMode
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_IRQCmd
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_internalPrioMode
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_AF_disableEntry
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_AF_loadSTDRangelEntry
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -706,57 +731,30 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7c]"></a>hCAN_sendMessage</STRONG> (Thumb, 774 bytes, Stack size 120 bytes, highcan.o(.text))
+<P><STRONG><a name="[7c]"></a>hCAN_sendMessage</STRONG> (Thumb, 886 bytes, Stack size 120 bytes, highcan.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = hCAN_sendMessage &rArr; CAN_bufferFrame
 </UL>
-<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_allTXok
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_sendFrames
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_bufferFrame
+<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_isTransmitting
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_sendFrames
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_bufferFrame
 </UL>
-<BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gasHandler
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gasHandler
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;brakeHandler
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER2_IRQHandler
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
 </UL>
 
-<P><STRONG><a name="[86]"></a>hCAN_receiveMessage</STRONG> (Thumb, 300 bytes, Stack size 32 bytes, highcan.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = hCAN_receiveMessage &rArr; putMessageInBuffer
+<P><STRONG><a name="[7e]"></a>hCAN_receiveMessage</STRONG> (Thumb, 334 bytes, Stack size 32 bytes, highcan.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = hCAN_receiveMessage &rArr; putMessageInBuffer
 </UL>
-<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_ReceiveMsg
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;putMessageInBuffer
+<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_ReceiveMsg
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;putMessageInBuffer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
-</UL>
-
-<P><STRONG><a name="[89]"></a>IRQ_CAN</STRONG> (Thumb, 414 bytes, Stack size 240 bytes, irq_can.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 796<LI>Call Chain = IRQ_CAN &rArr; verify_digest &rArr; digest &rArr; sha256_update &rArr; sha256_transform
-</UL>
-<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_arbitrationLost
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_receiveMessage
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_sendMessage
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;verify_digest
-</UL>
-<BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
 </UL>
 
-<P><STRONG><a name="[26]"></a>CAN_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, irq_can.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 812<LI>Call Chain = CAN_IRQHandler &rArr; IRQ_CAN &rArr; verify_digest &rArr; digest &rArr; sha256_update &rArr; sha256_transform
-</UL>
-<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
-</UL>
 <P><STRONG><a name="[8d]"></a>check_failed</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, lpc17xx_can.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_SetAFMode
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_ReceiveMsg
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_IRQCmd
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_FullCANPendGetStatus
+<BR><BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_FullCANPendGetStatus
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_FullCANIntGetStatus
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_IntGetStatus
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_SetCommand
@@ -772,9 +770,13 @@ Global Symbols
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_SetupAFLUT
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_DeInit
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can_SetBaudrate
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_SetAFMode
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_ReceiveMsg
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_IRQCmd
 </UL>
 
-<P><STRONG><a name="[7d]"></a>CAN_Init</STRONG> (Thumb, 176 bytes, Stack size 24 bytes, lpc17xx_can.o(.text))
+<P><STRONG><a name="[81]"></a>CAN_Init</STRONG> (Thumb, 176 bytes, Stack size 24 bytes, lpc17xx_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = CAN_Init &rArr; can_SetBaudrate &rArr; CLKPWR_GetPCLK
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLKPWR_SetPCLKDiv
@@ -790,7 +792,7 @@ Global Symbols
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
 </UL>
 
-<P><STRONG><a name="[92]"></a>CAN_SetupAFLUT</STRONG> (Thumb, 1700 bytes, Stack size 68 bytes, lpc17xx_can.o(.text), UNUSED)
+<P><STRONG><a name="[92]"></a>CAN_SetupAFLUT</STRONG> (Thumb, 1720 bytes, Stack size 68 bytes, lpc17xx_can.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
 </UL>
 
@@ -814,12 +816,12 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
 </UL>
 
-<P><STRONG><a name="[87]"></a>CAN_ReceiveMsg</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, lpc17xx_can.o(.text))
+<P><STRONG><a name="[8a]"></a>CAN_ReceiveMsg</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, lpc17xx_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_ReceiveMsg
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
 </UL>
-<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_receiveMessage
+<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_receiveMessage
 </UL>
 
 <P><STRONG><a name="[98]"></a>FCAN_ReadObj</STRONG> (Thumb, 210 bytes, Stack size 32 bytes, lpc17xx_can.o(.text), UNUSED)
@@ -834,7 +836,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
 </UL>
 
-<P><STRONG><a name="[7f]"></a>CAN_IRQCmd</STRONG> (Thumb, 170 bytes, Stack size 8 bytes, lpc17xx_can.o(.text))
+<P><STRONG><a name="[83]"></a>CAN_IRQCmd</STRONG> (Thumb, 170 bytes, Stack size 8 bytes, lpc17xx_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_IRQCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
@@ -842,7 +844,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_init
 </UL>
 
-<P><STRONG><a name="[82]"></a>CAN_SetAFMode</STRONG> (Thumb, 94 bytes, Stack size 4 bytes, lpc17xx_can.o(.text))
+<P><STRONG><a name="[86]"></a>CAN_SetAFMode</STRONG> (Thumb, 94 bytes, Stack size 4 bytes, lpc17xx_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = CAN_SetAFMode
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
@@ -873,7 +875,7 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>CLKPWR_SetPCLKDiv</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, lpc17xx_clkpwr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CLKPWR_SetPCLKDiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
+<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
 </UL>
 
 <P><STRONG><a name="[a0]"></a>CLKPWR_GetPCLKSEL</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text))
@@ -889,17 +891,17 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[8f]"></a>CLKPWR_ConfigPPWR</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_DeInit
+<BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_DeInit
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
 </UL>
 
-<P><STRONG><a name="[ea]"></a>CLKPWR_Sleep</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text), UNUSED)
+<P><STRONG><a name="[eb]"></a>CLKPWR_Sleep</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text), UNUSED)
 
-<P><STRONG><a name="[eb]"></a>CLKPWR_DeepSleep</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text), UNUSED)
+<P><STRONG><a name="[ec]"></a>CLKPWR_DeepSleep</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text), UNUSED)
 
-<P><STRONG><a name="[ec]"></a>CLKPWR_PowerDown</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text), UNUSED)
+<P><STRONG><a name="[ed]"></a>CLKPWR_PowerDown</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text), UNUSED)
 
-<P><STRONG><a name="[ed]"></a>CLKPWR_DeepPowerDown</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text), UNUSED)
+<P><STRONG><a name="[ee]"></a>CLKPWR_DeepPowerDown</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text), UNUSED)
 
 <P><STRONG><a name="[a1]"></a>AES_init_ctx</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, aes.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyExpansion
@@ -934,15 +936,15 @@ Global Symbols
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_init
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_final
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;verify_digest
+<BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;verify_digest
 </UL>
 
-<P><STRONG><a name="[8a]"></a>verify_digest</STRONG> (Thumb, 50 bytes, Stack size 56 bytes, security.o(.text))
+<P><STRONG><a name="[7f]"></a>verify_digest</STRONG> (Thumb, 50 bytes, Stack size 56 bytes, security.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 556<LI>Call Chain = verify_digest &rArr; digest &rArr; sha256_update &rArr; sha256_transform
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digest
 </UL>
-<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
 </UL>
 
 <P><STRONG><a name="[7b]"></a>AES</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, security.o(.text))
@@ -950,9 +952,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CTR_xcrypt_buffer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gasHandler
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gasHandler
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;brakeHandler
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
 </UL>
 
 <P><STRONG><a name="[4c]"></a>AES_init</STRONG> (Thumb, 34 bytes, Stack size 208 bytes, security.o(.text))
@@ -961,8 +963,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx_iv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[b0]"></a>sha256_transform</STRONG> (Thumb, 558 bytes, Stack size 312 bytes, sha256.o(.text))
@@ -1010,50 +1012,50 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
 <P><STRONG><a name="[4d]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetASCIICode
+<BR><BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetASCIICode
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CTR_xcrypt_buffer
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_ctx_set_iv
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx_iv
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
 </UL>
 
 <P><STRONG><a name="[b1]"></a>__rt_memcpy</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 
-<P><STRONG><a name="[ee]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
+<P><STRONG><a name="[ef]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
 
 <P><STRONG><a name="[70]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_memclr4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_final
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
 </UL>
 
-<P><STRONG><a name="[ef]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[f0]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[f0]"></a>__rt_memclr_w</STRONG> (Thumb, 78 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[f1]"></a>__rt_memclr_w</STRONG> (Thumb, 78 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[f1]"></a>_memset_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[f2]"></a>_memset_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[f2]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[f3]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[f3]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[f4]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[f4]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[f5]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
 <P><STRONG><a name="[b2]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
 </UL>
 
-<P><STRONG><a name="[f5]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[f6]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[f6]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[f7]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[f7]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[f8]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[39]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -1074,36 +1076,36 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[f8]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[f9]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[b3]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[f9]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[fa]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[42]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
-<P><STRONG><a name="[fa]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[fb]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[fb]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[fc]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[85]"></a>CAN_allTXok</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, can.o(i.CAN_allTXok))
-<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_sendMessage
-</UL>
-
-<P><STRONG><a name="[fc]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, indicate_semi.o(.text), UNUSED)
-
-<P><STRONG><a name="[7e]"></a>CAN_internalPrioMode</STRONG> (Thumb, 128 bytes, Stack size 0 bytes, can.o(i.CAN_internalPrioMode))
+<P><STRONG><a name="[82]"></a>CAN_internalPrioMode</STRONG> (Thumb, 128 bytes, Stack size 0 bytes, can.o(i.CAN_internalPrioMode))
 <BR><BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_init
 </UL>
 
-<P><STRONG><a name="[8b]"></a>hCAN_arbitrationLost</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, highcan.o(i.hCAN_arbitrationLost))
+<P><STRONG><a name="[fd]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, indicate_semi.o(.text), UNUSED)
+
+<P><STRONG><a name="[89]"></a>CAN_isTransmitting</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, can.o(i.CAN_isTransmitting))
+<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_sendMessage
+</UL>
+
+<P><STRONG><a name="[80]"></a>hCAN_arbitrationLost</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, highcan.o(i.hCAN_arbitrationLost))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = hCAN_arbitrationLost
 </UL>
-<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
 </UL>
 
 <P><STRONG><a name="[77]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
@@ -1151,13 +1153,13 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setCalibrationMatrix
 </UL>
 
-<P><STRONG><a name="[fd]"></a>_dflt</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt), UNUSED)
+<P><STRONG><a name="[fe]"></a>_dflt</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt), UNUSED)
 
 <P><STRONG><a name="[75]"></a>__aeabi_ui2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
 </UL>
 
-<P><STRONG><a name="[fe]"></a>_dfltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu), UNUSED)
+<P><STRONG><a name="[ff]"></a>_dfltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu), UNUSED)
 
 <P><STRONG><a name="[76]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
@@ -1183,7 +1185,7 @@ Global Symbols
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 </UL>
 
-<P><STRONG><a name="[ff]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
+<P><STRONG><a name="[100]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
 
 <P><STRONG><a name="[bf]"></a>_dsub</STRONG> (Thumb, 464 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
@@ -1279,10 +1281,10 @@ Local Symbols
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_X
 </UL>
 
-<P><STRONG><a name="[88]"></a>putMessageInBuffer</STRONG> (Thumb, 196 bytes, Stack size 12 bytes, highcan.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = putMessageInBuffer
+<P><STRONG><a name="[8b]"></a>putMessageInBuffer</STRONG> (Thumb, 226 bytes, Stack size 16 bytes, highcan.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = putMessageInBuffer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_receiveMessage
+<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_receiveMessage
 </UL>
 
 <P><STRONG><a name="[8c]"></a>can_SetBaudrate</STRONG> (Thumb, 178 bytes, Stack size 40 bytes, lpc17xx_can.o(.text))
@@ -1291,7 +1293,7 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLKPWR_GetPCLK
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_failed
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
+<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
 </UL>
 
 <P><STRONG><a name="[a2]"></a>KeyExpansion</STRONG> (Thumb, 282 bytes, Stack size 20 bytes, aes.o(.text))

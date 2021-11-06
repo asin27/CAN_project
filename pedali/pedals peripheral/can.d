@@ -10,3 +10,4 @@
 .\can.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
 .\can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
+.\can.o: ..\..\shared_libraries\CAN\../GLCD/GLCD.h
