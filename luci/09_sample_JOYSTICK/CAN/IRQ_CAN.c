@@ -11,33 +11,43 @@ extern struct AES_ctx ctx;
 
 extern uint8_t lock;
 
-void IRQ_CAN(int canBus);
-
+void IRQ_CAN_RECEIVE(int canBus);
+void IRQ_CAN_BEI_HANDLER(LPC_CAN_TypeDef * can);
+void IRQ_CAN_ALI_HANDLER(LPC_CAN_TypeDef * can);
 
 void CAN_IRQHandler (void)
 {
 	int32_t icr = LPC_CAN1->ICR; // clear the interrupt
+	LPC_CAN_TypeDef *can = LPC_CAN1;
 	
-	
-	int canBus = 0;
-	if( (LPC_CAN1->GSR & 1) == 1) canBus = 1;
-	//else if( (LPC_CAN2->GSR & 1) == 1) canBus = 2;
-	
-	if(canBus != 0)
-		IRQ_CAN(canBus);
-	// TODO: clear interrupt request
+	for(int i=1; i<=2; i++){
+		if(i==1) can = LPC_CAN1;
+		else if(i==2) can = LPC_CAN2;
+		
+		int canBusReceive = 0;
+		if( (can->GSR & 1) == 1) IRQ_CAN_RECEIVE(i);
+		
+		// Bus Error Interrupt
+		if( (icr & CAN_ICR_BEI) != 0)
+			IRQ_CAN_BEI_HANDLER(can);
+		
+		// Arbitration lost interrupt
+		if( (icr & CAN_ICR_ALI) != 0 )
+			IRQ_CAN_ALI_HANDLER(can);
+		
+	}
 }
 
-void IRQ_CAN(int canBus){
+void IRQ_CAN_RECEIVE(int canBus){
 	char b[16] = {0};
 	
-	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
-		hCAN_recMessage[hCAN_lenght] = 0;
+	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone[canBus-1]){
+		hCAN_recMessage[canBus-1][hCAN_lenght[canBus-1]] = 0;
 		
-		if( hCAN_recID == 0x3 ){
+		if( hCAN_recID[canBus-1] == 0x3 ){
 			
 			for(int i=0;i<16;i++)
-				b[i] = hCAN_recMessage[i];
+				b[i] = hCAN_recMessage[canBus-1][i];
 			
 			//DES3((unsigned char*) finestrino, key, DECRYPT);
 			AES(&break_dec_ctx, (unsigned char*) b);
@@ -49,20 +59,23 @@ void IRQ_CAN(int canBus){
 				msg[5] = 0;
 				clear_box(45, 180, Red);
 			}
-			AES(&ctx,  (unsigned char *) msg);
+			//AES(&ctx,  (unsigned char *) msg);
 			//while(hCAN_sendMessage(1, (char *) msg, 16) != hCAN_SUCCESS);
-			AES(&dec_ctx, (unsigned char *) msg);
+			//AES(&dec_ctx, (unsigned char *) msg);
 			
 		}
 	}
 	
-	if(hCAN_arbitrationLost(canBus)){
-	
-	}
-	
-	if(hCAN_busError(canBus)){
-		GUI_Text(0, 0, (uint8_t*)"ERROR!!!!", White, Blue);
-	}
-	
-	
+}
+
+void IRQ_CAN_BEI_HANDLER(LPC_CAN_TypeDef* can){
+	CAN_resetTXERR(can);
+	CAN_abortTransmission(can);
+	hCAN_ActiveError = hCAN_ERR_BUS_ERROR;
+}
+
+void IRQ_CAN_ALI_HANDLER(LPC_CAN_TypeDef* can){
+	CAN_resetTXERR(can);
+	CAN_abortTransmission(can);
+	hCAN_ActiveError = hCAN_ERR_COLLISION;
 }
