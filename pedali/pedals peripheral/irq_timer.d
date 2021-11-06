@@ -9,7 +9,7 @@
 .\irq_timer.o: D:\Programmi\Keil_v5\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\irq_timer.o: timer\timer.h
 .\irq_timer.o: timer\../led/led.h
-.\irq_timer.o: timer\../GLCD/GLCD.h
+.\irq_timer.o: ..\..\shared_libraries\GLCD/GLCD.h
 .\irq_timer.o: ..\..\shared_libraries\security/security.h
 .\irq_timer.o: D:\Programmi\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\irq_timer.o: ..\..\shared_libraries\security/sha256.h
