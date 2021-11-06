@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>SIMULATOR</Define>
               <Undefine></Undefine>
-              <IncludePath>.\..\shared_libraries;.\CAN\Drivers\include;.\Core;.\CAN\headers</IncludePath>
+              <IncludePath>.\..\shared_libraries;.\..\shared_libraries\CAN\Drivers\include;.\Core;.\..\shared_libraries\CAN\headers</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -545,29 +545,29 @@
           <GroupName>CAN</GroupName>
           <Files>
             <File>
-              <FileName>can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\CAN\can.c</FilePath>
-            </File>
-            <File>
-              <FileName>highcan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\CAN\highcan.c</FilePath>
-            </File>
-            <File>
               <FileName>IRQ_CAN.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\CAN\IRQ_CAN.c</FilePath>
             </File>
             <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\shared_libraries\CAN\can.c</FilePath>
+            </File>
+            <File>
+              <FileName>highcan.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\shared_libraries\CAN\highcan.c</FilePath>
+            </File>
+            <File>
               <FileName>lpc17xx_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\CAN\Drivers\source\lpc17xx_can.c</FilePath>
+              <FilePath>..\shared_libraries\CAN\Drivers\source\lpc17xx_can.c</FilePath>
             </File>
             <File>
               <FileName>lpc17xx_clkpwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\CAN\lpc17xx_clkpwr.c</FilePath>
+              <FilePath>..\shared_libraries\CAN\Drivers\source\lpc17xx_clkpwr.c</FilePath>
             </File>
           </Files>
         </Group>
