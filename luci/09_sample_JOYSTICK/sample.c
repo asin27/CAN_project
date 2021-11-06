@@ -49,8 +49,6 @@ uint8_t lock = 1;
  
 int main (void) {
   
-	
-	
  	SystemInit();  												/* System Initialization (i.e., PLL)  */
   LED_init();                           /* LED Initialization                 */
   BUTTON_init();												/* BUTTON Initialization              */
@@ -58,8 +56,13 @@ int main (void) {
 	init_RIT(0x004C4B40);									/* RIT Initialization 50 msec       	*/
 	enable_RIT();													/* RIT enabled												*/
 	ADC_init();
+	
+	for(int i=0; i<=34; i++) NVIC_SetPriority(i, 5);
+	
 	hCAN_init(1, CAN_5Kbps);
 	hCAN_setID(2);
+	
+	hCAN_init(2, CAN_5Kbps);
 	
 	ctx = AES_init(keyAES, ivAES);
 	dec_ctx = AES_init(keyAES, ivAES);

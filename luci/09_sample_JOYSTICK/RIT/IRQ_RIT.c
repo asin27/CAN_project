@@ -359,7 +359,12 @@ void RIT_IRQHandler (void)
 				//AES_state(&ctx, (unsigned char*)msg, &lock);
 				AES(&ctx,  (unsigned char *) msg);
 				
-				hCAN_sendMessage(1, (char *) msg, 16);
+				int r = hCAN_sendMessage(1, (char *) msg, 16);
+				if(r != hCAN_SUCCESS){
+					if(r == hCAN_ERR_BUS_ERROR){
+						GUI_Text(0, 0, (uint8_t*) "Disconnected!", White, Yellow);
+					}
+				}
 				
 				AES(&dec_ctx, (unsigned char *) msg);
 				lock = 1;
