@@ -16,10 +16,10 @@
 .\sample.o: .\CAN\Drivers\include\lpc17xx_can.h
 .\sample.o: .\CAN\Drivers\include\lpc_types.h
 .\sample.o: .\CAN\headers\./can.h
-.\sample.o: .\..\security\security.h
+.\sample.o: .\..\shared_libraries\security/security.h
 .\sample.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-.\sample.o: .\..\security\sha256.h
-.\sample.o: .\..\security\aes.h
+.\sample.o: .\..\shared_libraries\security/sha256.h
+.\sample.o: .\..\shared_libraries\security/aes.h
 .\sample.o: RIT/RIT.h
 .\sample.o: trng/adc.h
 .\sample.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Nov 05 12:58:17 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Nov 06 18:07:47 2021
 <BR><P>
 <H3>Maximum Stack Usage =        504 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -868,7 +868,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
 </UL>
 
-<P><STRONG><a name="[a1]"></a>IRQ_CAN</STRONG> (Thumb, 476 bytes, Stack size 80 bytes, irq_can.o(.text))
+<P><STRONG><a name="[a1]"></a>IRQ_CAN</STRONG> (Thumb, 482 bytes, Stack size 80 bytes, irq_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216 + Unknown Stack Size
 <LI>Call Chain = IRQ_CAN &rArr; GUI_Text &rArr; PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
@@ -1046,90 +1046,12 @@ Global Symbols
 
 <P><STRONG><a name="[154]"></a>CLKPWR_DeepPowerDown</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lpc17xx_clkpwr.o(.text), UNUSED)
 
-<P><STRONG><a name="[bb]"></a>AES_init_ctx</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, aes.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyExpansion
-</UL>
-
-<P><STRONG><a name="[bd]"></a>AES_init_ctx_iv</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, aes.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = AES_init_ctx_iv &rArr; KeyExpansion
-</UL>
-<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyExpansion
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-</UL>
-<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init
-</UL>
-
-<P><STRONG><a name="[be]"></a>AES_ctx_set_iv</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, aes.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-</UL>
-
-<P><STRONG><a name="[c5]"></a>AES_CTR_xcrypt_buffer</STRONG> (Thumb, 114 bytes, Stack size 40 bytes, aes.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = AES_CTR_xcrypt_buffer &rArr; Cipher &rArr; MixColumns
-</UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-</UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES
-</UL>
-
-<P><STRONG><a name="[c6]"></a>digest</STRONG> (Thumb, 88 bytes, Stack size 160 bytes, security.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_update
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_init
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_final
-</UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;verify_digest
-</UL>
-
-<P><STRONG><a name="[ca]"></a>verify_digest</STRONG> (Thumb, 50 bytes, Stack size 56 bytes, security.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digest
-</UL>
-
-<P><STRONG><a name="[a2]"></a>AES</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, security.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = AES &rArr; AES_CTR_xcrypt_buffer &rArr; Cipher &rArr; MixColumns
-</UL>
-<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CTR_xcrypt_buffer
-</UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
-<LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-</UL>
-
-<P><STRONG><a name="[52]"></a>AES_init</STRONG> (Thumb, 34 bytes, Stack size 208 bytes, security.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 244<LI>Call Chain = AES_init &rArr; AES_init_ctx_iv &rArr; KeyExpansion
-</UL>
-<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx_iv
-</UL>
-<BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[cb]"></a>sha256_transform</STRONG> (Thumb, 558 bytes, Stack size 312 bytes, sha256.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_update
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_final
-</UL>
-
-<P><STRONG><a name="[c7]"></a>sha256_init</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, sha256.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digest
-</UL>
-
-<P><STRONG><a name="[c8]"></a>sha256_update</STRONG> (Thumb, 68 bytes, Stack size 20 bytes, sha256.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_transform
-</UL>
-<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digest
-</UL>
-
-<P><STRONG><a name="[c9]"></a>sha256_final</STRONG> (Thumb, 316 bytes, Stack size 16 bytes, sha256.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_transform
-</UL>
-<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digest
-</UL>
-
-<P><STRONG><a name="[2b]"></a>RIT_IRQHandler</STRONG> (Thumb, 126 bytes, Stack size 8 bytes, irq_rit.o(.text))
+<P><STRONG><a name="[2b]"></a>RIT_IRQHandler</STRONG> (Thumb, 128 bytes, Stack size 8 bytes, irq_rit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = RIT_IRQHandler &rArr; hCAN_sendMessage &rArr; CAN_bufferFrame
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hCAN_sendMessage
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_generate_random
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_generate_random
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
@@ -1148,7 +1070,7 @@ Global Symbols
 <P><STRONG><a name="[24]"></a>ADC_IRQHandler</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, irq_adc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = ADC_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_start_conversion
+<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_start_conversion
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
@@ -1156,12 +1078,90 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[ce]"></a>ADC_start_conversion</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_adc.o(.text))
+<P><STRONG><a name="[bc]"></a>ADC_start_conversion</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_adc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_IRQHandler
 </UL>
 
-<P><STRONG><a name="[cd]"></a>ADC_generate_random</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, lib_adc.o(.text))
+<P><STRONG><a name="[bb]"></a>ADC_generate_random</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, lib_adc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
+</UL>
+
+<P><STRONG><a name="[bd]"></a>AES_init_ctx</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, aes.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyExpansion
+</UL>
+
+<P><STRONG><a name="[bf]"></a>AES_init_ctx_iv</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, aes.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = AES_init_ctx_iv &rArr; KeyExpansion
+</UL>
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyExpansion
+</UL>
+<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init
+</UL>
+
+<P><STRONG><a name="[c0]"></a>AES_ctx_set_iv</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, aes.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+
+<P><STRONG><a name="[c7]"></a>AES_CTR_xcrypt_buffer</STRONG> (Thumb, 114 bytes, Stack size 40 bytes, aes.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = AES_CTR_xcrypt_buffer &rArr; Cipher &rArr; MixColumns
+</UL>
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES
+</UL>
+
+<P><STRONG><a name="[c8]"></a>digest</STRONG> (Thumb, 96 bytes, Stack size 168 bytes, security.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_update
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_init
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_final
+</UL>
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;verify_digest
+</UL>
+
+<P><STRONG><a name="[cc]"></a>verify_digest</STRONG> (Thumb, 50 bytes, Stack size 56 bytes, security.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digest
+</UL>
+
+<P><STRONG><a name="[a2]"></a>AES</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, security.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = AES &rArr; AES_CTR_xcrypt_buffer &rArr; Cipher &rArr; MixColumns
+</UL>
+<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CTR_xcrypt_buffer
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ_CAN
+<LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
+</UL>
+
+<P><STRONG><a name="[52]"></a>AES_init</STRONG> (Thumb, 34 bytes, Stack size 208 bytes, security.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 244<LI>Call Chain = AES_init &rArr; AES_init_ctx_iv &rArr; KeyExpansion
+</UL>
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx_iv
+</UL>
+<BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[cd]"></a>sha256_transform</STRONG> (Thumb, 558 bytes, Stack size 312 bytes, sha256.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_update
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_final
+</UL>
+
+<P><STRONG><a name="[c9]"></a>sha256_init</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, sha256.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digest
+</UL>
+
+<P><STRONG><a name="[ca]"></a>sha256_update</STRONG> (Thumb, 68 bytes, Stack size 20 bytes, sha256.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_transform
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digest
+</UL>
+
+<P><STRONG><a name="[cb]"></a>sha256_final</STRONG> (Thumb, 316 bytes, Stack size 16 bytes, sha256.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_transform
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digest
 </UL>
 
 <P><STRONG><a name="[8c]"></a>__2sprintf</STRONG> (Thumb, 34 bytes, Stack size 32 bytes, noretval__2sprintf.o(.text))
@@ -1214,9 +1214,9 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetASCIICode
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init
 <LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CTR_xcrypt_buffer
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_ctx_set_iv
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx_iv
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CTR_xcrypt_buffer
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_ctx_set_iv
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx_iv
 </UL>
 
 <P><STRONG><a name="[d4]"></a>__rt_memcpy</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text), UNUSED)
@@ -1225,8 +1225,8 @@ Global Symbols
 
 <P><STRONG><a name="[157]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
 
-<P><STRONG><a name="[cc]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_final
+<P><STRONG><a name="[ce]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sha256_final
 </UL>
 
 <P><STRONG><a name="[158]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
@@ -1298,8 +1298,8 @@ Global Symbols
 <P><STRONG><a name="[15e]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[3d]"></a>__rt_locale</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_locale_intlibspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
-<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_common
+<BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_common
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 </UL>
 
 <P><STRONG><a name="[d7]"></a>__aeabi_errno_addr</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text))
@@ -2048,50 +2048,50 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
 </UL>
 
-<P><STRONG><a name="[bc]"></a>KeyExpansion</STRONG> (Thumb, 282 bytes, Stack size 20 bytes, aes.o(.text))
+<P><STRONG><a name="[be]"></a>KeyExpansion</STRONG> (Thumb, 282 bytes, Stack size 20 bytes, aes.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = KeyExpansion
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx_iv
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx
+<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx_iv
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_init_ctx
 </UL>
 
-<P><STRONG><a name="[c2]"></a>AddRoundKey</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, aes.o(.text))
+<P><STRONG><a name="[c4]"></a>AddRoundKey</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, aes.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = AddRoundKey
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
 </UL>
 
-<P><STRONG><a name="[c3]"></a>SubBytes</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, aes.o(.text))
+<P><STRONG><a name="[c5]"></a>SubBytes</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, aes.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SubBytes
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
 </UL>
 
-<P><STRONG><a name="[c4]"></a>ShiftRows</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, aes.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
+<P><STRONG><a name="[c6]"></a>ShiftRows</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, aes.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
 </UL>
 
-<P><STRONG><a name="[c0]"></a>xtime</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, aes.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MixColumns
+<P><STRONG><a name="[c2]"></a>xtime</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, aes.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MixColumns
 </UL>
 
-<P><STRONG><a name="[bf]"></a>MixColumns</STRONG> (Thumb, 212 bytes, Stack size 24 bytes, aes.o(.text))
+<P><STRONG><a name="[c1]"></a>MixColumns</STRONG> (Thumb, 212 bytes, Stack size 24 bytes, aes.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = MixColumns
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xtime
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xtime
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Cipher
 </UL>
 
-<P><STRONG><a name="[c1]"></a>Cipher</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, aes.o(.text))
+<P><STRONG><a name="[c3]"></a>Cipher</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, aes.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Cipher &rArr; MixColumns
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MixColumns
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ShiftRows
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SubBytes
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AddRoundKey
+<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MixColumns
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ShiftRows
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SubBytes
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AddRoundKey
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CTR_xcrypt_buffer
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AES_CTR_xcrypt_buffer
 </UL>
 
 <P><STRONG><a name="[10a]"></a>_dadd1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)

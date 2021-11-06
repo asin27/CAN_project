@@ -13,7 +13,7 @@
 #include "../GLCD/GLCD.h"
 #include "../trng/adc.h"
 #include <highcan.h>
-#include "../security/security.h"
+#include "security/security.h"
 
 /******************************************************************************
 ** Function name:		RIT_IRQHandler
@@ -51,7 +51,7 @@ void RIT_IRQHandler (void)
 					for (i = 0; i < 16; i++){
 						key[i] = k[i];
 					}
-					AES(&keyctx, (uint8_t *)key);
+					AES(&keyctx, (uint8_t *)key, 16);
 					while((hCAN_sendMessage(1, (char *) key, 16))!=hCAN_SUCCESS);
 				break;
 			}

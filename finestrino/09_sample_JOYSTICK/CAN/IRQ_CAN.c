@@ -1,7 +1,7 @@
 #include "lpc17xx.h"
 #include "./highcan.h"
 #include "../GLCD/GLCD.h"
-#include "../security/security.h"
+#include "security/security.h"
 
 void IRQ_CAN(int canBus);
 
@@ -36,7 +36,7 @@ void IRQ_CAN(int canBus){
 				new_key[i] = hCAN_recMessage[i];
 			
 			//DES3((unsigned char*) finestrino, key, DECRYPT);
-			AES(&ctx_dec_key, (unsigned char*) new_key);
+			AES(&ctx_dec_key, (unsigned char*) new_key, 16);
 			for(int i=0; i<100; i++);
 			
 			

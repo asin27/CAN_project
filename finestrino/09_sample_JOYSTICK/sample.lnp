@@ -15,14 +15,14 @@
 ".\asciilib.o"
 ".\glcd.o"
 ".\hzlib.o"
-".\security.o"
-".\sha256.o"
-".\aes.o"
+".\irq_can.o"
 ".\can.o"
 ".\highcan.o"
-".\irq_can.o"
 ".\lpc17xx_can.o"
 ".\lpc17xx_clkpwr.o"
+".\aes.o"
+".\security.o"
+".\sha256.o"
 --strict --scatter ".\sample.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>SIMULATOR</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Core\CM3\CoreSupport;.\CAN\Drivers\include;.\CAN\headers</IncludePath>
+              <IncludePath>.\Core\CM3\CoreSupport;.\..\..\shared_libraries\CAN\Drivers\include;.\..\..\shared_libraries\CAN\headers;.\..\..\shared_libraries</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -546,67 +546,52 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>security</GroupName>
-          <Files>
-            <File>
-              <FileName>security.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\security\security.c</FilePath>
-            </File>
-            <File>
-              <FileName>security.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\security\security.h</FilePath>
-            </File>
-            <File>
-              <FileName>sha256.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\security\sha256.c</FilePath>
-            </File>
-            <File>
-              <FileName>aes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\security\aes.c</FilePath>
-            </File>
-            <File>
-              <FileName>aes.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\security\aes.h</FilePath>
-            </File>
-            <File>
-              <FileName>sha256.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\security\sha256.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>can</GroupName>
           <Files>
-            <File>
-              <FileName>can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\CAN\can.c</FilePath>
-            </File>
-            <File>
-              <FileName>highcan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\CAN\highcan.c</FilePath>
-            </File>
             <File>
               <FileName>IRQ_CAN.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\CAN\IRQ_CAN.c</FilePath>
             </File>
             <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\shared_libraries\CAN\can.c</FilePath>
+            </File>
+            <File>
+              <FileName>highcan.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\shared_libraries\CAN\highcan.c</FilePath>
+            </File>
+            <File>
               <FileName>lpc17xx_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\CAN\Drivers\source\lpc17xx_can.c</FilePath>
+              <FilePath>..\..\shared_libraries\CAN\Drivers\source\lpc17xx_can.c</FilePath>
             </File>
             <File>
               <FileName>lpc17xx_clkpwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\CAN\Drivers\source\lpc17xx_clkpwr.c</FilePath>
+              <FilePath>..\..\shared_libraries\CAN\Drivers\source\lpc17xx_clkpwr.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>security</GroupName>
+          <Files>
+            <File>
+              <FileName>aes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\shared_libraries\security\aes.c</FilePath>
+            </File>
+            <File>
+              <FileName>security.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\shared_libraries\security\security.c</FilePath>
+            </File>
+            <File>
+              <FileName>sha256.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\shared_libraries\security\sha256.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -634,11 +619,6 @@
     <Layers>
       <Layer>
         <LayName>sample</LayName>
-        <LayDesc></LayDesc>
-        <LayUrl></LayUrl>
-        <LayKeys></LayKeys>
-        <LayCat></LayCat>
-        <LayLic></LayLic>
         <LayTarg>0</LayTarg>
         <LayPrjMark>1</LayPrjMark>
       </Layer>

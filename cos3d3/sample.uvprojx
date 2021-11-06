@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>SIMULATOR</Define>
               <Undefine></Undefine>
-              <IncludePath>.\..\security;.\CAN\Drivers\include;.\Core;.\CAN\headers</IncludePath>
+              <IncludePath>.\..\shared_libraries;.\CAN\Drivers\include;.\Core;.\CAN\headers</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -618,6 +618,26 @@
               <FileName>lib_adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\trng\lib_adc.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>security</GroupName>
+          <Files>
+            <File>
+              <FileName>aes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\shared_libraries\security\aes.c</FilePath>
+            </File>
+            <File>
+              <FileName>security.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\shared_libraries\security\security.c</FilePath>
+            </File>
+            <File>
+              <FileName>sha256.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\shared_libraries\security\sha256.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -692,7 +692,7 @@
   </Group>
 
   <Group>
-    <GroupName>security</GroupName>
+    <GroupName>can</GroupName>
     <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
@@ -704,20 +704,20 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\security\security.c</PathWithFileName>
-      <FilenameWithoutPath>security.c</FilenameWithoutPath>
+      <PathWithFileName>.\CAN\IRQ_CAN.c</PathWithFileName>
+      <FilenameWithoutPath>IRQ_CAN.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>10</GroupNumber>
       <FileNumber>26</FileNumber>
-      <FileType>5</FileType>
+      <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\security\security.h</PathWithFileName>
-      <FilenameWithoutPath>security.h</FilenameWithoutPath>
+      <PathWithFileName>..\..\shared_libraries\CAN\can.c</PathWithFileName>
+      <FilenameWithoutPath>can.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -728,8 +728,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\security\sha256.c</PathWithFileName>
-      <FilenameWithoutPath>sha256.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\shared_libraries\CAN\highcan.c</PathWithFileName>
+      <FilenameWithoutPath>highcan.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -740,43 +740,43 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\security\aes.c</PathWithFileName>
-      <FilenameWithoutPath>aes.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\shared_libraries\CAN\Drivers\source\lpc17xx_can.c</PathWithFileName>
+      <FilenameWithoutPath>lpc17xx_can.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>10</GroupNumber>
       <FileNumber>29</FileNumber>
-      <FileType>5</FileType>
+      <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\security\aes.h</PathWithFileName>
-      <FilenameWithoutPath>aes.h</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>10</GroupNumber>
-      <FileNumber>30</FileNumber>
-      <FileType>5</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\security\sha256.h</PathWithFileName>
-      <FilenameWithoutPath>sha256.h</FilenameWithoutPath>
+      <PathWithFileName>..\..\shared_libraries\CAN\Drivers\source\lpc17xx_clkpwr.c</PathWithFileName>
+      <FilenameWithoutPath>lpc17xx_clkpwr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
   </Group>
 
   <Group>
-    <GroupName>can</GroupName>
+    <GroupName>security</GroupName>
     <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
+    <File>
+      <GroupNumber>11</GroupNumber>
+      <FileNumber>30</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\shared_libraries\security\aes.c</PathWithFileName>
+      <FilenameWithoutPath>aes.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
     <File>
       <GroupNumber>11</GroupNumber>
       <FileNumber>31</FileNumber>
@@ -784,8 +784,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\CAN\can.c</PathWithFileName>
-      <FilenameWithoutPath>can.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\shared_libraries\security\security.c</PathWithFileName>
+      <FilenameWithoutPath>security.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -796,44 +796,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\CAN\highcan.c</PathWithFileName>
-      <FilenameWithoutPath>highcan.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>11</GroupNumber>
-      <FileNumber>33</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\CAN\IRQ_CAN.c</PathWithFileName>
-      <FilenameWithoutPath>IRQ_CAN.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>11</GroupNumber>
-      <FileNumber>34</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\CAN\Drivers\source\lpc17xx_can.c</PathWithFileName>
-      <FilenameWithoutPath>lpc17xx_can.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>11</GroupNumber>
-      <FileNumber>35</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\CAN\Drivers\source\lpc17xx_clkpwr.c</PathWithFileName>
-      <FilenameWithoutPath>lpc17xx_clkpwr.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\shared_libraries\security\sha256.c</PathWithFileName>
+      <FilenameWithoutPath>sha256.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

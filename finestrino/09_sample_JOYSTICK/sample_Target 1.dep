@@ -1,7 +1,7 @@
 Dependencies for Project 'sample', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (.\startup_LPC17xx.s)(0x60F2F696)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include--pd "__UVISION_VERSION SETA 533" --pd "_RTE_ SETA 1" --pd "LPC175x_6x SETA 1" --pd "_RTE_ SETA 1"--list .\startup_lpc17xx.lst --xref -o .\startup_lpc17xx.o --depend .\startup_lpc17xx.d)
-F (.\sample.c)(0x6184045C)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\sample.o --omf_browse .\sample.crf --depend .\sample.d)
+F (.\sample.c)(0x6186B770)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\sample.o --omf_browse .\sample.crf --depend .\sample.d)
 I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.H)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
@@ -15,24 +15,24 @@ I (timer/timer.h)(0x5FF6F818)
 I (RIT/RIT.h)(0x5FF6F818)
 I (joystick/joystick.h)(0x5FF6F818)
 I (GLCD/GLCD.h)(0x609CF668)
-I (security/security.h)(0x6183B037)
+I (.\..\..\shared_libraries\security/security.h)(0x6186B2F8)
 I (C:\Keil\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
-I (security/sha256.h)(0x60896B5D)
-I (security/aes.h)(0x60F2F393)
-I (.\CAN\headers\highcan.h)(0x6160719A)
-I (.\CAN\Drivers\include\lpc17xx_can.h)(0x60978F59)
-I (.\CAN\Drivers\include\lpc_types.h)(0x6096B9A6)
-I (.\CAN\headers\./can.h)(0x60B11C7C)
-F (.\Core\CM3\CoreSupport\core_cm3.c)(0x6096B993)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\core_cm3.o --omf_browse .\core_cm3.crf --depend .\core_cm3.d)
+I (.\..\..\shared_libraries\security/sha256.h)(0x60896B5D)
+I (.\..\..\shared_libraries\security/aes.h)(0x60F2F393)
+I (.\..\..\shared_libraries\CAN\headers\highcan.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\headers\./can.h)(0x6186B4D0)
+F (.\Core\CM3\CoreSupport\core_cm3.c)(0x6096B993)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\core_cm3.o --omf_browse .\core_cm3.crf --depend .\core_cm3.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
-F (.\Core\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.c)(0x60BF4712)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\system_lpc17xx.o --omf_browse .\system_lpc17xx.crf --depend .\system_lpc17xx.d)
+F (.\Core\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.c)(0x60BF4712)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\system_lpc17xx.o --omf_browse .\system_lpc17xx.crf --depend .\system_lpc17xx.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
 I (Core\CM3\DeviceSupport\NXP\LPC17xx\LPC17xx.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
 I (Core\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h)(0x6096B993)
-F (.\led\funct_led.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\funct_led.o --omf_browse .\funct_led.crf --depend .\funct_led.d)
+F (.\led\funct_led.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\funct_led.o --omf_browse .\funct_led.crf --depend .\funct_led.d)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -40,7 +40,7 @@ I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (led\led.h)(0x5FF6F818)
-F (.\led\lib_led.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_led.o --omf_browse .\lib_led.crf --depend .\lib_led.d)
+F (.\led\lib_led.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_led.o --omf_browse .\lib_led.crf --depend .\lib_led.d)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -50,7 +50,7 @@ I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Includ
 I (led\led.h)(0x5FF6F818)
 F (.\led\led.h)(0x5FF6F818)()
 F (.\button_EXINT\button.h)(0x5FF6F818)()
-F (.\button_EXINT\IRQ_button.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_button.o --omf_browse .\irq_button.crf --depend .\irq_button.d)
+F (.\button_EXINT\IRQ_button.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_button.o --omf_browse .\irq_button.crf --depend .\irq_button.d)
 I (button_EXINT\button.h)(0x5FF6F818)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
@@ -58,7 +58,7 @@ I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
 I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
-F (.\button_EXINT\lib_button.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_button.o --omf_browse .\lib_button.crf --depend .\lib_button.d)
+F (.\button_EXINT\lib_button.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_button.o --omf_browse .\lib_button.crf --depend .\lib_button.d)
 I (button_EXINT\button.h)(0x5FF6F818)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
@@ -66,7 +66,7 @@ I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
 I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
-F (.\RIT\IRQ_RIT.c)(0x61851E63)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_rit.o --omf_browse .\irq_rit.crf --depend .\irq_rit.d)
+F (.\RIT\IRQ_RIT.c)(0x6186B720)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_rit.o --omf_browse .\irq_rit.crf --depend .\irq_rit.d)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -77,15 +77,15 @@ I (RIT\RIT.h)(0x5FF6F818)
 I (RIT\../led/led.h)(0x5FF6F818)
 I (RIT\../timer/timer.h)(0x5FF6F818)
 I (RIT\../GLCD/GLCD.h)(0x609CF668)
-I (.\CAN\headers\highcan.h)(0x6160719A)
-I (.\CAN\Drivers\include\lpc17xx_can.h)(0x60978F59)
-I (.\CAN\Drivers\include\lpc_types.h)(0x6096B9A6)
-I (.\CAN\headers\./can.h)(0x60B11C7C)
-I (RIT\../security/security.h)(0x6183B037)
+I (.\..\..\shared_libraries\CAN\headers\highcan.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\headers\./can.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\security/security.h)(0x6186B2F8)
 I (C:\Keil\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
-I (RIT\../security/sha256.h)(0x60896B5D)
-I (RIT\../security/aes.h)(0x60F2F393)
-F (.\RIT\lib_RIT.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_rit.o --omf_browse .\lib_rit.crf --depend .\lib_rit.d)
+I (.\..\..\shared_libraries\security/sha256.h)(0x60896B5D)
+I (.\..\..\shared_libraries\security/aes.h)(0x60F2F393)
+F (.\RIT\lib_RIT.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_rit.o --omf_browse .\lib_rit.crf --depend .\lib_rit.d)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -95,7 +95,7 @@ I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Includ
 I (RIT\RIT.h)(0x5FF6F818)
 F (.\RIT\RIT.h)(0x5FF6F818)()
 F (.\joystick\joystick.h)(0x5FF6F818)()
-F (.\joystick\lib_joystick.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_joystick.o --omf_browse .\lib_joystick.crf --depend .\lib_joystick.d)
+F (.\joystick\lib_joystick.c)(0x5FF6F818)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_joystick.o --omf_browse .\lib_joystick.crf --depend .\lib_joystick.d)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -103,7 +103,7 @@ I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (joystick\joystick.h)(0x5FF6F818)
-F (.\timer\IRQ_timer.c)(0x61851E70)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_timer.o --omf_browse .\irq_timer.crf --depend .\irq_timer.d)
+F (.\timer\IRQ_timer.c)(0x61851E70)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_timer.o --omf_browse .\irq_timer.crf --depend .\irq_timer.d)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -113,7 +113,7 @@ I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Includ
 I (timer\timer.h)(0x5FF6F818)
 I (timer\../led/led.h)(0x5FF6F818)
 I (timer\../GLCD/GLCD.h)(0x609CF668)
-F (.\timer\lib_timer.c)(0x609A9CB0)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_timer.o --omf_browse .\lib_timer.crf --depend .\lib_timer.d)
+F (.\timer\lib_timer.c)(0x609A9CB0)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_timer.o --omf_browse .\lib_timer.crf --depend .\lib_timer.d)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -122,11 +122,11 @@ I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (timer\timer.h)(0x5FF6F818)
 F (.\timer\timer.h)(0x5FF6F818)()
-F (.\GLCD\AsciiLib.c)(0x4CEFE446)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\asciilib.o --omf_browse .\asciilib.crf --depend .\asciilib.d)
+F (.\GLCD\AsciiLib.c)(0x4CEFE446)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\asciilib.o --omf_browse .\asciilib.crf --depend .\asciilib.d)
 I (GLCD\AsciiLib.h)(0x4CEFE47F)
 I (C:\Keil\ARM\ARMCC\include\string.h)(0x5E8E9122)
 F (.\GLCD\AsciiLib.h)(0x4CEFE47F)()
-F (.\GLCD\GLCD.c)(0x609CF667)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\glcd.o --omf_browse .\glcd.crf --depend .\glcd.d)
+F (.\GLCD\GLCD.c)(0x609CF667)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\glcd.o --omf_browse .\glcd.crf --depend .\glcd.d)
 I (GLCD\GLCD.h)(0x609CF668)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
@@ -137,86 +137,83 @@ I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Includ
 I (GLCD\AsciiLib.h)(0x4CEFE47F)
 I (C:\Keil\ARM\ARMCC\include\string.h)(0x5E8E9122)
 F (.\GLCD\GLCD.h)(0x609CF668)()
-F (.\GLCD\HzLib.c)(0x4CF0C8E2)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\hzlib.o --omf_browse .\hzlib.crf --depend .\hzlib.d)
+F (.\GLCD\HzLib.c)(0x4CF0C8E2)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\hzlib.o --omf_browse .\hzlib.crf --depend .\hzlib.d)
 I (GLCD\HzLib.h)(0x4CF00CD6)
 I (C:\Keil\ARM\ARMCC\include\string.h)(0x5E8E9122)
 F (.\GLCD\HzLib.h)(0x4CF00CD6)()
-F (.\security\security.c)(0x6183B021)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\security.o --omf_browse .\security.crf --depend .\security.d)
-I (security\security.h)(0x6183B037)
-I (C:\Keil\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
-I (security\sha256.h)(0x60896B5D)
-I (security\aes.h)(0x60F2F393)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
-I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x5E8E9122)
-I (security\des.h)(0x608A658F)
-F (.\security\security.h)(0x6183B037)()
-F (.\security\sha256.c)(0x60705FAF)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\sha256.o --omf_browse .\sha256.crf --depend .\sha256.d)
-I (security\sha256.h)(0x60896B5D)
-I (C:\Keil\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
-F (.\security\aes.c)(0x60883AE9)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\aes.o --omf_browse .\aes.crf --depend .\aes.d)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x5E8E9122)
-I (security\aes.h)(0x60F2F393)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
-I (C:\Keil\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
-F (.\security\aes.h)(0x60F2F393)()
-F (.\security\sha256.h)(0x60896B5D)()
-F (.\CAN\can.c)(0x60BF443F)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\can.o --omf_browse .\can.crf --depend .\can.d)
-I (.\CAN\headers\./can.h)(0x60B11C7C)
-I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
-I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
-I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
-I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
-I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
-I (.\CAN\Drivers\include\lpc17xx_can.h)(0x60978F59)
-I (.\CAN\Drivers\include\lpc_types.h)(0x6096B9A6)
-F (.\CAN\highcan.c)(0x61607163)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\highcan.o --omf_browse .\highcan.crf --depend .\highcan.d)
-I (.\CAN\Drivers\include\lpc17xx_can.h)(0x60978F59)
-I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
-I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
-I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
-I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
-I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
-I (.\CAN\Drivers\include\lpc_types.h)(0x6096B9A6)
-I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
-I (CAN\../GLCD/GLCD.h)(0x609CF668)
-I (.\CAN\headers\./highcan.h)(0x6160719A)
-I (.\CAN\headers\././can.h)(0x60B11C7C)
-F (.\CAN\IRQ_CAN.c)(0x6154964E)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_can.o --omf_browse .\irq_can.crf --depend .\irq_can.d)
+F (.\CAN\IRQ_CAN.c)(0x6186B6FA)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_can.o --omf_browse .\irq_can.crf --depend .\irq_can.d)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
 I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
-I (.\CAN\headers\./highcan.h)(0x6160719A)
-I (.\CAN\Drivers\include\lpc17xx_can.h)(0x60978F59)
-I (.\CAN\Drivers\include\lpc_types.h)(0x6096B9A6)
-I (.\CAN\headers\././can.h)(0x60B11C7C)
+I (.\..\..\shared_libraries\CAN\headers\./highcan.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\headers\././can.h)(0x6186B4D0)
 I (CAN\../GLCD/GLCD.h)(0x609CF668)
-I (CAN\../security/security.h)(0x6183B037)
+I (.\..\..\shared_libraries\security/security.h)(0x6186B2F8)
 I (C:\Keil\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
-I (CAN\../security/sha256.h)(0x60896B5D)
-I (CAN\../security/aes.h)(0x60F2F393)
-F (.\CAN\Drivers\source\lpc17xx_can.c)(0x60B13F22)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lpc17xx_can.o --omf_browse .\lpc17xx_can.crf --depend .\lpc17xx_can.d)
-I (.\CAN\Drivers\include\lpc17xx_can.h)(0x60978F59)
+I (.\..\..\shared_libraries\security/sha256.h)(0x60896B5D)
+I (.\..\..\shared_libraries\security/aes.h)(0x60F2F393)
+F (..\..\shared_libraries\CAN\can.c)(0x6186B4D0)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\can.o --omf_browse .\can.crf --depend .\can.d)
+I (.\..\..\shared_libraries\CAN\headers\./can.h)(0x6186B4D0)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
 I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
-I (.\CAN\Drivers\include\lpc_types.h)(0x6096B9A6)
-I (.\CAN\Drivers\include\lpc17xx_clkpwr.h)(0x6096B9A5)
-I (.\CAN\Drivers\include\lpc17xx_libcfg_default.h)(0x609792FE)
-F (.\CAN\Drivers\source\lpc17xx_clkpwr.c)(0x609796A9)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\CAN\Drivers\include -I .\CAN\headers-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lpc17xx_clkpwr.o --omf_browse .\lpc17xx_clkpwr.crf --depend .\lpc17xx_clkpwr.d)
-I (.\CAN\Drivers\include\lpc17xx_clkpwr.h)(0x6096B9A5)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4D0)
+I (..\..\shared_libraries\CAN\../GLCD/GLCD.h)(0x609CF668)
+F (..\..\shared_libraries\CAN\highcan.c)(0x6186B874)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\highcan.o --omf_browse .\highcan.crf --depend .\highcan.d)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4D0)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
 I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
 I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
 I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
 I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
-I (.\CAN\Drivers\include\lpc_types.h)(0x6096B9A6)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4D0)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
+I (..\..\shared_libraries\CAN\../GLCD/GLCD.h)(0x609CF668)
+I (.\..\..\shared_libraries\CAN\headers\./highcan.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\headers\././can.h)(0x6186B4D0)
+F (..\..\shared_libraries\CAN\Drivers\source\lpc17xx_can.c)(0x6186B4D0)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lpc17xx_can.o --omf_browse .\lpc17xx_can.crf --depend .\lpc17xx_can.d)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h)(0x6186B4D0)
+I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
+I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_clkpwr.h)(0x6186B4D0)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_libcfg_default.h)(0x6186B4D0)
+F (..\..\shared_libraries\CAN\Drivers\source\lpc17xx_clkpwr.c)(0x6186B4D0)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lpc17xx_clkpwr.o --omf_browse .\lpc17xx_clkpwr.crf --depend .\lpc17xx_clkpwr.d)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_clkpwr.h)(0x6186B4D0)
+I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x58493F92)
+I (.\Core\CM3\CoreSupport\core_cm3.h)(0x6096B993)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (.\Core\CM3\CoreSupport\core_cmInstr.h)(0x6096B993)
+I (.\Core\CM3\CoreSupport\core_cmFunc.h)(0x6096B993)
+I (C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
+I (.\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h)(0x6186B4D0)
+F (..\..\shared_libraries\security\aes.c)(0x60883AE9)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\aes.o --omf_browse .\aes.crf --depend .\aes.d)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x5E8E9122)
+I (..\..\shared_libraries\security\aes.h)(0x60F2F393)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (C:\Keil\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
+F (..\..\shared_libraries\security\security.c)(0x6186ACB4)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\security.o --omf_browse .\security.crf --depend .\security.d)
+I (..\..\shared_libraries\security\security.h)(0x6186B2F8)
+I (C:\Keil\ARM\ARMCC\include\stddef.h)(0x5E8E9122)
+I (..\..\shared_libraries\security\sha256.h)(0x60896B5D)
+I (..\..\shared_libraries\security\aes.h)(0x60F2F393)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x5E8E9122)
+F (..\..\shared_libraries\security\sha256.c)(0x60705FAF)(--c99 -c --cpu Cortex-M3 -g -W -O0 --apcs=interwork -I .\Core\CM3\CoreSupport -I .\..\..\shared_libraries\CAN\Drivers\include -I .\..\..\shared_libraries\CAN\headers -I .\..\..\shared_libraries-I.\RTE\_Target_1-IC:\Users\Arianna\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\sha256.o --omf_browse .\sha256.crf --depend .\sha256.d)
+I (..\..\shared_libraries\security\sha256.h)(0x60896B5D)
+I (C:\Keil\ARM\ARMCC\include\stddef.h)(0x5E8E9122)

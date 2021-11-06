@@ -13,7 +13,7 @@
 #include "../timer/timer.h"
 #include "../GLCD/GLCD.h"
 #include <highcan.h>
-#include "../security/security.h"
+#include "security/security.h"
 
 /******************************************************************************
 ** Function name:		RIT_IRQHandler
@@ -123,7 +123,7 @@ void RIT_IRQHandler (void)
 			if(pressed){
 				message[0] = fLevel[selected];
 				message[1] = selected;
-				AES(&ctx_enc,message);
+				AES(&ctx_enc,message,16);
 				LED_Off(0);
 				while(hCAN_sendMessage(1, (char *) message, 16) != hCAN_SUCCESS);
 				pressed = 0;
