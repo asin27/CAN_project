@@ -25,7 +25,7 @@ uint8_t iv[16] = "BBBBBBBBBBBBBBBB";
 uint8_t oldKey[16] = "AAAAAAAAAAAAAAAA";
 uint8_t oldIv[16] = "BBBBBBBBBBBBBBBB";
 uint8_t sCode = 0xa;
-
+int good = 0, bad = 0;
 uint8_t hK[32];
 uint8_t hIv[32];
 uint8_t finalMessage[96];
@@ -43,8 +43,8 @@ int main (void) {
 	hCAN_init(1, CAN_5Kbps);
 	hCAN_setID(0x4);
 	
-	ctx = AES_init(eKey, iv);
-	
+	ctx = AES_init(oldKey, oldIv);
+	NVIC_SetPriority(CAN_IRQn, 0);
 	NVIC_SetPriority(ADC_IRQn, 1);
 	NVIC_SetPriority(TIMER0_IRQn, 2);
 

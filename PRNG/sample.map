@@ -24,7 +24,7 @@ Section Cross References
     sample.o(.text) refers to security.o(.text) for AES_init
     sample.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
     sample.o(.text) refers to lib_timer.o(.text) for init_timer
-    sample.o(.text) refers to sample.o(.data) for iv
+    sample.o(.text) refers to sample.o(.data) for oldIv
     sample.o(.text) refers to sample.o(.bss) for ctx
     system_lpc17xx.o(.text) refers to system_lpc17xx.o(.data) for SystemCoreClock
     asciilib.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
@@ -48,6 +48,7 @@ Section Cross References
     irq_can.o(.text) refers to highcan.o(.bss) for hCAN_recMessage
     irq_can.o(.text) refers to irq_timer.o(.data) for generated
     irq_can.o(.text) refers to sample.o(.bss) for ack_ctx
+    irq_can.o(.text) refers to sample.o(.data) for good
     lpc17xx_can.o(.text) refers to lpc17xx_clkpwr.o(.text) for CLKPWR_GetPCLK
     lpc17xx_can.o(.text) refers to lpc17xx_can.o(.data) for FULLCAN_ENABLE
     lpc17xx_clkpwr.o(.text) refers to system_lpc17xx.o(.data) for SystemCoreClock
@@ -436,13 +437,13 @@ Image Symbol Table
     .text                                    0x00000170   Section       52  startup_lpc17xx.o(.text)
     .text                                    0x000001a4   Section        0  sample.o(.text)
     __NVIC_SetPriority                       0x000001a5   Thumb Code    32  sample.o(.text)
-    .text                                    0x0000025c   Section        0  asciilib.o(.text)
-    .text                                    0x0000027c   Section        0  irq_adc_1.o(.text)
-    .text                                    0x000002a8   Section        0  noretval__2sprintf.o(.text)
-    .text                                    0x000002d0   Section        0  heapauxi.o(.text)
-    .text                                    0x000002d6   Section        0  _sputc.o(.text)
-    .text                                    0x000002e0   Section        0  exit.o(.text)
-    .text                                    0x000002f4   Section        8  libspace.o(.text)
+    .text                                    0x00000264   Section        0  asciilib.o(.text)
+    .text                                    0x00000284   Section        0  irq_adc_1.o(.text)
+    .text                                    0x000002b0   Section        0  noretval__2sprintf.o(.text)
+    .text                                    0x000002d8   Section        0  heapauxi.o(.text)
+    .text                                    0x000002de   Section        0  _sputc.o(.text)
+    .text                                    0x000002e8   Section        0  exit.o(.text)
+    .text                                    0x000002fa   Section        2  use_no_semi.o(.text)
     .ARM.__at_0x02FC                         0x000002fc   Section        4  startup_lpc17xx.o(.ARM.__at_0x02FC)
     .text                                    0x00000300   Section        0  system_lpc17xx.o(.text)
     .text                                    0x00000580   Section        0  glcd.o(.text)
@@ -454,77 +455,77 @@ Image Symbol Table
     .text                                    0x00004664   Section        0  can.o(.text)
     .text                                    0x000047b8   Section        0  highcan.o(.text)
     putMessageInBuffer                       0x00004b89   Thumb Code   196  highcan.o(.text)
-    .text                                    0x00004da0   Section        0  irq_can.o(.text)
+    .text                                    0x00004da4   Section        0  irq_can.o(.text)
     .text                                    0x00004eb4   Section        0  lpc17xx_can.o(.text)
     can_SetBaudrate                          0x00004eb7   Thumb Code   178  lpc17xx_can.o(.text)
     .text                                    0x00006c98   Section        0  lpc17xx_clkpwr.o(.text)
     .text                                    0x00006dd8   Section        0  lib_adc_1.o(.text)
     .text                                    0x00006e74   Section        0  irq_timer.o(.text)
-    .text                                    0x000070c4   Section        0  lib_timer.o(.text)
-    __NVIC_EnableIRQ                         0x000070c5   Thumb Code    34  lib_timer.o(.text)
-    .text                                    0x00007200   Section        0  aes.o(.text)
-    KeyExpansion                             0x00007201   Thumb Code   282  aes.o(.text)
-    AddRoundKey                              0x0000735d   Thumb Code    56  aes.o(.text)
-    SubBytes                                 0x00007395   Thumb Code    46  aes.o(.text)
-    ShiftRows                                0x000073c3   Thumb Code    50  aes.o(.text)
-    xtime                                    0x000073f5   Thumb Code    20  aes.o(.text)
-    MixColumns                               0x00007409   Thumb Code   212  aes.o(.text)
-    Cipher                                   0x000074dd   Thumb Code    76  aes.o(.text)
-    .text                                    0x000075a4   Section        0  security.o(.text)
-    .text                                    0x0000766c   Section        0  sha256.o(.text)
-    .text                                    0x00007a6c   Section        0  _printf_pad.o(.text)
-    .text                                    0x00007abc   Section        0  _printf_hex_int.o(.text)
-    .text                                    0x00007b14   Section        0  __printf_flags_wp.o(.text)
-    .text                                    0x00007c4c   Section      138  rt_memcpy_v6.o(.text)
-    .text                                    0x00007cd6   Section       78  rt_memclr_w.o(.text)
-    .text                                    0x00007d24   Section        0  _printf_intcommon.o(.text)
-    .text                                    0x00007dd8   Section        0  _printf_char_common.o(.text)
-    _printf_input_char                       0x00007dd9   Thumb Code    10  _printf_char_common.o(.text)
-    .text                                    0x00007e08   Section      100  rt_memcpy_w.o(.text)
-    .text                                    0x00007e6c   Section       74  sys_stackheap_outer.o(.text)
-    .text                                    0x00007eb8   Section        0  sys_exit.o(.text)
-    .text                                    0x00007ec4   Section        2  use_no_semi.o(.text)
-    .text                                    0x00007ec6   Section        0  indicate_semi.o(.text)
-    i.CAN_allTXok                            0x00007ec6   Section        0  can.o(i.CAN_allTXok)
-    i.CAN_internalPrioMode                   0x00007ed0   Section        0  can.o(i.CAN_internalPrioMode)
-    i._is_digit                              0x00007f50   Section        0  __printf_wp.o(i._is_digit)
-    i.hCAN_arbitrationLost                   0x00007f60   Section        0  highcan.o(i.hCAN_arbitrationLost)
-    .constdata                               0x00007f90   Section     1520  asciilib.o(.constdata)
-    AsciiLib                                 0x00007f90   Data        1520  asciilib.o(.constdata)
-    .constdata                               0x00008580   Section      267  aes.o(.constdata)
-    sbox                                     0x00008580   Data         256  aes.o(.constdata)
-    Rcon                                     0x00008680   Data          11  aes.o(.constdata)
-    .constdata                               0x0000868c   Section      256  sha256.o(.constdata)
-    k                                        0x0000868c   Data         256  sha256.o(.constdata)
-    .constdata                               0x0000878c   Section       40  _printf_hex_int.o(.constdata)
-    uc_hextab                                0x0000878c   Data          20  _printf_hex_int.o(.constdata)
-    lc_hextab                                0x000087a0   Data          20  _printf_hex_int.o(.constdata)
-    .constdata                               0x000087b4   Section       17  __printf_flags_wp.o(.constdata)
-    maptable                                 0x000087b4   Data          17  __printf_flags_wp.o(.constdata)
+    .text                                    0x000070c8   Section        0  lib_timer.o(.text)
+    __NVIC_EnableIRQ                         0x000070c9   Thumb Code    34  lib_timer.o(.text)
+    .text                                    0x00007204   Section        0  aes.o(.text)
+    KeyExpansion                             0x00007205   Thumb Code   282  aes.o(.text)
+    AddRoundKey                              0x00007361   Thumb Code    56  aes.o(.text)
+    SubBytes                                 0x00007399   Thumb Code    46  aes.o(.text)
+    ShiftRows                                0x000073c7   Thumb Code    50  aes.o(.text)
+    xtime                                    0x000073f9   Thumb Code    20  aes.o(.text)
+    MixColumns                               0x0000740d   Thumb Code   212  aes.o(.text)
+    Cipher                                   0x000074e1   Thumb Code    76  aes.o(.text)
+    .text                                    0x000075a8   Section        0  security.o(.text)
+    .text                                    0x00007670   Section        0  sha256.o(.text)
+    .text                                    0x00007a70   Section        0  _printf_pad.o(.text)
+    .text                                    0x00007ac0   Section        0  _printf_hex_int.o(.text)
+    .text                                    0x00007b18   Section        0  __printf_flags_wp.o(.text)
+    .text                                    0x00007c50   Section      138  rt_memcpy_v6.o(.text)
+    .text                                    0x00007cda   Section       78  rt_memclr_w.o(.text)
+    .text                                    0x00007d28   Section        0  _printf_intcommon.o(.text)
+    .text                                    0x00007ddc   Section        0  _printf_char_common.o(.text)
+    _printf_input_char                       0x00007ddd   Thumb Code    10  _printf_char_common.o(.text)
+    .text                                    0x00007e0c   Section      100  rt_memcpy_w.o(.text)
+    .text                                    0x00007e70   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x00007ebc   Section        8  libspace.o(.text)
+    .text                                    0x00007ec4   Section        0  sys_exit.o(.text)
+    .text                                    0x00007ed0   Section        0  indicate_semi.o(.text)
+    i.CAN_allTXok                            0x00007ed0   Section        0  can.o(i.CAN_allTXok)
+    i.CAN_internalPrioMode                   0x00007eda   Section        0  can.o(i.CAN_internalPrioMode)
+    i._is_digit                              0x00007f5a   Section        0  __printf_wp.o(i._is_digit)
+    i.hCAN_arbitrationLost                   0x00007f68   Section        0  highcan.o(i.hCAN_arbitrationLost)
+    .constdata                               0x00007f98   Section     1520  asciilib.o(.constdata)
+    AsciiLib                                 0x00007f98   Data        1520  asciilib.o(.constdata)
+    .constdata                               0x00008588   Section      267  aes.o(.constdata)
+    sbox                                     0x00008588   Data         256  aes.o(.constdata)
+    Rcon                                     0x00008688   Data          11  aes.o(.constdata)
+    .constdata                               0x00008694   Section      256  sha256.o(.constdata)
+    k                                        0x00008694   Data         256  sha256.o(.constdata)
+    .constdata                               0x00008794   Section       40  _printf_hex_int.o(.constdata)
+    uc_hextab                                0x00008794   Data          20  _printf_hex_int.o(.constdata)
+    lc_hextab                                0x000087a8   Data          20  _printf_hex_int.o(.constdata)
+    .constdata                               0x000087bc   Section       17  __printf_flags_wp.o(.constdata)
+    maptable                                 0x000087bc   Data          17  __printf_flags_wp.o(.constdata)
     STACK                                    0x10000000   Section    16384  startup_lpc17xx.o(STACK)
     Stack_Mem                                0x10000000   Data       16384  startup_lpc17xx.o(STACK)
     __initial_sp                             0x10004000   Data           0  startup_lpc17xx.o(STACK)
-    .data                                    0x2007c000   Section       65  sample.o(.data)
-    .data                                    0x2007c044   Section        4  system_lpc17xx.o(.data)
-    .data                                    0x2007c048   Section        1  glcd.o(.data)
-    LCD_Code                                 0x2007c048   Data           1  glcd.o(.data)
-    .data                                    0x2007c04c   Section        8  can.o(.data)
-    CAN_state                                0x2007c04c   Data           1  can.o(.data)
-    counter                                  0x2007c04d   Data           2  can.o(.data)
-    tableLen                                 0x2007c050   Data           4  can.o(.data)
-    .data                                    0x2007c054   Section       56  highcan.o(.data)
-    ID                                       0x2007c054   Data           8  highcan.o(.data)
-    busBlocked                               0x2007c05c   Data           8  highcan.o(.data)
-    hCAN_AfEntry                             0x2007c06c   Data           8  highcan.o(.data)
-    recStatus                                0x2007c080   Data           1  highcan.o(.data)
-    recNext                                  0x2007c084   Data           4  highcan.o(.data)
-    buffIndex                                0x2007c088   Data           4  highcan.o(.data)
-    .data                                    0x2007c08c   Section       12  lpc17xx_can.o(.data)
-    .data                                    0x2007c098   Section       20  irq_adc_1.o(.data)
-    cont                                     0x2007c0a4   Data           4  irq_adc_1.o(.data)
-    i                                        0x2007c0a8   Data           4  irq_adc_1.o(.data)
-    .data                                    0x2007c0ac   Section        1  lib_adc_1.o(.data)
-    .data                                    0x2007c0b0   Section       20  irq_timer.o(.data)
+    .data                                    0x2007c000   Section       76  sample.o(.data)
+    .data                                    0x2007c04c   Section        4  system_lpc17xx.o(.data)
+    .data                                    0x2007c050   Section        1  glcd.o(.data)
+    LCD_Code                                 0x2007c050   Data           1  glcd.o(.data)
+    .data                                    0x2007c054   Section        8  can.o(.data)
+    CAN_state                                0x2007c054   Data           1  can.o(.data)
+    counter                                  0x2007c055   Data           2  can.o(.data)
+    tableLen                                 0x2007c058   Data           4  can.o(.data)
+    .data                                    0x2007c05c   Section       56  highcan.o(.data)
+    ID                                       0x2007c05c   Data           8  highcan.o(.data)
+    busBlocked                               0x2007c064   Data           8  highcan.o(.data)
+    hCAN_AfEntry                             0x2007c074   Data           8  highcan.o(.data)
+    recStatus                                0x2007c088   Data           1  highcan.o(.data)
+    recNext                                  0x2007c08c   Data           4  highcan.o(.data)
+    buffIndex                                0x2007c090   Data           4  highcan.o(.data)
+    .data                                    0x2007c094   Section       12  lpc17xx_can.o(.data)
+    .data                                    0x2007c0a0   Section       20  irq_adc_1.o(.data)
+    cont                                     0x2007c0ac   Data           4  irq_adc_1.o(.data)
+    i                                        0x2007c0b0   Data           4  irq_adc_1.o(.data)
+    .data                                    0x2007c0b4   Section        1  lib_adc_1.o(.data)
+    .data                                    0x2007c0b8   Section       12  irq_timer.o(.data)
     .bss                                     0x2007c0c4   Section     1120  sample.o(.bss)
     .bss                                     0x2007c524   Section      200  highcan.o(.bss)
     .bss                                     0x2007c5ec   Section       96  libspace.o(.bss)
@@ -666,18 +667,17 @@ Image Symbol Table
     USB_IRQHandler                           0x00000187   Thumb Code     0  startup_lpc17xx.o(.text)
     WDT_IRQHandler                           0x00000187   Thumb Code     0  startup_lpc17xx.o(.text)
     __user_initial_stackheap                 0x00000189   Thumb Code     0  startup_lpc17xx.o(.text)
-    main                                     0x000001c5   Thumb Code   122  sample.o(.text)
-    GetASCIICode                             0x0000025d   Thumb Code    26  asciilib.o(.text)
-    ADC_IRQHandler                           0x0000027d   Thumb Code    28  irq_adc_1.o(.text)
-    __2sprintf                               0x000002a9   Thumb Code    34  noretval__2sprintf.o(.text)
-    __use_two_region_memory                  0x000002d1   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_escrow$2region                 0x000002d3   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_expand$2region                 0x000002d5   Thumb Code     2  heapauxi.o(.text)
-    _sputc                                   0x000002d7   Thumb Code    10  _sputc.o(.text)
-    exit                                     0x000002e1   Thumb Code    18  exit.o(.text)
-    __user_libspace                          0x000002f5   Thumb Code     8  libspace.o(.text)
-    __user_perproc_libspace                  0x000002f5   Thumb Code     0  libspace.o(.text)
-    __user_perthread_libspace                0x000002f5   Thumb Code     0  libspace.o(.text)
+    main                                     0x000001c5   Thumb Code   130  sample.o(.text)
+    GetASCIICode                             0x00000265   Thumb Code    26  asciilib.o(.text)
+    ADC_IRQHandler                           0x00000285   Thumb Code    28  irq_adc_1.o(.text)
+    __2sprintf                               0x000002b1   Thumb Code    34  noretval__2sprintf.o(.text)
+    __use_two_region_memory                  0x000002d9   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x000002db   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x000002dd   Thumb Code     2  heapauxi.o(.text)
+    _sputc                                   0x000002df   Thumb Code    10  _sputc.o(.text)
+    exit                                     0x000002e9   Thumb Code    18  exit.o(.text)
+    __I$use$semihosting                      0x000002fb   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x000002fb   Thumb Code     2  use_no_semi.o(.text)
     SystemCoreClockUpdate                    0x00000301   Thumb Code   300  system_lpc17xx.o(.text)
     SystemInit                               0x0000042d   Thumb Code   308  system_lpc17xx.o(.text)
     LCD_Initialization                       0x00000b0b   Thumb Code 12014  glcd.o(.text)
@@ -694,8 +694,8 @@ Image Symbol Table
     hCAN_init                                0x000047b9   Thumb Code   194  highcan.o(.text)
     hCAN_setID                               0x0000487b   Thumb Code     8  highcan.o(.text)
     hCAN_sendMessage                         0x00004883   Thumb Code   774  highcan.o(.text)
-    hCAN_receiveMessage                      0x00004c4d   Thumb Code   300  highcan.o(.text)
-    IRQ_CAN                                  0x00004da1   Thumb Code   166  irq_can.o(.text)
+    hCAN_receiveMessage                      0x00004c4d   Thumb Code   302  highcan.o(.text)
+    IRQ_CAN                                  0x00004da5   Thumb Code   162  irq_can.o(.text)
     CAN_IRQHandler                           0x00004e47   Thumb Code    28  irq_can.o(.text)
     check_failed                             0x00004eb5   Thumb Code     2  lpc17xx_can.o(.text)
     CAN_Init                                 0x00004f69   Thumb Code   176  lpc17xx_can.o(.text)
@@ -730,77 +730,78 @@ Image Symbol Table
     ADC_generate_random                      0x00006e55   Thumb Code     6  lib_adc_1.o(.text)
     keyGeneration                            0x00006e75   Thumb Code   212  irq_timer.o(.text)
     prepareMessage                           0x00006f49   Thumb Code    86  irq_timer.o(.text)
-    TIMER0_IRQHandler                        0x00006f9f   Thumb Code   178  irq_timer.o(.text)
-    TIMER1_IRQHandler                        0x00007051   Thumb Code     8  irq_timer.o(.text)
-    enable_timer                             0x000070e7   Thumb Code    48  lib_timer.o(.text)
-    disable_timer                            0x00007117   Thumb Code    48  lib_timer.o(.text)
-    reset_timer                              0x00007147   Thumb Code    66  lib_timer.o(.text)
-    init_timer                               0x00007189   Thumb Code   106  lib_timer.o(.text)
-    AES_init_ctx                             0x0000731b   Thumb Code    16  aes.o(.text)
-    AES_init_ctx_iv                          0x0000732b   Thumb Code    30  aes.o(.text)
-    AES_ctx_set_iv                           0x00007349   Thumb Code    20  aes.o(.text)
-    AES_CTR_xcrypt_buffer                    0x00007529   Thumb Code   114  aes.o(.text)
-    digest                                   0x000075a5   Thumb Code    96  security.o(.text)
-    verify_digest                            0x00007605   Thumb Code    50  security.o(.text)
-    AES                                      0x00007637   Thumb Code    18  security.o(.text)
-    AES_init                                 0x00007649   Thumb Code    34  security.o(.text)
-    sha256_transform                         0x0000766d   Thumb Code   558  sha256.o(.text)
-    sha256_init                              0x0000789b   Thumb Code    44  sha256.o(.text)
-    sha256_update                            0x000078c7   Thumb Code    68  sha256.o(.text)
-    sha256_final                             0x0000790b   Thumb Code   316  sha256.o(.text)
-    _printf_pre_padding                      0x00007a6d   Thumb Code    44  _printf_pad.o(.text)
-    _printf_post_padding                     0x00007a99   Thumb Code    34  _printf_pad.o(.text)
-    _printf_int_hex                          0x00007abd   Thumb Code    84  _printf_hex_int.o(.text)
-    _printf_longlong_hex                     0x00007abd   Thumb Code     0  _printf_hex_int.o(.text)
-    __printf                                 0x00007b15   Thumb Code   308  __printf_flags_wp.o(.text)
-    __aeabi_memcpy                           0x00007c4d   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __rt_memcpy                              0x00007c4d   Thumb Code   138  rt_memcpy_v6.o(.text)
-    _memcpy_lastbytes                        0x00007cb3   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __aeabi_memclr4                          0x00007cd7   Thumb Code     0  rt_memclr_w.o(.text)
-    __aeabi_memclr8                          0x00007cd7   Thumb Code     0  rt_memclr_w.o(.text)
-    __rt_memclr_w                            0x00007cd7   Thumb Code    78  rt_memclr_w.o(.text)
-    _memset_w                                0x00007cdb   Thumb Code     0  rt_memclr_w.o(.text)
-    _printf_int_common                       0x00007d25   Thumb Code   178  _printf_intcommon.o(.text)
-    _printf_char_common                      0x00007de3   Thumb Code    32  _printf_char_common.o(.text)
-    __aeabi_memcpy4                          0x00007e09   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memcpy8                          0x00007e09   Thumb Code     0  rt_memcpy_w.o(.text)
-    __rt_memcpy_w                            0x00007e09   Thumb Code   100  rt_memcpy_w.o(.text)
-    _memcpy_lastbytes_aligned                0x00007e51   Thumb Code     0  rt_memcpy_w.o(.text)
-    __user_setup_stackheap                   0x00007e6d   Thumb Code    74  sys_stackheap_outer.o(.text)
-    _sys_exit                                0x00007eb9   Thumb Code     8  sys_exit.o(.text)
-    __I$use$semihosting                      0x00007ec5   Thumb Code     0  use_no_semi.o(.text)
-    __use_no_semihosting_swi                 0x00007ec5   Thumb Code     2  use_no_semi.o(.text)
-    CAN_allTXok                              0x00007ec7   Thumb Code    10  can.o(i.CAN_allTXok)
-    __semihosting_library_function           0x00007ec7   Thumb Code     0  indicate_semi.o(.text)
-    CAN_internalPrioMode                     0x00007ed1   Thumb Code   128  can.o(i.CAN_internalPrioMode)
-    _is_digit                                0x00007f51   Thumb Code    14  __printf_wp.o(i._is_digit)
-    hCAN_arbitrationLost                     0x00007f61   Thumb Code    34  highcan.o(i.hCAN_arbitrationLost)
-    Region$$Table$$Base                      0x000087c8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000087f8   Number         0  anon$$obj.o(Region$$Table)
+    TIMER0_IRQHandler                        0x00006f9f   Thumb Code   182  irq_timer.o(.text)
+    TIMER1_IRQHandler                        0x00007055   Thumb Code     8  irq_timer.o(.text)
+    enable_timer                             0x000070eb   Thumb Code    48  lib_timer.o(.text)
+    disable_timer                            0x0000711b   Thumb Code    48  lib_timer.o(.text)
+    reset_timer                              0x0000714b   Thumb Code    66  lib_timer.o(.text)
+    init_timer                               0x0000718d   Thumb Code   106  lib_timer.o(.text)
+    AES_init_ctx                             0x0000731f   Thumb Code    16  aes.o(.text)
+    AES_init_ctx_iv                          0x0000732f   Thumb Code    30  aes.o(.text)
+    AES_ctx_set_iv                           0x0000734d   Thumb Code    20  aes.o(.text)
+    AES_CTR_xcrypt_buffer                    0x0000752d   Thumb Code   114  aes.o(.text)
+    digest                                   0x000075a9   Thumb Code    96  security.o(.text)
+    verify_digest                            0x00007609   Thumb Code    50  security.o(.text)
+    AES                                      0x0000763b   Thumb Code    20  security.o(.text)
+    AES_init                                 0x0000764f   Thumb Code    34  security.o(.text)
+    sha256_transform                         0x00007671   Thumb Code   558  sha256.o(.text)
+    sha256_init                              0x0000789f   Thumb Code    44  sha256.o(.text)
+    sha256_update                            0x000078cb   Thumb Code    68  sha256.o(.text)
+    sha256_final                             0x0000790f   Thumb Code   316  sha256.o(.text)
+    _printf_pre_padding                      0x00007a71   Thumb Code    44  _printf_pad.o(.text)
+    _printf_post_padding                     0x00007a9d   Thumb Code    34  _printf_pad.o(.text)
+    _printf_int_hex                          0x00007ac1   Thumb Code    84  _printf_hex_int.o(.text)
+    _printf_longlong_hex                     0x00007ac1   Thumb Code     0  _printf_hex_int.o(.text)
+    __printf                                 0x00007b19   Thumb Code   308  __printf_flags_wp.o(.text)
+    __aeabi_memcpy                           0x00007c51   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __rt_memcpy                              0x00007c51   Thumb Code   138  rt_memcpy_v6.o(.text)
+    _memcpy_lastbytes                        0x00007cb7   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __aeabi_memclr4                          0x00007cdb   Thumb Code     0  rt_memclr_w.o(.text)
+    __aeabi_memclr8                          0x00007cdb   Thumb Code     0  rt_memclr_w.o(.text)
+    __rt_memclr_w                            0x00007cdb   Thumb Code    78  rt_memclr_w.o(.text)
+    _memset_w                                0x00007cdf   Thumb Code     0  rt_memclr_w.o(.text)
+    _printf_int_common                       0x00007d29   Thumb Code   178  _printf_intcommon.o(.text)
+    _printf_char_common                      0x00007de7   Thumb Code    32  _printf_char_common.o(.text)
+    __aeabi_memcpy4                          0x00007e0d   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memcpy8                          0x00007e0d   Thumb Code     0  rt_memcpy_w.o(.text)
+    __rt_memcpy_w                            0x00007e0d   Thumb Code   100  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes_aligned                0x00007e55   Thumb Code     0  rt_memcpy_w.o(.text)
+    __user_setup_stackheap                   0x00007e71   Thumb Code    74  sys_stackheap_outer.o(.text)
+    __user_libspace                          0x00007ebd   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x00007ebd   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x00007ebd   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x00007ec5   Thumb Code     8  sys_exit.o(.text)
+    CAN_allTXok                              0x00007ed1   Thumb Code    10  can.o(i.CAN_allTXok)
+    __semihosting_library_function           0x00007ed1   Thumb Code     0  indicate_semi.o(.text)
+    CAN_internalPrioMode                     0x00007edb   Thumb Code   128  can.o(i.CAN_internalPrioMode)
+    _is_digit                                0x00007f5b   Thumb Code    14  __printf_wp.o(i._is_digit)
+    hCAN_arbitrationLost                     0x00007f69   Thumb Code    34  highcan.o(i.hCAN_arbitrationLost)
+    Region$$Table$$Base                      0x000087d0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00008800   Number         0  anon$$obj.o(Region$$Table)
     eKey                                     0x2007c000   Data          16  sample.o(.data)
     iv                                       0x2007c010   Data          16  sample.o(.data)
     oldKey                                   0x2007c020   Data          16  sample.o(.data)
     oldIv                                    0x2007c030   Data          16  sample.o(.data)
     sCode                                    0x2007c040   Data           1  sample.o(.data)
-    SystemCoreClock                          0x2007c044   Data           4  system_lpc17xx.o(.data)
-    busMine                                  0x2007c064   Data           8  highcan.o(.data)
-    hCAN_recID                               0x2007c074   Data           1  highcan.o(.data)
-    hCAN_recDone                             0x2007c075   Data           1  highcan.o(.data)
-    hCAN_lenght                              0x2007c078   Data           4  highcan.o(.data)
-    i                                        0x2007c07c   Data           4  highcan.o(.data)
-    FULLCAN_ENABLE                           0x2007c08c   Data           1  lpc17xx_can.o(.data)
-    CANAF_FullCAN_cnt                        0x2007c08e   Data           2  lpc17xx_can.o(.data)
-    CANAF_std_cnt                            0x2007c090   Data           2  lpc17xx_can.o(.data)
-    CANAF_gstd_cnt                           0x2007c092   Data           2  lpc17xx_can.o(.data)
-    CANAF_ext_cnt                            0x2007c094   Data           2  lpc17xx_can.o(.data)
-    CANAF_gext_cnt                           0x2007c096   Data           2  lpc17xx_can.o(.data)
-    AD_last                                  0x2007c098   Data           2  irq_adc_1.o(.data)
-    converted                                0x2007c09a   Data           5  irq_adc_1.o(.data)
-    check                                    0x2007c0a0   Data           4  irq_adc_1.o(.data)
-    AD_current                               0x2007c0ac   Data           1  lib_adc_1.o(.data)
-    blink_mask                               0x2007c0b0   Data           4  irq_timer.o(.data)
-    good                                     0x2007c0b4   Data           4  irq_timer.o(.data)
-    bad                                      0x2007c0b8   Data           4  irq_timer.o(.data)
+    good                                     0x2007c044   Data           4  sample.o(.data)
+    bad                                      0x2007c048   Data           4  sample.o(.data)
+    SystemCoreClock                          0x2007c04c   Data           4  system_lpc17xx.o(.data)
+    busMine                                  0x2007c06c   Data           8  highcan.o(.data)
+    hCAN_recID                               0x2007c07c   Data           1  highcan.o(.data)
+    hCAN_recDone                             0x2007c07d   Data           1  highcan.o(.data)
+    hCAN_lenght                              0x2007c080   Data           4  highcan.o(.data)
+    i                                        0x2007c084   Data           4  highcan.o(.data)
+    FULLCAN_ENABLE                           0x2007c094   Data           1  lpc17xx_can.o(.data)
+    CANAF_FullCAN_cnt                        0x2007c096   Data           2  lpc17xx_can.o(.data)
+    CANAF_std_cnt                            0x2007c098   Data           2  lpc17xx_can.o(.data)
+    CANAF_gstd_cnt                           0x2007c09a   Data           2  lpc17xx_can.o(.data)
+    CANAF_ext_cnt                            0x2007c09c   Data           2  lpc17xx_can.o(.data)
+    CANAF_gext_cnt                           0x2007c09e   Data           2  lpc17xx_can.o(.data)
+    AD_last                                  0x2007c0a0   Data           2  irq_adc_1.o(.data)
+    converted                                0x2007c0a2   Data           5  irq_adc_1.o(.data)
+    check                                    0x2007c0a8   Data           4  irq_adc_1.o(.data)
+    AD_current                               0x2007c0b4   Data           1  lib_adc_1.o(.data)
+    blink_mask                               0x2007c0b8   Data           4  irq_timer.o(.data)
     generated                                0x2007c0bc   Data           4  irq_timer.o(.data)
     ready                                    0x2007c0c0   Data           4  irq_timer.o(.data)
     ctx                                      0x2007c0c4   Data         192  sample.o(.bss)
@@ -820,9 +821,9 @@ Memory Map of the image
 
   Image Entry point : 0x000000cd
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000088bc, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000088c4, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000087f8, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00008800, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -878,87 +879,83 @@ Memory Map of the image
     0x00000166   0x00000166   0x00000004   Code   RO          765    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
     0x0000016a   0x0000016a   0x00000006   Code   RO          766    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x00000170   0x00000170   0x00000034   Code   RO            5    .text               startup_lpc17xx.o
-    0x000001a4   0x000001a4   0x000000b8   Code   RO           16    .text               sample.o
-    0x0000025c   0x0000025c   0x00000020   Code   RO          160    .text               asciilib.o
-    0x0000027c   0x0000027c   0x0000002c   Code   RO          419    .text               irq_adc_1.o
-    0x000002a8   0x000002a8   0x00000028   Code   RO          619    .text               c_w.l(noretval__2sprintf.o)
-    0x000002d0   0x000002d0   0x00000006   Code   RO          672    .text               c_w.l(heapauxi.o)
-    0x000002d6   0x000002d6   0x0000000a   Code   RO          681    .text               c_w.l(_sputc.o)
-    0x000002e0   0x000002e0   0x00000012   Code   RO          705    .text               c_w.l(exit.o)
-    0x000002f2   0x000002f2   0x00000002   PAD
-    0x000002f4   0x000002f4   0x00000008   Code   RO          713    .text               c_w.l(libspace.o)
+    0x000001a4   0x000001a4   0x000000c0   Code   RO           16    .text               sample.o
+    0x00000264   0x00000264   0x00000020   Code   RO          160    .text               asciilib.o
+    0x00000284   0x00000284   0x0000002c   Code   RO          419    .text               irq_adc_1.o
+    0x000002b0   0x000002b0   0x00000028   Code   RO          619    .text               c_w.l(noretval__2sprintf.o)
+    0x000002d8   0x000002d8   0x00000006   Code   RO          672    .text               c_w.l(heapauxi.o)
+    0x000002de   0x000002de   0x0000000a   Code   RO          681    .text               c_w.l(_sputc.o)
+    0x000002e8   0x000002e8   0x00000012   Code   RO          705    .text               c_w.l(exit.o)
+    0x000002fa   0x000002fa   0x00000002   Code   RO          785    .text               c_w.l(use_no_semi.o)
     0x000002fc   0x000002fc   0x00000004   Code   RO            4    .ARM.__at_0x02FC    startup_lpc17xx.o
     0x00000300   0x00000300   0x00000280   Code   RO          126    .text               system_lpc17xx.o
     0x00000580   0x00000580   0x000040e4   Code   RO          183    .text               glcd.o
     0x00004664   0x00004664   0x00000154   Code   RO          229    .text               can.o
-    0x000047b8   0x000047b8   0x000005e8   Code   RO          273    .text               highcan.o
-    0x00004da0   0x00004da0   0x00000114   Code   RO          317    .text               irq_can.o
+    0x000047b8   0x000047b8   0x000005ec   Code   RO          273    .text               highcan.o
+    0x00004da4   0x00004da4   0x00000110   Code   RO          317    .text               irq_can.o
     0x00004eb4   0x00004eb4   0x00001de4   Code   RO          362    .text               lpc17xx_can.o
     0x00006c98   0x00006c98   0x00000140   Code   RO          395    .text               lpc17xx_clkpwr.o
     0x00006dd8   0x00006dd8   0x0000009c   Code   RO          463    .text               lib_adc_1.o
-    0x00006e74   0x00006e74   0x00000250   Code   RO          497    .text               irq_timer.o
-    0x000070c4   0x000070c4   0x0000013c   Code   RO          537    .text               lib_timer.o
-    0x00007200   0x00007200   0x000003a4   Code   RO          562    .text               aes.o
-    0x000075a4   0x000075a4   0x000000c6   Code   RO          579    .text               security.o
-    0x0000766a   0x0000766a   0x00000002   PAD
-    0x0000766c   0x0000766c   0x00000400   Code   RO          601    .text               sha256.o
-    0x00007a6c   0x00007a6c   0x0000004e   Code   RO          623    .text               c_w.l(_printf_pad.o)
-    0x00007aba   0x00007aba   0x00000002   PAD
-    0x00007abc   0x00007abc   0x00000058   Code   RO          628    .text               c_w.l(_printf_hex_int.o)
-    0x00007b14   0x00007b14   0x00000138   Code   RO          658    .text               c_w.l(__printf_flags_wp.o)
-    0x00007c4c   0x00007c4c   0x0000008a   Code   RO          668    .text               c_w.l(rt_memcpy_v6.o)
-    0x00007cd6   0x00007cd6   0x0000004e   Code   RO          670    .text               c_w.l(rt_memclr_w.o)
-    0x00007d24   0x00007d24   0x000000b2   Code   RO          677    .text               c_w.l(_printf_intcommon.o)
-    0x00007dd6   0x00007dd6   0x00000002   PAD
-    0x00007dd8   0x00007dd8   0x00000030   Code   RO          679    .text               c_w.l(_printf_char_common.o)
-    0x00007e08   0x00007e08   0x00000064   Code   RO          684    .text               c_w.l(rt_memcpy_w.o)
-    0x00007e6c   0x00007e6c   0x0000004a   Code   RO          703    .text               c_w.l(sys_stackheap_outer.o)
-    0x00007eb6   0x00007eb6   0x00000002   PAD
-    0x00007eb8   0x00007eb8   0x0000000c   Code   RO          774    .text               c_w.l(sys_exit.o)
-    0x00007ec4   0x00007ec4   0x00000002   Code   RO          785    .text               c_w.l(use_no_semi.o)
-    0x00007ec6   0x00007ec6   0x00000000   Code   RO          787    .text               c_w.l(indicate_semi.o)
-    0x00007ec6   0x00007ec6   0x0000000a   Code   RO          255    i.CAN_allTXok       can.o
-    0x00007ed0   0x00007ed0   0x00000080   Code   RO          249    i.CAN_internalPrioMode  can.o
-    0x00007f50   0x00007f50   0x0000000e   Code   RO          656    i._is_digit         c_w.l(__printf_wp.o)
-    0x00007f5e   0x00007f5e   0x00000002   PAD
-    0x00007f60   0x00007f60   0x00000030   Code   RO          295    i.hCAN_arbitrationLost  highcan.o
-    0x00007f90   0x00007f90   0x000005f0   Data   RO          161    .constdata          asciilib.o
-    0x00008580   0x00008580   0x0000010b   Data   RO          563    .constdata          aes.o
-    0x0000868b   0x0000868b   0x00000001   PAD
-    0x0000868c   0x0000868c   0x00000100   Data   RO          602    .constdata          sha256.o
-    0x0000878c   0x0000878c   0x00000028   Data   RO          629    .constdata          c_w.l(_printf_hex_int.o)
-    0x000087b4   0x000087b4   0x00000011   Data   RO          659    .constdata          c_w.l(__printf_flags_wp.o)
-    0x000087c5   0x000087c5   0x00000003   PAD
-    0x000087c8   0x000087c8   0x00000030   Data   RO          842    Region$$Table       anon$$obj.o
+    0x00006e74   0x00006e74   0x00000254   Code   RO          497    .text               irq_timer.o
+    0x000070c8   0x000070c8   0x0000013c   Code   RO          537    .text               lib_timer.o
+    0x00007204   0x00007204   0x000003a4   Code   RO          562    .text               aes.o
+    0x000075a8   0x000075a8   0x000000c8   Code   RO          579    .text               security.o
+    0x00007670   0x00007670   0x00000400   Code   RO          601    .text               sha256.o
+    0x00007a70   0x00007a70   0x0000004e   Code   RO          623    .text               c_w.l(_printf_pad.o)
+    0x00007abe   0x00007abe   0x00000002   PAD
+    0x00007ac0   0x00007ac0   0x00000058   Code   RO          628    .text               c_w.l(_printf_hex_int.o)
+    0x00007b18   0x00007b18   0x00000138   Code   RO          658    .text               c_w.l(__printf_flags_wp.o)
+    0x00007c50   0x00007c50   0x0000008a   Code   RO          668    .text               c_w.l(rt_memcpy_v6.o)
+    0x00007cda   0x00007cda   0x0000004e   Code   RO          670    .text               c_w.l(rt_memclr_w.o)
+    0x00007d28   0x00007d28   0x000000b2   Code   RO          677    .text               c_w.l(_printf_intcommon.o)
+    0x00007dda   0x00007dda   0x00000002   PAD
+    0x00007ddc   0x00007ddc   0x00000030   Code   RO          679    .text               c_w.l(_printf_char_common.o)
+    0x00007e0c   0x00007e0c   0x00000064   Code   RO          684    .text               c_w.l(rt_memcpy_w.o)
+    0x00007e70   0x00007e70   0x0000004a   Code   RO          703    .text               c_w.l(sys_stackheap_outer.o)
+    0x00007eba   0x00007eba   0x00000002   PAD
+    0x00007ebc   0x00007ebc   0x00000008   Code   RO          713    .text               c_w.l(libspace.o)
+    0x00007ec4   0x00007ec4   0x0000000c   Code   RO          774    .text               c_w.l(sys_exit.o)
+    0x00007ed0   0x00007ed0   0x00000000   Code   RO          787    .text               c_w.l(indicate_semi.o)
+    0x00007ed0   0x00007ed0   0x0000000a   Code   RO          255    i.CAN_allTXok       can.o
+    0x00007eda   0x00007eda   0x00000080   Code   RO          249    i.CAN_internalPrioMode  can.o
+    0x00007f5a   0x00007f5a   0x0000000e   Code   RO          656    i._is_digit         c_w.l(__printf_wp.o)
+    0x00007f68   0x00007f68   0x00000030   Code   RO          295    i.hCAN_arbitrationLost  highcan.o
+    0x00007f98   0x00007f98   0x000005f0   Data   RO          161    .constdata          asciilib.o
+    0x00008588   0x00008588   0x0000010b   Data   RO          563    .constdata          aes.o
+    0x00008693   0x00008693   0x00000001   PAD
+    0x00008694   0x00008694   0x00000100   Data   RO          602    .constdata          sha256.o
+    0x00008794   0x00008794   0x00000028   Data   RO          629    .constdata          c_w.l(_printf_hex_int.o)
+    0x000087bc   0x000087bc   0x00000011   Data   RO          659    .constdata          c_w.l(__printf_flags_wp.o)
+    0x000087cd   0x000087cd   0x00000003   PAD
+    0x000087d0   0x000087d0   0x00000030   Data   RO          842    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x10000000, Load base: 0x000087f8, Size: 0x00004000, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x10000000, Load base: 0x00008800, Size: 0x00004000, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x10000000        -       0x00004000   Zero   RW            1    STACK               startup_lpc17xx.o
 
 
-    Execution Region RW_IRAM2 (Exec base: 0x2007c000, Load base: 0x000087f8, Size: 0x00000650, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM2 (Exec base: 0x2007c000, Load base: 0x00008800, Size: 0x00000650, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2007c000   0x000087f8   0x00000041   Data   RW           18    .data               sample.o
-    0x2007c041   0x00008839   0x00000003   PAD
-    0x2007c044   0x0000883c   0x00000004   Data   RW          127    .data               system_lpc17xx.o
-    0x2007c048   0x00008840   0x00000001   Data   RW          184    .data               glcd.o
-    0x2007c049   0x00008841   0x00000003   PAD
-    0x2007c04c   0x00008844   0x00000008   Data   RW          230    .data               can.o
-    0x2007c054   0x0000884c   0x00000038   Data   RW          275    .data               highcan.o
-    0x2007c08c   0x00008884   0x0000000c   Data   RW          363    .data               lpc17xx_can.o
-    0x2007c098   0x00008890   0x00000014   Data   RW          420    .data               irq_adc_1.o
-    0x2007c0ac   0x000088a4   0x00000001   Data   RW          464    .data               lib_adc_1.o
-    0x2007c0ad   0x000088a5   0x00000003   PAD
-    0x2007c0b0   0x000088a8   0x00000014   Data   RW          498    .data               irq_timer.o
+    0x2007c000   0x00008800   0x0000004c   Data   RW           18    .data               sample.o
+    0x2007c04c   0x0000884c   0x00000004   Data   RW          127    .data               system_lpc17xx.o
+    0x2007c050   0x00008850   0x00000001   Data   RW          184    .data               glcd.o
+    0x2007c051   0x00008851   0x00000003   PAD
+    0x2007c054   0x00008854   0x00000008   Data   RW          230    .data               can.o
+    0x2007c05c   0x0000885c   0x00000038   Data   RW          275    .data               highcan.o
+    0x2007c094   0x00008894   0x0000000c   Data   RW          363    .data               lpc17xx_can.o
+    0x2007c0a0   0x000088a0   0x00000014   Data   RW          420    .data               irq_adc_1.o
+    0x2007c0b4   0x000088b4   0x00000001   Data   RW          464    .data               lib_adc_1.o
+    0x2007c0b5   0x000088b5   0x00000003   PAD
+    0x2007c0b8   0x000088b8   0x0000000c   Data   RW          498    .data               irq_timer.o
     0x2007c0c4        -       0x00000460   Zero   RW           17    .bss                sample.o
     0x2007c524        -       0x000000c8   Zero   RW          274    .bss                highcan.o
     0x2007c5ec        -       0x00000060   Zero   RW          714    .bss                c_w.l(libspace.o)
-    0x2007c64c   0x000088bc   0x00000004   PAD
+    0x2007c64c   0x000088c4   0x00000004   PAD
     0x2007c650        -       0x00000000   Zero   RW            2    HEAP                startup_lpc17xx.o
 
 
@@ -973,24 +970,24 @@ Image component sizes
         32          6       1520          0          0       1435   asciilib.o
        478         16          0          8          0       4288   can.o
      16612        104          0          1          0      40135   glcd.o
-      1560         94          0         56        200      31594   highcan.o
+      1564         96          0         56        200      31594   highcan.o
         44         16          0         20          0       1370   irq_adc_1.o
-       276         82          0          0          0      18165   irq_can.o
-       592        108          0         20          0       2033   irq_timer.o
+       272         82          0          0          0      18173   irq_can.o
+       596        108          0         12          0       1984   irq_timer.o
        156         26          0          1          0      27676   lib_adc_1.o
        316         14          0          0          0       1564   lib_timer.o
       7652        292          0         12          0      14572   lpc17xx_can.o
        320         22          0          0          0       1835   lpc17xx_clkpwr.o
-       184         30          0         65       1120      33028   sample.o
-       198          0          0          0          0       2640   security.o
+       192         30          0         76       1120      33089   sample.o
+       200          0          0          0          0       2680   security.o
       1024         38        256          0          0       2798   sha256.o
         56         22        204          0      16384       1024   startup_lpc17xx.o
        640         32          0          4          0      17789   system_lpc17xx.o
 
     ----------------------------------------------------------------------
-     31074        912       2296        196      17704     206614   Object Totals
+     31086        914       2296        196      17704     206674   Object Totals
          0          0         48          0          0          0   (incl. Generated)
-         2          0          1          9          0          0   (incl. Padding)
+         0          0          1          6          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1032,8 +1029,8 @@ Image component sizes
          2          0          0          0          0         68   use_no_semi.o
 
     ----------------------------------------------------------------------
-      1378         36         60          0        100       1504   Library Totals
-        12          0          3          0          4          0   (incl. Padding)
+      1374         36         60          0        100       1504   Library Totals
+         8          0          3          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1042,7 +1039,7 @@ Image component sizes
       1366         36         57          0         96       1504   c_w.l
 
     ----------------------------------------------------------------------
-      1378         36         60          0        100       1504   Library Totals
+      1374         36         60          0        100       1504   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1051,15 +1048,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     32452        948       2356        196      17804     206086   Grand Totals
-     32452        948       2356        196      17804     206086   ELF Image Totals
-     32452        948       2356        196          0          0   ROM Totals
+     32460        950       2356        196      17804     206146   Grand Totals
+     32460        950       2356        196      17804     206146   ELF Image Totals
+     32460        950       2356        196          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                34808 (  33.99kB)
+    Total RO  Size (Code + RO Data)                34816 (  34.00kB)
     Total RW  Size (RW Data + ZI Data)             18000 (  17.58kB)
-    Total ROM Size (Code + RO Data + RW Data)      35004 (  34.18kB)
+    Total ROM Size (Code + RO Data + RW Data)      35012 (  34.19kB)
 
 ==============================================================================
 
