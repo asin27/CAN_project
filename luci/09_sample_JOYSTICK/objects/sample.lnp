@@ -21,12 +21,13 @@
 ".\objects\draw.o"
 ".\objects\can.o"
 ".\objects\highcan.o"
-".\objects\irq_can.o"
 ".\objects\lpc17xx_can.o"
 ".\objects\lpc17xx_clkpwr.o"
+".\objects\irq_can.o"
+".\objects\aes.o"
 ".\objects\security.o"
 ".\objects\sha256.o"
-".\objects\aes.o"
+".\objects\keep_alive.o"
 --strict --scatter ".\objects\sample.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
