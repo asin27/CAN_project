@@ -12,5 +12,5 @@
 .\objects\keep_alive.o: C:\Users\clem-\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\objects\keep_alive.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
 .\objects\keep_alive.o: ..\..\shared_libraries\CAN\headers\./can.h
-.\objects\keep_alive.o: .\Core\../GLCD/GLCD.h
+.\objects\keep_alive.o: ..\..\shared_libraries\keep_alive\../GLCD/GLCD.h
 .\objects\keep_alive.o: .\Core\../timer/timer.h

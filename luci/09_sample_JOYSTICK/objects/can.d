@@ -10,4 +10,4 @@
 .\objects\can.o: C:\Users\clem-\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\objects\can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
 .\objects\can.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
-.\objects\can.o: .\Core\../GLCD/GLCD.h
+.\objects\can.o: ..\..\shared_libraries\CAN\../GLCD/GLCD.h

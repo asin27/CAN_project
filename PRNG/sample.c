@@ -16,7 +16,7 @@
 #include "highcan.h"
 #include "GLCD/GLCD.h"
 #include "TouchPanel/TouchPanel.h"
-#include <security.h>
+#include <security/security.h>
 
 struct AES_ctx ctx;
 struct AES_ctx ack_ctx[4];
