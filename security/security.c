@@ -37,8 +37,8 @@ int verify_digest(unsigned char *data, unsigned char* key, unsigned char* dig){
     return 1;
 }
 
-void AES(struct AES_ctx* ctx, uint8_t *data){
-    AES_CTR_xcrypt_buffer(ctx, data, 16);
+void AES(struct AES_ctx* ctx, uint8_t *data, int len){
+    AES_CTR_xcrypt_buffer(ctx, data, len);
 }
 
 struct AES_ctx AES_init(const uint8_t *key, const uint8_t *iv){

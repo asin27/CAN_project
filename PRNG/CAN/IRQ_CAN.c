@@ -39,9 +39,9 @@ void IRQ_CAN(int canBus){
 	
 	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone){
 		hCAN_recMessage[hCAN_lenght] = 0;
-		if(hCAN_lenght == 8 && generated){
-			AES(&ack_ctx[hCAN_recID == 0xa ? 3 : hCAN_recID -1], (uint8_t *) hCAN_recMessage);
-			if(hCAN_recMessage[0] == hCAN_recMessage[1] == 1)
+		if(hCAN_lenght == 32 && generated){
+			AES(&ack_ctx[hCAN_recID == 0xa ? 3 : hCAN_recID -1], (uint8_t *) hCAN_recMessage, 32);
+			if(hCAN_recMessage[0] == 1 && hCAN_recMessage[1] == 1)
 				good++;
 			else 
 				bad++;

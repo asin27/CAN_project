@@ -11,7 +11,7 @@
 
 void digest(unsigned char *data, unsigned char *key, unsigned char *final);
 int verify_digest(unsigned char *data, unsigned char* key, unsigned char* dig);
-void AES(struct AES_ctx* ctx, uint8_t *data);
+void AES(struct AES_ctx* ctx, uint8_t *data, int len);
 struct AES_ctx AES_init(const uint8_t *key, const uint8_t *iv);
 
 #endif   // SECURITY_H

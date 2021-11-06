@@ -29,8 +29,9 @@ int down_KEY1=0;
 int down_KEY2=0;
 
 extern int steering;
-extern int brake;
+extern int isOn;
 extern int gas;
+extern int breaks;
 
 void RIT_IRQHandler (void)
 {						
@@ -46,9 +47,13 @@ void RIT_IRQHandler (void)
 				
 			switch(down_INT0){
 				case 2:
-					steering = 1;
-					brake = 0;
-					gas = 0;
+					isOn = !isOn;
+					if (isOn) {
+						GUI_Text(132, 5,(unsigned char *) "On ", White, Blue);
+					} else {
+						GUI_Text(132, 5,(unsigned char *) "Off", White, Blue);
+
+					}
 					break;
 				default:
 					break;
@@ -68,8 +73,11 @@ void RIT_IRQHandler (void)
 			switch(down_KEY1){
 				case 2:
 					steering = 0;
-					brake = 0;
+					breaks = 0;
 					gas = 1;
+					GUI_Text(50, 292,(unsigned char *) "Gas", White, Blue);
+					GUI_Text(155, 292, (unsigned char *)"Brake", writ, bgnd);
+
 					break;
 				default:
 					break;
@@ -89,8 +97,11 @@ void RIT_IRQHandler (void)
 			switch(down_KEY2){
 				case 2:
 					steering = 0;
-					brake = 1;
+					//brake = 1;
+					breaks = 1;
 					gas = 0;
+				GUI_Text(50, 292,(unsigned char *) "Gas", writ, bgnd);
+					GUI_Text(155, 292, (unsigned char *)"Brake", White, Blue);
 					break;
 				default:
 					break;

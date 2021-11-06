@@ -24,6 +24,8 @@
 ".\aes.o"
 ".\security.o"
 ".\sha256.o"
+".\irq_timer.o"
+".\lib_timer.o"
 --strict --scatter ".\sample.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

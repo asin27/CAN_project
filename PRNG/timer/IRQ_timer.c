@@ -40,7 +40,7 @@ extern uint8_t sCode;
 extern uint8_t hK[32];
 extern uint8_t hIv[32];
 extern uint8_t finalMessage[96];
-int good = 0, bad = 0;
+extern int good, bad;
 int generated = 0;
 
 int ready = 0;
@@ -104,8 +104,8 @@ void TIMER0_IRQHandler (void)
 		ack_ctx[i] = AES_init(eKey, iv);
 		
 	//auth then enc
-	AES(&ctx, eKey);
-	AES(&ctx, iv);
+	AES(&ctx, eKey, 16);
+	AES(&ctx, iv, 16);
 	digest(eKey, oldKey, hK);
 	digest(iv, oldKey, hIv); 
 	//do handshake here 
