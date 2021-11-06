@@ -1,11 +1,11 @@
 .\can.o: ..\..\shared_libraries\CAN\can.c
 .\can.o: .\..\..\shared_libraries\CAN\headers\./can.h
-.\can.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
+.\can.o: C:\Users\clem-\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
 .\can.o: .\Core\CM3\CoreSupport\core_cm3.h
-.\can.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\can.o: .\Core\CM3\CoreSupport\core_cmInstr.h
 .\can.o: .\Core\CM3\CoreSupport\core_cmFunc.h
-.\can.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\can.o: C:\Users\clem-\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\can.o: .\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
 .\can.o: .\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
 .\can.o: ..\..\shared_libraries\CAN\../GLCD/GLCD.h
