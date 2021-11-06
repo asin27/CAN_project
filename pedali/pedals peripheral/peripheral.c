@@ -12,7 +12,7 @@
 #include "peripheral.h"
 #include "./GLCD/GLCD.h"
 #include "highcan.h"
-#include "../security/security.h"
+#include <security/security.h>
 #include "../led/led.h"
 
 extern struct AES_ctx ctx;

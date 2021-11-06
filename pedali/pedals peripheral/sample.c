@@ -19,7 +19,7 @@
 #include "GLCD/GLCD.h"
 #include "TouchPanel/TouchPanel.h"
 #include "highcan.h"
-#include "./security/security.h"
+#include <security/security.h>
 
 /*----------------------------------------------------------------------------
   Main Program

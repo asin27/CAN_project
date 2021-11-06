@@ -11,7 +11,7 @@
 #include "timer.h"
 #include "../led/led.h"
 #include "../GLCD/GLCD.h"
-#include "../security/security.h"
+#include <security/security.h>
 #include "highcan.h"
 
 
