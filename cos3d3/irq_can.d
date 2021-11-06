@@ -12,10 +12,10 @@
 .\irq_can.o: .\CAN\Drivers\include\lpc_types.h
 .\irq_can.o: .\CAN\headers\././can.h
 .\irq_can.o: CAN\../GLCD/GLCD.h
-.\irq_can.o: .\security\security.h
+.\irq_can.o: .\..\security\security.h
 .\irq_can.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-.\irq_can.o: .\security\sha256.h
-.\irq_can.o: .\security\aes.h
+.\irq_can.o: .\..\security\sha256.h
+.\irq_can.o: .\..\security\aes.h
 .\irq_can.o: CAN\../trng/adc.h
 .\irq_can.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
 .\irq_can.o: CAN\../cos3d.h

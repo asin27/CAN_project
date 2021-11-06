@@ -16,7 +16,7 @@
 .\irq_rit.o: .\CAN\Drivers\include\lpc17xx_can.h
 .\irq_rit.o: .\CAN\Drivers\include\lpc_types.h
 .\irq_rit.o: .\CAN\headers\./can.h
-.\irq_rit.o: RIT\../security/security.h
+.\irq_rit.o: .\..\security\../security/security.h
 .\irq_rit.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-.\irq_rit.o: RIT\../security/sha256.h
-.\irq_rit.o: RIT\../security/aes.h
+.\irq_rit.o: .\..\security\../security/sha256.h
+.\irq_rit.o: .\..\security\../security/aes.h

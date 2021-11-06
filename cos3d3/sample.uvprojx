@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>SIMULATOR</Define>
               <Undefine></Undefine>
-              <IncludePath>.\security\;.\CAN\Drivers\include;.\Core;.\CAN\headers</IncludePath>
+              <IncludePath>.\..\security;.\CAN\Drivers\include;.\Core;.\CAN\headers</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -578,41 +578,6 @@
               <FileName>lpc17xx_clkpwr.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\CAN\lpc17xx_clkpwr.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>security</GroupName>
-          <Files>
-            <File>
-              <FileName>aes.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\security\aes.c</FilePath>
-            </File>
-            <File>
-              <FileName>aes.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\security\aes.h</FilePath>
-            </File>
-            <File>
-              <FileName>security.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\security\security.c</FilePath>
-            </File>
-            <File>
-              <FileName>security.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\security\security.h</FilePath>
-            </File>
-            <File>
-              <FileName>sha256.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\security\sha256.c</FilePath>
-            </File>
-            <File>
-              <FileName>sha256.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\security\sha256.h</FilePath>
             </File>
           </Files>
         </Group>
