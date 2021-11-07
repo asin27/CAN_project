@@ -97,6 +97,8 @@ void prepareMessage(){
 void TIMER0_IRQHandler (void)
 {
 	do{
+	good = 0;
+	bad = 0;
 	keyGeneration();
 	
 	//prepare ack_ctx(s)
@@ -116,7 +118,7 @@ void TIMER0_IRQHandler (void)
 		
 	while(hCAN_sendMessage(1, (char *) finalMessage, 96)!= hCAN_SUCCESS); //hK | k | hIv | iv
 
-	while(good < 1 || bad != 0);	
+	while(good < 2 && bad ==0);
 		
 	generated = 0;
 		

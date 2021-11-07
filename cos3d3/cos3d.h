@@ -20,7 +20,7 @@ enum e_freno {NON_INSERITO=0, INSERITO=1 };
 enum periferica {FARI=0, FRECCIA, ACCELERATORE, FRENO, FINESTRINO, STERZO};
 
 static char freccia = 0; // 0 = spenta; 1 = sx; 2 = dx; 3=hazard;
-static int velocita;
+static int velocita = 0;
 static char fari = 0; // 0 = spenti; 1 = anabbaglianti; 2 = abbaglianti; 3 = fendinebbia;
 static char freno_parcheggio = 0; // 0 = non inserito; 1 = inserito
 static float target_finestrini[4] = {1.,1.,1.,1.};
