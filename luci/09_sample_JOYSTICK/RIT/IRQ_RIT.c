@@ -357,7 +357,9 @@ void RIT_IRQHandler (void)
 			if (!lock) {
 				//DES3((unsigned char*)msg, key, ENCRYPT);
 				//AES_state(&ctx, (unsigned char*)msg, &lock);
-				AES(&ctx,  (unsigned char *) msg);
+				
+				msg[15] = 0xa; // verifing code
+				AES(&ctx,  (unsigned char *) msg, 16);
 				
 				int r = hCAN_sendMessage(1, (char *) msg, 16);
 				if(r != hCAN_SUCCESS){
@@ -366,7 +368,7 @@ void RIT_IRQHandler (void)
 					}
 				}
 				
-				AES(&dec_ctx, (unsigned char *) msg);
+				AES(&dec_ctx, (unsigned char *) msg, 16);
 				lock = 1;
 			}
 	}

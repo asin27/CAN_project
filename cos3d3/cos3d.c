@@ -81,6 +81,10 @@ void draw_car(vector3f rotation, vector3f translation, int color) {
 	for (i=0; i < car_edges_n - 4*(fari<1); i++) {
 		LCD_DrawLine(car_data_out[car_edges[i].a].x, car_data_out[car_edges[i].a].y, car_data_out[car_edges[i].b].x, car_data_out[car_edges[i].b].y, color);
 	}
+	if (color == White) 
+		for (i=car_edges_n-4; i < car_edges_n; i++) 
+			LCD_DrawLine(car_data_out[car_edges[i].a].x, car_data_out[car_edges[i].a].y, car_data_out[car_edges[i].b].x, car_data_out[car_edges[i].b].y, color);
+		
 }
 
 const vector2int finestrini[4] = {
