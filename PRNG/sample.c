@@ -50,7 +50,8 @@ int main (void) {
 	NVIC_SetPriority(CAN_IRQn, 0);
 	NVIC_SetPriority(ADC_IRQn, 1);
 	NVIC_SetPriority(TIMER0_IRQn, 2);
-
+	NVIC_SetPriority(TIMER3_IRQn, 1);
+	init_timer(3, 1);
 	init_timer(0, 0x989680); // 10 secondi
 	enable_timer(0);
 	

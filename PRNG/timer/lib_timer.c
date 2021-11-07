@@ -166,7 +166,7 @@ uint32_t init_timer ( uint8_t timer_num, uint32_t TimerInterval )
 //	 <i> 1 Stop on MR3: the TC and PC will be stopped and TCR[3] will be set to 0 if MR3 matches the TC
 //	 <i> 0 Feature disabled.
 //   </e>
-	LPC_TIM0->MCR = 3;
+	LPC_TIM0->MCR = 7;
 // </h>
 //*** <<< end of configuration section >>>    ***
 
@@ -183,6 +183,7 @@ uint32_t init_timer ( uint8_t timer_num, uint32_t TimerInterval )
   }
 	else if ( timer_num == 2 )
   {
+	LPC_SC->PCONP |= 1 << 22;
 	LPC_TIM2->MR0 = TimerInterval;
 	LPC_TIM2->MCR = 3;				/* Interrupt and Reset on MR1 */
 
@@ -191,6 +192,7 @@ uint32_t init_timer ( uint8_t timer_num, uint32_t TimerInterval )
   }
 	else if ( timer_num == 3 )
   {
+	LPC_SC->PCONP |= 1 << 23;
 	LPC_TIM3->MR0 = TimerInterval;
 	LPC_TIM3->MCR = 7;				/* Interrupt and Reset on MR1 */
 

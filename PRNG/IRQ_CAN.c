@@ -3,6 +3,7 @@
 #include "GLCD/GLCD.h"
 #include <security/security.h>
 #include "./trng/adc.h"
+#include "timer/timer.h"
 
 void IRQ_CAN(int canBus);
 extern int good, bad; //declared static in IRQ_timer
@@ -34,13 +35,17 @@ void IRQ_CAN(int canBus){
 	unsigned char finestrino[16] = {0};
 	
 	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone[canBus-1]){
+		
+		enable_timer(3);
+		
+		/*
 		hCAN_recMessage[canBus-1][hCAN_lenght[canBus-1]] = 0;
 		if(hCAN_lenght[canBus-1] == 32 && generated){
 			AES(&ack_ctx[hCAN_recID[canBus-1] == 0xa ? 3 : hCAN_recID[canBus-1] -1], (uint8_t *) hCAN_recMessage[canBus-1], 32);
 			if(hCAN_recMessage[canBus-1][0] == 1 && hCAN_recMessage[canBus-1][1] == 1)
 				good++;
 			else 
-				bad++;
+				bad++;*/
 			/*switch(hCAN_recID){
 				case 1: //finestrino
 					break;
@@ -52,6 +57,4 @@ void IRQ_CAN(int canBus){
 					break;
 			}*/
 		}
-	}
-
 }

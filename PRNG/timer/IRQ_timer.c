@@ -145,3 +145,18 @@ void TIMER1_IRQHandler (void)
   return;
 }
 
+void TIMER3_IRQHandler (void)
+{  	
+	int canBus = 1; 
+	hCAN_recMessage[canBus-1][hCAN_lenght[canBus-1]] = 0;
+	if(hCAN_lenght[canBus-1] == 32 && generated){
+		AES(&ack_ctx[hCAN_recID[canBus-1] == 0xa ? 3 : hCAN_recID[canBus-1] -1], (uint8_t *) hCAN_recMessage[canBus-1], 32);
+		if(hCAN_recMessage[canBus-1][0] == 1 && hCAN_recMessage[canBus-1][1] == 1)
+			good++;
+		else 
+			bad++;
+	}
+	LPC_TIM3->IR = 1;			/* clear interrupt flag */
+  return;
+}
+
