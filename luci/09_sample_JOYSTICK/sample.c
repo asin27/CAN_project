@@ -65,7 +65,7 @@ int main (void) {
 	hCAN_setID(2);
 	hCAN_init(2, CAN_5Kbps);
 	
-	alive_timer_init(3);
+	//alive_timer_init(3); KEEP ALIVE
 	
 	ctx = AES_init(keyAES, ivAES);
 	dec_ctx = AES_init(keyAES, ivAES);
