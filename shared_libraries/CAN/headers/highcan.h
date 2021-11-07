@@ -11,6 +11,7 @@
 #define CAN_250Kbps 250000
 #define CAN_100Kbps 100000
 #define CAN_5Kbps     5000
+#define CAN_1Kbps			1000
 
 #define hCAN_SUCCESS 0x1337
 #define hCAN_ONGOING_RECEVING 2
@@ -49,8 +50,5 @@ void hCAN_setID(int ID);
 
 int hCAN_sendMessage(int peripheral, char *buffer, int lenght);
 int hCAN_receiveMessage(int peripheral);
-
-int hCAN_arbitrationLost(int canBus);
-int hCAN_busError(int canBus);
 
 #endif // HIGH_CAN_H

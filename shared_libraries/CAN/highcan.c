@@ -322,26 +322,3 @@ inline void putMessageInBuffer(CAN_MSG_Type* msg, int canBus){
 		buffIndex += l;
 	} // else l < 8
 }
-
-
-inline int hCAN_arbitrationLost(int canBus){
-	LPC_CAN_TypeDef *can;
-	if(canBus == 1) can = LPC_CAN1;
-	else can = LPC_CAN2;
-	
-	if( (can->ICR & CAN_ICR_ALI) != 0){
-		busMine[canBus-1] = 0;
-		return 1;
-	}
-	return 0;
-}
-
-inline int hCAN_busError(int canBus){
-		LPC_CAN_TypeDef *can;
-	if(canBus == 1) can = LPC_CAN1;
-	else can = LPC_CAN2;
-	
-	if( (can->ICR & CAN_ICR_ALI) != 0)
-		return 1;
-	return 0;
-}
