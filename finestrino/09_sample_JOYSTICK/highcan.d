@@ -9,5 +9,5 @@
 .\highcan.o: .\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
 .\highcan.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\highcan.o: ..\..\shared_libraries\CAN\../GLCD/GLCD.h
-.\highcan.o: .\..\..\shared_libraries\CAN\headers\./highcan.h
-.\highcan.o: .\..\..\shared_libraries\CAN\headers\././can.h
+.\highcan.o: ..\..\shared_libraries\CAN\./headers/highcan.h
+.\highcan.o: ..\..\shared_libraries\CAN\./headers/./can.h

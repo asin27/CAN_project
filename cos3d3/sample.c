@@ -43,11 +43,22 @@ extern uint8_t ScaleFlag; // <- ScaleFlag needs to visible in order for the emul
 uint8_t key[16] = {'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'};
 uint8_t iv[16] = {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'};
 
-struct AES_ctx ctx_dec[3];
+struct AES_ctx ctx_dec[4];
 struct AES_ctx keyctx;
+
+unsigned char keyDgst[32];
+unsigned char ivDgst[32];
+unsigned char newKey[16];
+unsigned char newIv[16];
+struct AES_ctx newParam_dec;
+struct AES_ctx ctx;
+struct AES_ctx ack;
+
 int main(void)
 {
 	SystemInit();  												/* System Initialization (i.e., PLL)  */
+	for(int i=0; i<32; i++) NVIC_SetPriority(i, 5);
+	NVIC_SetPriority(TIMER0_IRQn, 0);
 	init_RIT(0x004c4b40);
 	enable_RIT();
 	ADC_init();
@@ -57,6 +68,10 @@ int main(void)
 	ctx_dec[0] = AES_init(key, iv);
 	ctx_dec[1] = AES_init(key, iv);
 	ctx_dec[2] = AES_init(key, iv);
+	ctx_dec[3] = AES_init(key, iv);
+	newParam_dec = AES_init(key, iv);
+	ctx = AES_init(key, iv);
+	ack = AES_init(key, iv);
   keyctx = AES_init(key, iv);
 	
 //	TP_Init();
@@ -71,10 +86,12 @@ int main(void)
 	
 	enable_timer(0);
 	
+	justDraw();
 	
 	LPC_SC->PCON |= 0x1;									/* power-down	mode										*/
 	LPC_SC->PCON &= ~(0x2);						
 	
+
   while (1)	
   {
 		__ASM("wfi");

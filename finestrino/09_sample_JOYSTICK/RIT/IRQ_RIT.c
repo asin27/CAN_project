@@ -123,6 +123,7 @@ void RIT_IRQHandler (void)
 			if(pressed){
 				message[0] = fLevel[selected];
 				message[1] = selected;
+				message[15] = 0xa;
 				AES(&ctx_enc,message,16);
 				LED_Off(0);
 				while(hCAN_sendMessage(1, (char *) message, 16) != hCAN_SUCCESS);

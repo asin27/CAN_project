@@ -30,7 +30,7 @@ int blink_mask = 0xFF;
 
 extern int check;
 extern unsigned char AD_current;
-extern struct AES_ctx ctx;
+extern struct AES_ctx ctx, decK;
 extern struct AES_ctx ack_ctx[4]; //declared in main 
 extern uint8_t oldKey[16];
 extern uint8_t oldIv[16];
@@ -97,6 +97,8 @@ void prepareMessage(){
 void TIMER0_IRQHandler (void)
 {
 	do{
+	good = 0;
+	bad = 0;
 	keyGeneration();
 	
 	//prepare ack_ctx(s)
@@ -116,17 +118,21 @@ void TIMER0_IRQHandler (void)
 		
 	while(hCAN_sendMessage(1, (char *) finalMessage, 96)!= hCAN_SUCCESS); //hK | k | hIv | iv
 
-	while(good < 1 || bad != 0);	
+	while(good < 2 && bad ==0);
 		
 	generated = 0;
 		
 	}while(bad != 0);
 	
 	//updating keys
+	AES(&decK, eKey, 16);
+	AES(&decK, iv, 16);
 	for(int i = 0; i<16; i++){
 		oldKey[i] = eKey[i];
 		oldIv[i] = iv[i];
 	}
+	decK = AES_init(oldKey, oldIv);
+	ctx = AES_init(oldKey, oldIv);
 	
   LPC_TIM0->IR = 1;			/* clear interrupt flag */
   return;

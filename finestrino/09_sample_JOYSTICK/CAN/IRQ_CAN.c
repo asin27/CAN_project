@@ -7,6 +7,7 @@ void IRQ_CAN(int canBus);
 
 extern struct AES_ctx ctx_dec_key;
 uint8_t new_key[16];
+extern uint8_t iv[16];
 
 void CAN_IRQHandler (void)
 {
@@ -71,6 +72,10 @@ void IRQ_CAN(int canBus){
 					okIv = res[1] = 1;
 			}
 			if (okKey && okIv){
+				for(int i=0; i<16;i++){
+					key_aes[i] = newKey[i];
+					iv[i] = newIv[i];
+				}
 					ctx_dec = AES_init(newKey, newIv);
 					ctx_enc = AES_init(newKey, newIv);
 					newParam_dec = AES_init(newKey, newIv);
@@ -88,8 +93,5 @@ void IRQ_CAN(int canBus){
 		}
 		
 	}
-	if(hCAN_arbitrationLost(canBus)){
-		GUI_Text(0, 0, (uint8_t*) "ARBITRATION LOST! SOMEONE IS TRASMIITTING", Yellow, Red);
-	};
 
 }

@@ -1,5 +1,5 @@
 .\can.o: ..\..\shared_libraries\CAN\can.c
-.\can.o: .\..\..\shared_libraries\CAN\headers\./can.h
+.\can.o: .\..\..\shared_libraries\CAN/headers/can.h
 .\can.o: C:\Users\clem-\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
 .\can.o: .\Core\CM3\CoreSupport\core_cm3.h
 .\can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
