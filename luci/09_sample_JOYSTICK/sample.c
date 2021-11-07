@@ -45,7 +45,13 @@ uint8_t ivAES[16] = "BBBBBBBBBBBBBBBB";
  
 struct AES_ctx ctx;
 struct AES_ctx dec_ctx;
-struct AES_ctx break_dec_ctx;									
+struct AES_ctx break_dec_ctx;	
+struct AES_ctx newParam_dec;
+struct AES_ctx ack;
+unsigned char keyDgst[32] = {0};
+unsigned char ivDgst[32] = {0};
+unsigned char newKey[16] = {0};
+unsigned char newIv[16] = {0};									
 char msg[16] = {0};
 uint8_t lock = 1;
  
@@ -70,6 +76,8 @@ int main (void) {
 	ctx = AES_init(keyAES, ivAES);
 	dec_ctx = AES_init(keyAES, ivAES);
 	break_dec_ctx = AES_init(keyAES, ivAES);
+	newParam_dec = AES_init(keyAES, ivAES);
+	ack = AES_init(keyAES, ivAES);
 	
 	
 	//init_timer(1, 0x002625A0);
