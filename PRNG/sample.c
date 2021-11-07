@@ -18,7 +18,7 @@
 #include "TouchPanel/TouchPanel.h"
 #include <security/security.h>
 
-struct AES_ctx ctx;
+struct AES_ctx ctx, decK;
 struct AES_ctx ack_ctx[4];
 uint8_t eKey[16] = "AAAAAAAAAAAAAAAA";
 uint8_t iv[16] = "BBBBBBBBBBBBBBBB";
@@ -46,6 +46,7 @@ int main (void) {
 	hCAN_setID(0x4);
 	
 	ctx = AES_init(oldKey, oldIv);
+	decK = AES_init(oldKey, oldIv);
 	NVIC_SetPriority(CAN_IRQn, 0);
 	NVIC_SetPriority(ADC_IRQn, 1);
 	NVIC_SetPriority(TIMER0_IRQn, 2);

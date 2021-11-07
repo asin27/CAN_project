@@ -20,12 +20,8 @@ void CAN_IRQHandler (void)
 //		GUI_Text(0, 20*counter++, (uint8_t*) "EPI ERROR!", Black, Yellow);
 	
 	int canBus = 0;
-	if( (LPC_CAN1->GSR & 1) == 1) canBus = 1;
+	if( (LPC_CAN1->GSR & 1) == 1) IRQ_CAN(1);
 	//else if( (LPC_CAN2->GSR & 1) == 1) canBus = 2;
-	
-	if(canBus != 0)
-		IRQ_CAN(canBus);
-	
 	
 	//uint8_t c[2];
  	//c[0] = ADC_generate_random();
