@@ -41,8 +41,10 @@ void CAN_IRQHandler (void)
 		if(i==1) can = LPC_CAN1;
 		else if(i==2) can = LPC_CAN2;
 		
-		int canBusReceive = 0;
-		if( (can->GSR & 1) == 1) IRQ_CAN_RECEIVE(i);
+		// Receive interrupt
+		if( (icr & CAN_ICR_RI) != 0 ){			
+			if( (can->GSR & 1) == 1) IRQ_CAN_RECEIVE(i);
+		}
 		
 		// Bus Error Interrupt
 		if( (icr & CAN_ICR_BEI) != 0)
@@ -111,9 +113,6 @@ void IRQ_CAN_RECEIVE(int canBus){
 		}
 		// otherwise other messages
 		if( hCAN_recID[canBus-1] == 0x3 ){
-			
-			for(int i=0;i<16;i++)
-				b[i] = hCAN_recMessage[canBus-1][i];
 			
 			//DES3((unsigned char*) finestrino, key, DECRYPT);
 			AES(&break_dec_ctx, (unsigned char*) b, 16);
