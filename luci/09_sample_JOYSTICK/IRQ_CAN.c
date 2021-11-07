@@ -58,6 +58,10 @@ void IRQ_CAN_RECEIVE(int canBus){
 			//DES3((unsigned char*) finestrino, key, DECRYPT);
 			AES(&break_dec_ctx, (unsigned char*) b, 16);
 			
+			if( b[15] != 0xa ){
+				GUI_Text(0, 0, (uint8_t *) "Crypto Trubles", Black, Yellow);
+			}
+			
 			if (b[0] > 0) {
 				msg[5] = 1;
 				clear_box(45, 180, Green);
