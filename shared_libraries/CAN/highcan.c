@@ -251,7 +251,7 @@ int hCAN_receiveMessage(int canBus){
 		if( (msg1.id & hCAN_ENUM) == recNext << hCAN_FIRST_ENUM_BIT ){
 			hCAN_lenght[canBus-1] += msg1.len;
 			if(recNext == 0){
-				putMessageInBuffer(&msg1, canBus-1);
+				putMessageInBuffer(&msg1, canBus);
 				
 				busBlocked[canBus-1] = 0;
 				hCAN_recDone[canBus-1] = 1;
