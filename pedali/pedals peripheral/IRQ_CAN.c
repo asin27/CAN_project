@@ -1,5 +1,5 @@
 #include "lpc17xx.h"
-#include "CAN/headers/highcan.h"
+#include <CAN/headers/highcan.h>
 #include "GLCD/GLCD.h"
 #include <security/security.h>
 
