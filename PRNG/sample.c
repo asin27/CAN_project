@@ -36,6 +36,8 @@ uint8_t finalMessage[96];
 int main (void) {
   	
 	SystemInit();  												/* System Initialization (i.e., PLL)  */
+	
+	for(int i=0; i<32; i++) NVIC_SetPriority(i, 5);
 
 	LCD_Initialization();
 	LCD_Clear(Blue);
@@ -48,7 +50,7 @@ int main (void) {
 	NVIC_SetPriority(ADC_IRQn, 1);
 	NVIC_SetPriority(TIMER0_IRQn, 2);
 
-	init_timer(0, 0x2FAF080);
+	init_timer(0, 10 * 0x2FAF080);
 	enable_timer(0);
 	
 	LPC_SC->PCON |= 0x1;									/* power-down	mode										*/
