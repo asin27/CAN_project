@@ -30,6 +30,11 @@ unsigned char key[3][8];
 uint8_t key_aes[16] = {'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'};
 uint8_t iv[16] = {'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'};
 
+unsigned char keyDgst[32] = {0};
+unsigned char ivDgst[32] = {0};
+unsigned char newKey[16] = {0};
+unsigned char newIv[16] = {0};
+
 void init_key(){
 	int i,j;
 	for(i=0; i<3;i++)
@@ -37,9 +42,9 @@ void init_key(){
 			key[i][j] = 0x41;
 }
 
-struct AES_ctx ctx_enc, ctx_dec, break_ctx;
-struct AES_ctx ctx_dec_key;
-
+struct AES_ctx ctx_enc, ctx_dec;
+struct AES_ctx newParam_dec;
+struct AES_ctx ack;
 uint8_t d[16] = {'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'};
 
 #ifdef SIMULATOR
@@ -63,11 +68,17 @@ int main (void) {
 	init_timer(1, 0xbebc20);
 	LED_Out(15);
 	init_key();
+	
 	ctx_enc = AES_init(key_aes, iv);
 	ctx_dec = AES_init(key_aes, iv);
-	break_ctx = AES_init(key_aes, iv);
-	ctx_dec_key = AES_init(key_aes, iv);
-	
+	newParam_dec = AES_init(key_aes, iv);
+	ack = AES_init(key_aes, iv);
+
+	for (int i = 0; i < 34; i++){
+		NVIC_SetPriority(i, 5);
+	}
+	NVIC_SetPriority(CAN_IRQn, 4);
+
 	LCD_Clear(White);
 	GUI_Text(55, 10, (uint8_t *)"CAs CAN project:", Black, White);
 	GUI_Text(80, 30, (uint8_t *)"Finestrino 0", Black, White);
