@@ -80,6 +80,9 @@ int main (void) {
 	ack = AES_init(keyAES, ivAES);
 	
 	
+	init_timer(3, 0x1);
+	NVIC_SetPriority(TIMER3_IRQn, 1);
+	
 	//init_timer(1, 0x002625A0);
 	init_timer(1, 0x00bebc20/2);
 	init_timer(2, 0x00bebc20/2); 						/* 12,5 Mhz */

@@ -39,7 +39,7 @@ int hCAN_init(int peripheral, int speed){
 	CAN_IRQCmd(can, CANINT_RIE, ENABLE); // receive message 
 	CAN_IRQCmd(can, CANINT_ALIE, ENABLE); // arbitration lost
 	//CAN_IRQCmd(can, CANINT_EPIE, ENABLE); // Error passive interrupt
-	CAN_IRQCmd(can, CANINT_BEIE, ENABLE); // Buss Error interrupt
+	//CAN_IRQCmd(can, CANINT_BEIE, ENABLE); // Buss Error interrupt
 
 	NVIC_EnableIRQ(CAN_IRQn); // enable interrupt
 	

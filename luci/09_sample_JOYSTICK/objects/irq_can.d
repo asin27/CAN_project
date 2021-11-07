@@ -19,3 +19,4 @@
 .\objects\irq_can.o: .\Core\../drawing/draw.h
 .\objects\irq_can.o: .\Core\../drawing/../led/led.h
 .\objects\irq_can.o: ..\..\shared_libraries\keep_alive/keep_alive.h
+.\objects\irq_can.o: timer/timer.h
