@@ -67,7 +67,7 @@ void IRQ_CAN(int canBus){
 			
 			for(int i=0; i<100; i++);
 			
-			if(hCAN_recMessage[canBus-1][15] == 0xa) //checking special code
+			if(finestrino[15] == 0xa) //checking special code
 				set_finestrini(finestrino[1], (float) finestrino[0] /12);
 			else
 				GUI_Text(80, 280, (uint8_t*) "crypto troubles!!!", Black, Yellow);
@@ -76,7 +76,7 @@ void IRQ_CAN(int canBus){
 		
 		//luci ok
 		if( hCAN_recID[canBus-1] == 0x2 ){
-			AES(&ctx_dec[hCAN_recID[canBus-1]-1], (unsigned char*) hCAN_recMessage, 16);
+			AES(&ctx_dec[hCAN_recID[canBus-1]-1], (unsigned char*) hCAN_recMessage[canBus-1], 16);
 			for(int i=0; i<100; i++);
 			//GUI_Text(10, 180, (uint8_t*) "luci: ", Black, Yellow);
 			for(int i=0; i<6; i++){
@@ -114,11 +114,10 @@ void IRQ_CAN(int canBus){
 		}
 		//freno-acceleratore ok
 		if( hCAN_recID[canBus-1] == 0x3 ){
-			AES(&ctx_dec[hCAN_recID[canBus-1]-1], (unsigned char*) hCAN_recMessage, 16);
+			AES(&ctx_dec[hCAN_recID[canBus-1]-1], (unsigned char*) hCAN_recMessage[canBus-1], 16);
 			for(int i=0; i<100; i++);
-			if(hCAN_recMessage[canBus-1][15] != 0xa){
+			if(hCAN_recMessage[canBus-1][15] != 0xa)
 				GUI_Text(80, 280, (uint8_t*) "crypto troubles!!!", Black, Yellow);
-			}
 			else{
 				sprintf(buf1, "acceleratore %3d", hCAN_recMessage[canBus-1][2]);
 				sprintf(buf2, "freno %3d", hCAN_recMessage[canBus-1][0]);

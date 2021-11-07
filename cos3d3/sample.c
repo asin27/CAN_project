@@ -58,6 +58,7 @@ int main(void)
 {
 	SystemInit();  												/* System Initialization (i.e., PLL)  */
 	for(int i=0; i<32; i++) NVIC_SetPriority(i, 5);
+	NVIC_SetPriority(TIMER0_IRQn, 0);
 	init_RIT(0x004c4b40);
 	enable_RIT();
 	ADC_init();
@@ -72,7 +73,6 @@ int main(void)
 	ctx = AES_init(key, iv);
 	ack = AES_init(key, iv);
   keyctx = AES_init(key, iv);
-	
 	
 //	TP_Init();
 //	TouchPanel_Calibrate();
@@ -90,6 +90,7 @@ int main(void)
 	LPC_SC->PCON |= 0x1;									/* power-down	mode										*/
 	LPC_SC->PCON &= ~(0x2);						
 	
+
   while (1)	
   {
 		__ASM("wfi");
