@@ -3,10 +3,10 @@
 #include "GLCD/GLCD.h"
 #include <security/security.h>
 
-static unsigned char keyDgst[32] = {0};
-static unsigned char ivDgst[32] = {0};
-static unsigned char newKey[16] = {0};
-static unsigned char newIv[16] = {0};
+//static unsigned char keyDgst[32] = {0};
+//static unsigned char ivDgst[32] = {0};
+//static unsigned char newKey[16] = {0};
+//static unsigned char newIv[16] = {0};
 
 void IRQ_CAN(int canBus);
 
