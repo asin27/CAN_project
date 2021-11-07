@@ -66,6 +66,7 @@ void IRQ_CAN(int canBus){
 			AES(&ctx_dec[hCAN_recID[canBus-1]-1], (unsigned char*) finestrino, 16);
 			
 			for(int i=0; i<100; i++);
+			
 			if(hCAN_recMessage[canBus-1][15] == 0xa) //checking special code
 				set_finestrini(finestrino[1], (float) finestrino[0] /12);
 			else

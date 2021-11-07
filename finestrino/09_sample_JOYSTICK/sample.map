@@ -384,44 +384,44 @@ Image Symbol Table
     .text                                    0x00000d18   Section        0  irq_can.o(.text)
     .text                                    0x00000f70   Section        0  can.o(.text)
     .text                                    0x000010d0   Section        0  highcan.o(.text)
-    putMessageInBuffer                       0x00001507   Thumb Code   226  highcan.o(.text)
-    .text                                    0x00001760   Section        0  lpc17xx_can.o(.text)
-    can_SetBaudrate                          0x00001763   Thumb Code   178  lpc17xx_can.o(.text)
-    .text                                    0x00003558   Section        0  lpc17xx_clkpwr.o(.text)
-    .text                                    0x00003698   Section        0  aes.o(.text)
-    KeyExpansion                             0x00003699   Thumb Code   282  aes.o(.text)
-    AddRoundKey                              0x000037f5   Thumb Code    56  aes.o(.text)
-    SubBytes                                 0x0000382d   Thumb Code    46  aes.o(.text)
-    ShiftRows                                0x0000385b   Thumb Code    50  aes.o(.text)
-    xtime                                    0x0000388d   Thumb Code    20  aes.o(.text)
-    MixColumns                               0x000038a1   Thumb Code   212  aes.o(.text)
-    Cipher                                   0x00003975   Thumb Code    76  aes.o(.text)
-    .text                                    0x00003a3c   Section        0  security.o(.text)
-    .text                                    0x00003b04   Section        0  sha256.o(.text)
-    .text                                    0x00003f04   Section        0  glcd.o(.text)
-    wait_delay                               0x00003f05   Thumb Code    12  glcd.o(.text)
-    LCD_SetCursor                            0x00003f11   Thumb Code  1356  glcd.o(.text)
-    LCD_Configuration                        0x00004acd   Thumb Code    20  glcd.o(.text)
-    delay_ms                                 0x00004ae1   Thumb Code    30  glcd.o(.text)
-    LCD_BGR2RGB                              0x00008025   Thumb Code    26  glcd.o(.text)
-    .text                                    0x0000843c   Section      138  rt_memcpy_v6.o(.text)
-    .text                                    0x000084c6   Section       78  rt_memclr_w.o(.text)
-    .text                                    0x00008514   Section      100  rt_memcpy_w.o(.text)
-    .text                                    0x00008578   Section       74  sys_stackheap_outer.o(.text)
-    .text                                    0x000085c2   Section        0  exit.o(.text)
-    .text                                    0x000085d4   Section        8  libspace.o(.text)
-    .text                                    0x000085dc   Section        0  sys_exit.o(.text)
-    .text                                    0x000085e8   Section        0  indicate_semi.o(.text)
-    i.CAN_internalPrioMode                   0x000085e8   Section        0  can.o(i.CAN_internalPrioMode)
-    i.CAN_isTransmitting                     0x00008668   Section        0  can.o(i.CAN_isTransmitting)
-    .constdata                               0x00008674   Section       32  funct_led.o(.constdata)
-    .constdata                               0x00008694   Section      267  aes.o(.constdata)
-    sbox                                     0x00008694   Data         256  aes.o(.constdata)
-    Rcon                                     0x00008794   Data          11  aes.o(.constdata)
-    .constdata                               0x000087a0   Section      256  sha256.o(.constdata)
-    k                                        0x000087a0   Data         256  sha256.o(.constdata)
-    .constdata                               0x000088a0   Section     1520  asciilib.o(.constdata)
-    AsciiLib                                 0x000088a0   Data        1520  asciilib.o(.constdata)
+    putMessageInBuffer                       0x000014fd   Thumb Code   226  highcan.o(.text)
+    .text                                    0x00001754   Section        0  lpc17xx_can.o(.text)
+    can_SetBaudrate                          0x00001757   Thumb Code   178  lpc17xx_can.o(.text)
+    .text                                    0x0000354c   Section        0  lpc17xx_clkpwr.o(.text)
+    .text                                    0x0000368c   Section        0  aes.o(.text)
+    KeyExpansion                             0x0000368d   Thumb Code   282  aes.o(.text)
+    AddRoundKey                              0x000037e9   Thumb Code    56  aes.o(.text)
+    SubBytes                                 0x00003821   Thumb Code    46  aes.o(.text)
+    ShiftRows                                0x0000384f   Thumb Code    50  aes.o(.text)
+    xtime                                    0x00003881   Thumb Code    20  aes.o(.text)
+    MixColumns                               0x00003895   Thumb Code   212  aes.o(.text)
+    Cipher                                   0x00003969   Thumb Code    76  aes.o(.text)
+    .text                                    0x00003a30   Section        0  security.o(.text)
+    .text                                    0x00003af8   Section        0  sha256.o(.text)
+    .text                                    0x00003ef8   Section        0  glcd.o(.text)
+    wait_delay                               0x00003ef9   Thumb Code    12  glcd.o(.text)
+    LCD_SetCursor                            0x00003f05   Thumb Code  1356  glcd.o(.text)
+    LCD_Configuration                        0x00004ac1   Thumb Code    20  glcd.o(.text)
+    delay_ms                                 0x00004ad5   Thumb Code    30  glcd.o(.text)
+    LCD_BGR2RGB                              0x00008019   Thumb Code    26  glcd.o(.text)
+    .text                                    0x00008430   Section      138  rt_memcpy_v6.o(.text)
+    .text                                    0x000084ba   Section       78  rt_memclr_w.o(.text)
+    .text                                    0x00008508   Section      100  rt_memcpy_w.o(.text)
+    .text                                    0x0000856c   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x000085b6   Section        0  exit.o(.text)
+    .text                                    0x000085c8   Section        8  libspace.o(.text)
+    .text                                    0x000085d0   Section        0  sys_exit.o(.text)
+    .text                                    0x000085dc   Section        0  indicate_semi.o(.text)
+    i.CAN_internalPrioMode                   0x000085dc   Section        0  can.o(i.CAN_internalPrioMode)
+    i.CAN_isTransmitting                     0x0000865c   Section        0  can.o(i.CAN_isTransmitting)
+    .constdata                               0x00008668   Section       32  funct_led.o(.constdata)
+    .constdata                               0x00008688   Section      267  aes.o(.constdata)
+    sbox                                     0x00008688   Data         256  aes.o(.constdata)
+    Rcon                                     0x00008788   Data          11  aes.o(.constdata)
+    .constdata                               0x00008794   Section      256  sha256.o(.constdata)
+    k                                        0x00008794   Data         256  sha256.o(.constdata)
+    .constdata                               0x00008894   Section     1520  asciilib.o(.constdata)
+    AsciiLib                                 0x00008894   Data        1520  asciilib.o(.constdata)
     STACK                                    0x10000000   Section    16384  startup_lpc17xx.o(STACK)
     Stack_Mem                                0x10000000   Data       16384  startup_lpc17xx.o(STACK)
     __initial_sp                             0x10004000   Data           0  startup_lpc17xx.o(STACK)
@@ -613,87 +613,87 @@ Image Symbol Table
     CAN_abortTransmission                    0x00001031   Thumb Code    10  can.o(.text)
     CAN_AF_loadSTDRangelEntry                0x0000103b   Thumb Code    92  can.o(.text)
     CAN_AF_disableEntry                      0x00001097   Thumb Code    40  can.o(.text)
-    hCAN_init                                0x000010d1   Thumb Code   176  highcan.o(.text)
-    hCAN_setID                               0x00001181   Thumb Code     8  highcan.o(.text)
-    hCAN_sendMessage                         0x00001189   Thumb Code   894  highcan.o(.text)
-    hCAN_receiveMessage                      0x000015e9   Thumb Code   334  highcan.o(.text)
-    check_failed                             0x00001761   Thumb Code     2  lpc17xx_can.o(.text)
-    CAN_Init                                 0x00001815   Thumb Code   176  lpc17xx_can.o(.text)
-    CAN_DeInit                               0x000018c5   Thumb Code    56  lpc17xx_can.o(.text)
-    CAN_SetupAFLUT                           0x000018fd   Thumb Code  1720  lpc17xx_can.o(.text)
-    CAN_LoadExplicitEntry                    0x00001fb5   Thumb Code   840  lpc17xx_can.o(.text)
-    CAN_LoadFullCANEntry                     0x000022fd   Thumb Code   826  lpc17xx_can.o(.text)
-    CAN_LoadGroupEntry                       0x00002637   Thumb Code   816  lpc17xx_can.o(.text)
-    CAN_RemoveEntry                          0x00002967   Thumb Code  1220  lpc17xx_can.o(.text)
-    CAN_SendMsg                              0x00002e2b   Thumb Code   576  lpc17xx_can.o(.text)
-    CAN_ReceiveMsg                           0x0000306b   Thumb Code   124  lpc17xx_can.o(.text)
-    FCAN_ReadObj                             0x000030e7   Thumb Code   210  lpc17xx_can.o(.text)
-    CAN_GetCTRLStatus                        0x000031b9   Thumb Code    84  lpc17xx_can.o(.text)
-    CAN_GetCRStatus                          0x0000320d   Thumb Code    66  lpc17xx_can.o(.text)
-    CAN_IRQCmd                               0x0000324f   Thumb Code   170  lpc17xx_can.o(.text)
-    CAN_SetAFMode                            0x000032f9   Thumb Code    94  lpc17xx_can.o(.text)
-    CAN_ModeConfig                           0x00003357   Thumb Code   340  lpc17xx_can.o(.text)
-    CAN_SetCommand                           0x000034ab   Thumb Code    38  lpc17xx_can.o(.text)
-    CAN_IntGetStatus                         0x000034d1   Thumb Code    32  lpc17xx_can.o(.text)
-    CAN_FullCANIntGetStatus                  0x000034f1   Thumb Code    34  lpc17xx_can.o(.text)
-    CAN_FullCANPendGetStatus                 0x00003513   Thumb Code    52  lpc17xx_can.o(.text)
-    CLKPWR_SetPCLKDiv                        0x00003559   Thumb Code    94  lpc17xx_clkpwr.o(.text)
-    CLKPWR_GetPCLKSEL                        0x000035b7   Thumb Code    34  lpc17xx_clkpwr.o(.text)
-    CLKPWR_GetPCLK                           0x000035d9   Thumb Code    58  lpc17xx_clkpwr.o(.text)
-    CLKPWR_ConfigPPWR                        0x00003613   Thumb Code    46  lpc17xx_clkpwr.o(.text)
-    CLKPWR_Sleep                             0x00003641   Thumb Code    12  lpc17xx_clkpwr.o(.text)
-    CLKPWR_DeepSleep                         0x0000364d   Thumb Code    18  lpc17xx_clkpwr.o(.text)
-    CLKPWR_PowerDown                         0x0000365f   Thumb Code    18  lpc17xx_clkpwr.o(.text)
-    CLKPWR_DeepPowerDown                     0x00003671   Thumb Code    18  lpc17xx_clkpwr.o(.text)
-    AES_init_ctx                             0x000037b3   Thumb Code    16  aes.o(.text)
-    AES_init_ctx_iv                          0x000037c3   Thumb Code    30  aes.o(.text)
-    AES_ctx_set_iv                           0x000037e1   Thumb Code    20  aes.o(.text)
-    AES_CTR_xcrypt_buffer                    0x000039c1   Thumb Code   114  aes.o(.text)
-    digest                                   0x00003a3d   Thumb Code    96  security.o(.text)
-    verify_digest                            0x00003a9d   Thumb Code    50  security.o(.text)
-    AES                                      0x00003acf   Thumb Code    20  security.o(.text)
-    AES_init                                 0x00003ae3   Thumb Code    34  security.o(.text)
-    sha256_transform                         0x00003b05   Thumb Code   558  sha256.o(.text)
-    sha256_init                              0x00003d33   Thumb Code    44  sha256.o(.text)
-    sha256_update                            0x00003d5f   Thumb Code    68  sha256.o(.text)
-    sha256_final                             0x00003da3   Thumb Code   316  sha256.o(.text)
-    LCD_SetPoint                             0x0000445d   Thumb Code   206  glcd.o(.text)
-    PutChar                                  0x0000452b   Thumb Code   100  glcd.o(.text)
-    GUI_Text                                 0x0000458f   Thumb Code    80  glcd.o(.text)
-    LCD_DrawLine                             0x000045df   Thumb Code   170  glcd.o(.text)
-    winFun                                   0x00004689   Thumb Code    50  glcd.o(.text)
-    drawPlayer                               0x000046bb   Thumb Code   432  glcd.o(.text)
-    clear                                    0x0000486b   Thumb Code    54  glcd.o(.text)
-    initGame                                 0x000048a1   Thumb Code   352  glcd.o(.text)
-    restartGame                              0x00004a01   Thumb Code   104  glcd.o(.text)
-    drawSquare                               0x00004a69   Thumb Code    72  glcd.o(.text)
-    drawLineOfSquares                        0x00004ab1   Thumb Code    28  glcd.o(.text)
-    LCD_Initialization                       0x00004aff   Thumb Code 12092  glcd.o(.text)
-    LCD_Clear                                0x00007a3b   Thumb Code  1514  glcd.o(.text)
-    LCD_GetPoint                             0x0000803f   Thumb Code  1016  glcd.o(.text)
-    __aeabi_memcpy                           0x0000843d   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __rt_memcpy                              0x0000843d   Thumb Code   138  rt_memcpy_v6.o(.text)
-    _memcpy_lastbytes                        0x000084a3   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __aeabi_memclr4                          0x000084c7   Thumb Code     0  rt_memclr_w.o(.text)
-    __aeabi_memclr8                          0x000084c7   Thumb Code     0  rt_memclr_w.o(.text)
-    __rt_memclr_w                            0x000084c7   Thumb Code    78  rt_memclr_w.o(.text)
-    _memset_w                                0x000084cb   Thumb Code     0  rt_memclr_w.o(.text)
-    __aeabi_memcpy4                          0x00008515   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memcpy8                          0x00008515   Thumb Code     0  rt_memcpy_w.o(.text)
-    __rt_memcpy_w                            0x00008515   Thumb Code   100  rt_memcpy_w.o(.text)
-    _memcpy_lastbytes_aligned                0x0000855d   Thumb Code     0  rt_memcpy_w.o(.text)
-    __user_setup_stackheap                   0x00008579   Thumb Code    74  sys_stackheap_outer.o(.text)
-    exit                                     0x000085c3   Thumb Code    18  exit.o(.text)
-    __user_libspace                          0x000085d5   Thumb Code     8  libspace.o(.text)
-    __user_perproc_libspace                  0x000085d5   Thumb Code     0  libspace.o(.text)
-    __user_perthread_libspace                0x000085d5   Thumb Code     0  libspace.o(.text)
-    _sys_exit                                0x000085dd   Thumb Code     8  sys_exit.o(.text)
-    CAN_internalPrioMode                     0x000085e9   Thumb Code   128  can.o(i.CAN_internalPrioMode)
-    __semihosting_library_function           0x000085e9   Thumb Code     0  indicate_semi.o(.text)
-    CAN_isTransmitting                       0x00008669   Thumb Code    10  can.o(i.CAN_isTransmitting)
-    led_mask                                 0x00008674   Data          32  funct_led.o(.constdata)
-    Region$$Table$$Base                      0x00008e90   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00008ec0   Number         0  anon$$obj.o(Region$$Table)
+    hCAN_init                                0x000010d1   Thumb Code   166  highcan.o(.text)
+    hCAN_setID                               0x00001177   Thumb Code     8  highcan.o(.text)
+    hCAN_sendMessage                         0x0000117f   Thumb Code   894  highcan.o(.text)
+    hCAN_receiveMessage                      0x000015df   Thumb Code   334  highcan.o(.text)
+    check_failed                             0x00001755   Thumb Code     2  lpc17xx_can.o(.text)
+    CAN_Init                                 0x00001809   Thumb Code   176  lpc17xx_can.o(.text)
+    CAN_DeInit                               0x000018b9   Thumb Code    56  lpc17xx_can.o(.text)
+    CAN_SetupAFLUT                           0x000018f1   Thumb Code  1720  lpc17xx_can.o(.text)
+    CAN_LoadExplicitEntry                    0x00001fa9   Thumb Code   840  lpc17xx_can.o(.text)
+    CAN_LoadFullCANEntry                     0x000022f1   Thumb Code   826  lpc17xx_can.o(.text)
+    CAN_LoadGroupEntry                       0x0000262b   Thumb Code   816  lpc17xx_can.o(.text)
+    CAN_RemoveEntry                          0x0000295b   Thumb Code  1220  lpc17xx_can.o(.text)
+    CAN_SendMsg                              0x00002e1f   Thumb Code   576  lpc17xx_can.o(.text)
+    CAN_ReceiveMsg                           0x0000305f   Thumb Code   124  lpc17xx_can.o(.text)
+    FCAN_ReadObj                             0x000030db   Thumb Code   210  lpc17xx_can.o(.text)
+    CAN_GetCTRLStatus                        0x000031ad   Thumb Code    84  lpc17xx_can.o(.text)
+    CAN_GetCRStatus                          0x00003201   Thumb Code    66  lpc17xx_can.o(.text)
+    CAN_IRQCmd                               0x00003243   Thumb Code   170  lpc17xx_can.o(.text)
+    CAN_SetAFMode                            0x000032ed   Thumb Code    94  lpc17xx_can.o(.text)
+    CAN_ModeConfig                           0x0000334b   Thumb Code   340  lpc17xx_can.o(.text)
+    CAN_SetCommand                           0x0000349f   Thumb Code    38  lpc17xx_can.o(.text)
+    CAN_IntGetStatus                         0x000034c5   Thumb Code    32  lpc17xx_can.o(.text)
+    CAN_FullCANIntGetStatus                  0x000034e5   Thumb Code    34  lpc17xx_can.o(.text)
+    CAN_FullCANPendGetStatus                 0x00003507   Thumb Code    52  lpc17xx_can.o(.text)
+    CLKPWR_SetPCLKDiv                        0x0000354d   Thumb Code    94  lpc17xx_clkpwr.o(.text)
+    CLKPWR_GetPCLKSEL                        0x000035ab   Thumb Code    34  lpc17xx_clkpwr.o(.text)
+    CLKPWR_GetPCLK                           0x000035cd   Thumb Code    58  lpc17xx_clkpwr.o(.text)
+    CLKPWR_ConfigPPWR                        0x00003607   Thumb Code    46  lpc17xx_clkpwr.o(.text)
+    CLKPWR_Sleep                             0x00003635   Thumb Code    12  lpc17xx_clkpwr.o(.text)
+    CLKPWR_DeepSleep                         0x00003641   Thumb Code    18  lpc17xx_clkpwr.o(.text)
+    CLKPWR_PowerDown                         0x00003653   Thumb Code    18  lpc17xx_clkpwr.o(.text)
+    CLKPWR_DeepPowerDown                     0x00003665   Thumb Code    18  lpc17xx_clkpwr.o(.text)
+    AES_init_ctx                             0x000037a7   Thumb Code    16  aes.o(.text)
+    AES_init_ctx_iv                          0x000037b7   Thumb Code    30  aes.o(.text)
+    AES_ctx_set_iv                           0x000037d5   Thumb Code    20  aes.o(.text)
+    AES_CTR_xcrypt_buffer                    0x000039b5   Thumb Code   114  aes.o(.text)
+    digest                                   0x00003a31   Thumb Code    96  security.o(.text)
+    verify_digest                            0x00003a91   Thumb Code    50  security.o(.text)
+    AES                                      0x00003ac3   Thumb Code    20  security.o(.text)
+    AES_init                                 0x00003ad7   Thumb Code    34  security.o(.text)
+    sha256_transform                         0x00003af9   Thumb Code   558  sha256.o(.text)
+    sha256_init                              0x00003d27   Thumb Code    44  sha256.o(.text)
+    sha256_update                            0x00003d53   Thumb Code    68  sha256.o(.text)
+    sha256_final                             0x00003d97   Thumb Code   316  sha256.o(.text)
+    LCD_SetPoint                             0x00004451   Thumb Code   206  glcd.o(.text)
+    PutChar                                  0x0000451f   Thumb Code   100  glcd.o(.text)
+    GUI_Text                                 0x00004583   Thumb Code    80  glcd.o(.text)
+    LCD_DrawLine                             0x000045d3   Thumb Code   170  glcd.o(.text)
+    winFun                                   0x0000467d   Thumb Code    50  glcd.o(.text)
+    drawPlayer                               0x000046af   Thumb Code   432  glcd.o(.text)
+    clear                                    0x0000485f   Thumb Code    54  glcd.o(.text)
+    initGame                                 0x00004895   Thumb Code   352  glcd.o(.text)
+    restartGame                              0x000049f5   Thumb Code   104  glcd.o(.text)
+    drawSquare                               0x00004a5d   Thumb Code    72  glcd.o(.text)
+    drawLineOfSquares                        0x00004aa5   Thumb Code    28  glcd.o(.text)
+    LCD_Initialization                       0x00004af3   Thumb Code 12092  glcd.o(.text)
+    LCD_Clear                                0x00007a2f   Thumb Code  1514  glcd.o(.text)
+    LCD_GetPoint                             0x00008033   Thumb Code  1016  glcd.o(.text)
+    __aeabi_memcpy                           0x00008431   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __rt_memcpy                              0x00008431   Thumb Code   138  rt_memcpy_v6.o(.text)
+    _memcpy_lastbytes                        0x00008497   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __aeabi_memclr4                          0x000084bb   Thumb Code     0  rt_memclr_w.o(.text)
+    __aeabi_memclr8                          0x000084bb   Thumb Code     0  rt_memclr_w.o(.text)
+    __rt_memclr_w                            0x000084bb   Thumb Code    78  rt_memclr_w.o(.text)
+    _memset_w                                0x000084bf   Thumb Code     0  rt_memclr_w.o(.text)
+    __aeabi_memcpy4                          0x00008509   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memcpy8                          0x00008509   Thumb Code     0  rt_memcpy_w.o(.text)
+    __rt_memcpy_w                            0x00008509   Thumb Code   100  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes_aligned                0x00008551   Thumb Code     0  rt_memcpy_w.o(.text)
+    __user_setup_stackheap                   0x0000856d   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x000085b7   Thumb Code    18  exit.o(.text)
+    __user_libspace                          0x000085c9   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x000085c9   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x000085c9   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x000085d1   Thumb Code     8  sys_exit.o(.text)
+    CAN_internalPrioMode                     0x000085dd   Thumb Code   128  can.o(i.CAN_internalPrioMode)
+    __semihosting_library_function           0x000085dd   Thumb Code     0  indicate_semi.o(.text)
+    CAN_isTransmitting                       0x0000865d   Thumb Code    10  can.o(i.CAN_isTransmitting)
+    led_mask                                 0x00008668   Data          32  funct_led.o(.constdata)
+    Region$$Table$$Base                      0x00008e84   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00008eb4   Number         0  anon$$obj.o(Region$$Table)
     fLevel                                   0x2007c000   Data           4  sample.o(.data)
     key_aes                                  0x2007c004   Data          16  sample.o(.data)
     iv                                       0x2007c014   Data          16  sample.o(.data)
@@ -738,9 +738,9 @@ Memory Map of the image
 
   Image Entry point : 0x000000cd
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00008f68, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00008f5c, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00008ec0, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00008eb4, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -811,53 +811,53 @@ Memory Map of the image
     0x00000c7c   0x00000c7c   0x0000009c   Code   RO          305    .text               lib_timer.o
     0x00000d18   0x00000d18   0x00000258   Code   RO          321    .text               irq_can.o
     0x00000f70   0x00000f70   0x00000160   Code   RO          347    .text               can.o
-    0x000010d0   0x000010d0   0x00000690   Code   RO          402    .text               highcan.o
-    0x00001760   0x00001760   0x00001df8   Code   RO          432    .text               lpc17xx_can.o
-    0x00003558   0x00003558   0x00000140   Code   RO          457    .text               lpc17xx_clkpwr.o
-    0x00003698   0x00003698   0x000003a4   Code   RO          472    .text               aes.o
-    0x00003a3c   0x00003a3c   0x000000c8   Code   RO          495    .text               security.o
-    0x00003b04   0x00003b04   0x00000400   Code   RO          520    .text               sha256.o
-    0x00003f04   0x00003f04   0x00004538   Code   RO          552    .text               glcd.o
-    0x0000843c   0x0000843c   0x0000008a   Code   RO          591    .text               c_w.l(rt_memcpy_v6.o)
-    0x000084c6   0x000084c6   0x0000004e   Code   RO          593    .text               c_w.l(rt_memclr_w.o)
-    0x00008514   0x00008514   0x00000064   Code   RO          600    .text               c_w.l(rt_memcpy_w.o)
-    0x00008578   0x00008578   0x0000004a   Code   RO          617    .text               c_w.l(sys_stackheap_outer.o)
-    0x000085c2   0x000085c2   0x00000012   Code   RO          619    .text               c_w.l(exit.o)
-    0x000085d4   0x000085d4   0x00000008   Code   RO          627    .text               c_w.l(libspace.o)
-    0x000085dc   0x000085dc   0x0000000c   Code   RO          688    .text               c_w.l(sys_exit.o)
-    0x000085e8   0x000085e8   0x00000000   Code   RO          701    .text               c_w.l(indicate_semi.o)
-    0x000085e8   0x000085e8   0x00000080   Code   RO          361    i.CAN_internalPrioMode  can.o
-    0x00008668   0x00008668   0x0000000a   Code   RO          373    i.CAN_isTransmitting  can.o
-    0x00008672   0x00008672   0x00000002   PAD
-    0x00008674   0x00008674   0x00000020   Data   RO          130    .constdata          funct_led.o
-    0x00008694   0x00008694   0x0000010b   Data   RO          473    .constdata          aes.o
-    0x0000879f   0x0000879f   0x00000001   PAD
-    0x000087a0   0x000087a0   0x00000100   Data   RO          521    .constdata          sha256.o
-    0x000088a0   0x000088a0   0x000005f0   Data   RO          535    .constdata          asciilib.o
-    0x00008e90   0x00008e90   0x00000030   Data   RO          756    Region$$Table       anon$$obj.o
+    0x000010d0   0x000010d0   0x00000684   Code   RO          402    .text               highcan.o
+    0x00001754   0x00001754   0x00001df8   Code   RO          432    .text               lpc17xx_can.o
+    0x0000354c   0x0000354c   0x00000140   Code   RO          457    .text               lpc17xx_clkpwr.o
+    0x0000368c   0x0000368c   0x000003a4   Code   RO          472    .text               aes.o
+    0x00003a30   0x00003a30   0x000000c8   Code   RO          495    .text               security.o
+    0x00003af8   0x00003af8   0x00000400   Code   RO          520    .text               sha256.o
+    0x00003ef8   0x00003ef8   0x00004538   Code   RO          552    .text               glcd.o
+    0x00008430   0x00008430   0x0000008a   Code   RO          591    .text               c_w.l(rt_memcpy_v6.o)
+    0x000084ba   0x000084ba   0x0000004e   Code   RO          593    .text               c_w.l(rt_memclr_w.o)
+    0x00008508   0x00008508   0x00000064   Code   RO          600    .text               c_w.l(rt_memcpy_w.o)
+    0x0000856c   0x0000856c   0x0000004a   Code   RO          617    .text               c_w.l(sys_stackheap_outer.o)
+    0x000085b6   0x000085b6   0x00000012   Code   RO          619    .text               c_w.l(exit.o)
+    0x000085c8   0x000085c8   0x00000008   Code   RO          627    .text               c_w.l(libspace.o)
+    0x000085d0   0x000085d0   0x0000000c   Code   RO          688    .text               c_w.l(sys_exit.o)
+    0x000085dc   0x000085dc   0x00000000   Code   RO          701    .text               c_w.l(indicate_semi.o)
+    0x000085dc   0x000085dc   0x00000080   Code   RO          361    i.CAN_internalPrioMode  can.o
+    0x0000865c   0x0000865c   0x0000000a   Code   RO          373    i.CAN_isTransmitting  can.o
+    0x00008666   0x00008666   0x00000002   PAD
+    0x00008668   0x00008668   0x00000020   Data   RO          130    .constdata          funct_led.o
+    0x00008688   0x00008688   0x0000010b   Data   RO          473    .constdata          aes.o
+    0x00008793   0x00008793   0x00000001   PAD
+    0x00008794   0x00008794   0x00000100   Data   RO          521    .constdata          sha256.o
+    0x00008894   0x00008894   0x000005f0   Data   RO          535    .constdata          asciilib.o
+    0x00008e84   0x00008e84   0x00000030   Data   RO          756    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x10000000, Load base: 0x00008ec0, Size: 0x00004000, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x10000000, Load base: 0x00008eb4, Size: 0x00004000, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x10000000        -       0x00004000   Zero   RW            1    STACK               startup_lpc17xx.o
 
 
-    Execution Region RW_IRAM2 (Exec base: 0x2007c000, Load base: 0x00008ec0, Size: 0x00000620, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM2 (Exec base: 0x2007c000, Load base: 0x00008eb4, Size: 0x00000620, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2007c000   0x00008ec0   0x00000034   Data   RW           16    .data               sample.o
-    0x2007c034   0x00008ef4   0x00000004   Data   RW          101    .data               system_lpc17xx.o
-    0x2007c038   0x00008ef8   0x00000001   Data   RW          157    .data               lib_led.o
-    0x2007c039   0x00008ef9   0x00000003   PAD
-    0x2007c03c   0x00008efc   0x00000014   Data   RW          218    .data               irq_rit.o
-    0x2007c050   0x00008f10   0x00000008   Data   RW          348    .data               can.o
-    0x2007c058   0x00008f18   0x00000040   Data   RW          404    .data               highcan.o
-    0x2007c098   0x00008f58   0x0000000c   Data   RW          433    .data               lpc17xx_can.o
-    0x2007c0a4   0x00008f64   0x00000001   Data   RW          553    .data               glcd.o
-    0x2007c0a5   0x00008f65   0x00000003   PAD
+    0x2007c000   0x00008eb4   0x00000034   Data   RW           16    .data               sample.o
+    0x2007c034   0x00008ee8   0x00000004   Data   RW          101    .data               system_lpc17xx.o
+    0x2007c038   0x00008eec   0x00000001   Data   RW          157    .data               lib_led.o
+    0x2007c039   0x00008eed   0x00000003   PAD
+    0x2007c03c   0x00008ef0   0x00000014   Data   RW          218    .data               irq_rit.o
+    0x2007c050   0x00008f04   0x00000008   Data   RW          348    .data               can.o
+    0x2007c058   0x00008f0c   0x00000040   Data   RW          404    .data               highcan.o
+    0x2007c098   0x00008f4c   0x0000000c   Data   RW          433    .data               lpc17xx_can.o
+    0x2007c0a4   0x00008f58   0x00000001   Data   RW          553    .data               glcd.o
+    0x2007c0a5   0x00008f59   0x00000003   PAD
     0x2007c0a8        -       0x00000378   Zero   RW           15    .bss                sample.o
     0x2007c420        -       0x00000010   Zero   RW          217    .bss                irq_rit.o
     0x2007c430        -       0x00000190   Zero   RW          403    .bss                highcan.o
@@ -877,7 +877,7 @@ Image component sizes
        490         18          0          8          0      20373   can.o
        108         14         32          0          0      18368   funct_led.o
      17720        202          0          1          0      42461   glcd.o
-      1680         78          0         64        400      21184   highcan.o
+      1668         78          0         64        400      21176   highcan.o
        104         22          0          0          0      17116   irq_button.o
        600         96          0          0          0       1261   irq_can.o
        780         54          0         20         16       3956   irq_rit.o
@@ -896,7 +896,7 @@ Image component sizes
        640         32          0          4          0       1141   system_lpc17xx.o
 
     ----------------------------------------------------------------------
-     33624       1090       2328        168      17688     227471   Object Totals
+     33612       1090       2328        168      17688     227463   Object Totals
          0          0         48          0          0          0   (incl. Generated)
          2          0          1          6          0          0   (incl. Padding)
 
@@ -948,15 +948,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     34216       1106       2328        168      17784     226407   Grand Totals
-     34216       1106       2328        168      17784     226407   ELF Image Totals
-     34216       1106       2328        168          0          0   ROM Totals
+     34204       1106       2328        168      17784     226399   Grand Totals
+     34204       1106       2328        168      17784     226399   ELF Image Totals
+     34204       1106       2328        168          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                36544 (  35.69kB)
+    Total RO  Size (Code + RO Data)                36532 (  35.68kB)
     Total RW  Size (RW Data + ZI Data)             17952 (  17.53kB)
-    Total ROM Size (Code + RO Data + RW Data)      36712 (  35.85kB)
+    Total ROM Size (Code + RO Data + RW Data)      36700 (  35.84kB)
 
 ==============================================================================
 

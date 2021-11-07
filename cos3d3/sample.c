@@ -67,6 +67,10 @@ int main(void)
 	ctx_dec[0] = AES_init(key, iv);
 	ctx_dec[1] = AES_init(key, iv);
 	ctx_dec[2] = AES_init(key, iv);
+	ctx_dec[3] = AES_init(key, iv);
+	newParam_dec = AES_init(key, iv);
+	ctx = AES_init(key, iv);
+	ack = AES_init(key, iv);
   keyctx = AES_init(key, iv);
 	
 	
