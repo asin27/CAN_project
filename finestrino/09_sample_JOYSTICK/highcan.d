@@ -1,13 +1,13 @@
 .\highcan.o: ..\..\shared_libraries\CAN\highcan.c
 .\highcan.o: .\..\..\shared_libraries\CAN\Drivers\include\lpc17xx_can.h
-.\highcan.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
+.\highcan.o: C:\Users\clem-\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h
 .\highcan.o: .\Core\CM3\CoreSupport\core_cm3.h
-.\highcan.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\highcan.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\highcan.o: .\Core\CM3\CoreSupport\core_cmInstr.h
 .\highcan.o: .\Core\CM3\CoreSupport\core_cmFunc.h
-.\highcan.o: C:\Users\Arianna\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\highcan.o: C:\Users\clem-\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\highcan.o: .\..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
-.\highcan.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\highcan.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\highcan.o: ..\..\shared_libraries\CAN\../GLCD/GLCD.h
 .\highcan.o: ..\..\shared_libraries\CAN\./headers/highcan.h
 .\highcan.o: ..\..\shared_libraries\CAN\./headers/./can.h

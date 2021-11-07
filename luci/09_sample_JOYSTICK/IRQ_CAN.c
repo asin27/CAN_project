@@ -17,7 +17,7 @@ extern unsigned char ivDgst[32];
 extern unsigned char newKey[16];
 extern unsigned char newIv[16];
 char res[32] = {0};
-int okKey = 0, okIv = 0;
+
 
 extern unsigned char keyAES[16];
 extern uint8_t ivAES[16];
@@ -56,6 +56,7 @@ void CAN_IRQHandler (void)
 
 void IRQ_CAN_RECEIVE(int canBus){
 	char b[16] = {0};
+	int okKey = 0, okIv = 0;
 	
 	if(hCAN_receiveMessage(canBus) == hCAN_SUCCESS && hCAN_recDone[canBus-1]){
 		hCAN_recMessage[canBus-1][hCAN_lenght[canBus-1]] = 0;
@@ -94,16 +95,17 @@ void IRQ_CAN_RECEIVE(int canBus){
 					okIv = res[1] = 1;
 			}
 			if (okKey && okIv){
-					ctx = AES_init(newKey, newIv);
-					dec_ctx = AES_init(newKey, newIv);
-					newParam_dec = AES_init(newKey, newIv);
-					ack = AES_init(newKey, newIv);
-					break_dec_ctx = AES_init(newKey, newIv);
-					AES(&ack, (uint8_t *)res, 32);
-					for(int i =0; i<16; i++){
+				for(int i =0; i<16; i++){
 						keyAES[i] = newKey[i];
 						ivAES[i] = newIv[i];
 					}
+				ctx = AES_init(newKey, newIv);
+				dec_ctx = AES_init(newKey, newIv);
+				newParam_dec = AES_init(newKey, newIv);
+				ack = AES_init(newKey, newIv);
+				break_dec_ctx = AES_init(newKey, newIv);
+				AES(&ack, (uint8_t *)res, 32);
+					
 					while(hCAN_sendMessage(1, (char *) res, 32)!=hCAN_SUCCESS);
 			} else {
 					while(hCAN_sendMessage(1, (char *) res, 32)!=hCAN_SUCCESS);
