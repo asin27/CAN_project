@@ -118,8 +118,9 @@ int hCAN_sendMessage(int canBus, char *buf, int lenght){
 	CAN_sendFrames(can); // send messages
 		
 	// processor stays in while until transsion is put in idle
-	while( 
-		 hCAN_ActiveError == hCAN_ERR_NO_ERR // or an error occours
+	while(
+		CAN_isTransmitting(can)
+		 && hCAN_ActiveError == hCAN_ERR_NO_ERR // or an error occours
 	); 
 	
 	if(hCAN_ActiveError == hCAN_ERR_BUS_ERROR ) return hCAN_ActiveError;

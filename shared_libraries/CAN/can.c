@@ -59,7 +59,8 @@ static unsigned char counter[2] = "1";
 void CAN_sendFrames(LPC_CAN_TypeDef*can){
 	int cmd = 0;
 	
-	while( (can->GSR & CAN_GSR_TCS) == 0); // wait for can ready to send
+	//while( (can->GSR & CAN_GSR_TCS) == 0); // wait for can ready to send
+	while( (can->GSR & CAN_GSR_TBS) == 0); // wait for can ready to send
 	
 	// send only prepared frames
 	if( (CAN_state & BUFFER1) == BUFFER1) cmd |= CAN_CMR_STB1; // transmit 1
