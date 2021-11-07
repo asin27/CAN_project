@@ -30,7 +30,7 @@ int blink_mask = 0xFF;
 
 extern int check;
 extern unsigned char AD_current;
-extern struct AES_ctx ctx;
+extern struct AES_ctx ctx, decK;
 extern struct AES_ctx ack_ctx[4]; //declared in main 
 extern uint8_t oldKey[16];
 extern uint8_t oldIv[16];
@@ -125,10 +125,14 @@ void TIMER0_IRQHandler (void)
 	}while(bad != 0);
 	
 	//updating keys
+	AES(&decK, eKey, 16);
+	AES(&decK, iv, 16);
 	for(int i = 0; i<16; i++){
 		oldKey[i] = eKey[i];
 		oldIv[i] = iv[i];
 	}
+	decK = AES_init(oldKey, oldIv);
+	ctx = AES_init(oldKey, oldIv);
 	
   LPC_TIM0->IR = 1;			/* clear interrupt flag */
   return;

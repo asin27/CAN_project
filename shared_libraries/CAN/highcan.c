@@ -8,18 +8,16 @@ volatile int busMine[2];
 
 int hCAN_ActiveError;
 
-/*void printTextOnDisplay(int x, int y, CAN_MSG_Type* msg1){
-		unsigned char buff[100];
-		union {
-			uint32_t n[2];
-			char string[9];
-		} m;
-		m.n[0] = msg1->dataA.number;
-		m.n[1] = msg1->dataB.number;
-		m.string[8] = 0;
-		//sprintf((char*) buff, "0x%x - %s", msg1->id, m.string);
-		GUI_Text(x, y, (uint8_t*) m.string, White, Black);
-}*/
+static inline int isErrorPresent(int canBus){ // boolean
+		if(hCAN_ActiveError == hCAN_ERR_BUS_ERROR)
+			return 1;
+		if(hCAN_ActiveError == hCAN_ERR_COLLISION){ // busMine goes to 0 if interrupt handler for transmission problem is called
+			busBlocked[canBus-1] = 1;
+			busMine[canBus-1] = 0;
+			return 1;
+		}
+		return 0;
+}
 
 static int hCAN_AfEntry[2];
 int hCAN_init(int peripheral, int speed){
@@ -81,10 +79,9 @@ int hCAN_sendMessage(int canBus, char *buf, int lenght){
 		while( 
 			CAN_isTransmitting(can)	 // wait until either the messages are sent or interrupt is issued
 			&& hCAN_ActiveError == hCAN_ERR_NO_ERR // or an error occours
-		);
-			
-		if( hCAN_ActiveError != hCAN_ERR_NO_ERR)
-			return hCAN_ActiveError;
+		);	
+		if(isErrorPresent(canBus)) return hCAN_ActiveError;
+		
 		return hCAN_SUCCESS;
 	}
 	
@@ -123,12 +120,7 @@ int hCAN_sendMessage(int canBus, char *buf, int lenght){
 		 && hCAN_ActiveError == hCAN_ERR_NO_ERR // or an error occours
 	); 
 	
-	if(hCAN_ActiveError == hCAN_ERR_BUS_ERROR ) return hCAN_ActiveError;
-	if(hCAN_ActiveError == hCAN_ERR_COLLISION){ // busMine goes to 0 if interrupt handler for transmission problem is called
-		busBlocked[canBus-1] = 1;
-		busMine[canBus-1] = 0;
-		return hCAN_ERR_COLLISION;
-	}
+	if(isErrorPresent(canBus)) return hCAN_ActiveError;
 	
 	if(lenght <= 16) return hCAN_SUCCESS;
 	
@@ -156,6 +148,8 @@ int hCAN_sendMessage(int canBus, char *buf, int lenght){
 			CAN_isTransmitting(can)	 // wait until either the messages are sent or interrupt is issued
 			&& hCAN_ActiveError == hCAN_ERR_NO_ERR // or an error occours
 		); 
+		
+		if(isErrorPresent(canBus)) return hCAN_ActiveError;
 	}
 	
 	// send last packet
@@ -185,6 +179,8 @@ int hCAN_sendMessage(int canBus, char *buf, int lenght){
 		CAN_isTransmitting(can)	 // wait until either the messages are sent or interrupt is issued
 		&& hCAN_ActiveError == hCAN_ERR_NO_ERR // or an error occours
 	);
+	
+	if(isErrorPresent(canBus)) return hCAN_ActiveError;
 	
 	busBlocked[canBus-1] = 0;
 	busMine[canBus-1] = 0;
