@@ -86,6 +86,7 @@ int main(void)
 	
 	enable_timer(0);
 	
+	justDraw();
 	
 	LPC_SC->PCON |= 0x1;									/* power-down	mode										*/
 	LPC_SC->PCON &= ~(0x2);						
