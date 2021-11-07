@@ -11,5 +11,5 @@
 .\objects\highcan.o: ..\..\shared_libraries\CAN\Drivers\include\lpc_types.h
 .\objects\highcan.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\highcan.o: ..\..\shared_libraries\CAN\../GLCD/GLCD.h
-.\objects\highcan.o: ..\..\shared_libraries\CAN\headers\./highcan.h
-.\objects\highcan.o: ..\..\shared_libraries\CAN\headers\././can.h
+.\objects\highcan.o: ..\..\shared_libraries\CAN\./headers/highcan.h
+.\objects\highcan.o: ..\..\shared_libraries\CAN\./headers/./can.h
