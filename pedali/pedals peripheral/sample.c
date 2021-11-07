@@ -45,8 +45,10 @@ unsigned char newIv[16] = {0};
 	SystemInit();  												/* System Initialization (i.e., PLL)  */
   LED_init();                           /* LED Initialization                 */
   
-	init_RIT(0x004C4B40);									/* RIT Initialization 50 msec       	*/
-	enable_RIT();													/* RIT enabled												*/
+	init_RIT(0x004C4B40);
+	 /* RIT Initialization 50 msec       	*/
+	init_timer(0,1);
+	 enable_RIT();													/* RIT enabled												*/
 	ADC_init();
 	hCAN_init(1, CAN_5Kbps);
 	//hCAN_init(2, CAN_5Kbps);
