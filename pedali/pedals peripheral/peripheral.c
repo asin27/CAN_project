@@ -61,7 +61,10 @@ void gasHandler(unsigned short ADC_value){
 	message[3] = finalHeight & 0xFF00;
 	AES(&ctx, message, 16);
 	//LED_Off(0);
-	while(hCAN_sendMessage(1, (char *) message, 16)!=hCAN_SUCCESS);
+	int r = hCAN_sendMessage(1, (char *) message, 16);
+	while(r!=hCAN_SUCCESS){
+		hCAN_sendMessage(1, (char *) message, 16);
+	}
 	AES(&ctx_dec, message, 16);
 	//draw rectangle
 	finalHeight = (finalHeight * 260) / 150;
