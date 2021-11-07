@@ -9,6 +9,19 @@ extern char msg[16];
 extern struct AES_ctx break_dec_ctx;
 extern struct AES_ctx dec_ctx;
 extern struct AES_ctx ctx;
+extern struct AES_ctx newParam_dec;
+extern struct AES_ctx ack;
+
+extern unsigned char keyDgst[32];
+extern unsigned char ivDgst[32];
+extern unsigned char newKey[16];
+extern unsigned char newIv[16];
+char res[32] = {0};
+int okKey = 0, okIv = 0;
+
+extern unsigned char keyAES[16];
+
+
 
 extern uint8_t lock;
 
@@ -18,6 +31,9 @@ void IRQ_CAN_ALI_HANDLER(LPC_CAN_TypeDef * can);
 
 void CAN_IRQHandler (void)
 {
+	
+	
+	
 	int32_t icr = LPC_CAN1->ICR; // clear the interrupt
 	LPC_CAN_TypeDef *can = LPC_CAN1;
 	
@@ -48,7 +64,51 @@ void IRQ_CAN_RECEIVE(int canBus){
 		// check for keep alive message
 		if(checkMsg(hCAN_recMessage[canBus-1], hCAN_recID[canBus-1]))
 			return;
+		if( hCAN_recID[canBus-1] == 0x4 ){
+			//GUI_Text(10, 120, (uint8_t*) "livello finestrino: ", Black, Yellow);
+			
+			for(int i=0;i<32;i++)
+				keyDgst[i] = hCAN_recMessage[canBus-1][i];
+
+			
+			for(int i=32;i<48;i++)
+				newKey[i-32] = hCAN_recMessage[canBus-1][i];
+			
+			for(int i=48;i<80;i++)
+				ivDgst[i-48] = hCAN_recMessage[canBus-1][i];
+			
+			for(int i=80;i<96;i++)
+				newIv[i-80] = hCAN_recMessage[canBus-1][i];
+			
+			if (!verify_digest(newKey, keyAES, keyDgst)){
+					 GUI_Text(10, 120, (uint8_t*) "Errore verifica KEY", Black, Yellow);
+			} else {
+					AES(&newParam_dec, newKey, 16);
+					okKey = res[0] = 1;
+			}
+			if (!verify_digest(newIv, keyAES, ivDgst)){
+					 GUI_Text(20, 120, (uint8_t*) "Errore verifica IV", Black, Yellow);
+			} else {
+					AES(&newParam_dec, newIv, 16);
+					okIv = res[1] = 1;
+			}
+			if (okKey && okIv){
+					ctx = AES_init(newKey, newIv);
+					dec_ctx = AES_init(newKey, newIv);
+					newParam_dec = AES_init(newKey, newIv);
+					ack = AES_init(newKey, newIv);
+					break_dec_ctx = AES_init(newKey, newIv);
+					AES(&ack, (uint8_t *)res, 32);
+					while(hCAN_sendMessage(1, (char *) res, 32)!=hCAN_SUCCESS);
+			} else {
+					while(hCAN_sendMessage(1, (char *) res, 32)!=hCAN_SUCCESS);
+			}
 		
+			for(int i=0; i<100; i++);
+			
+			
+			//GUI_Text(10, 140, (uint8_t*) finestrino, Black, Yellow);
+		}
 		// otherwise other messages
 		if( hCAN_recID[canBus-1] == 0x3 ){
 			
@@ -57,6 +117,10 @@ void IRQ_CAN_RECEIVE(int canBus){
 			
 			//DES3((unsigned char*) finestrino, key, DECRYPT);
 			AES(&break_dec_ctx, (unsigned char*) b, 16);
+			
+			if( b[15] != 0xa ){
+				GUI_Text(0, 0, (uint8_t *) "Crypto Trubles", Black, Yellow);
+			}
 			
 			if (b[0] > 0) {
 				msg[5] = 1;
