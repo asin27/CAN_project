@@ -50,7 +50,7 @@ int main (void) {
 	NVIC_SetPriority(ADC_IRQn, 1);
 	NVIC_SetPriority(TIMER0_IRQn, 2);
 
-	init_timer(0, 10 * 0x2FAF080);
+	init_timer(0, 0x989680); // 10 secondi
 	enable_timer(0);
 	
 	LPC_SC->PCON |= 0x1;									/* power-down	mode										*/
