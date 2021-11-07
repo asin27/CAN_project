@@ -156,6 +156,9 @@ int hCAN_sendMessage(int canBus, char *buf, int lenght){
 			CAN_isTransmitting(can)	 // wait until either the messages are sent or interrupt is issued
 			&& hCAN_ActiveError == hCAN_ERR_NO_ERR // or an error occours
 		); 
+		
+		if(hCAN_ActiveError != hCAN_ERR_NO_ERR) 
+			return hCAN_ActiveError;
 	}
 	
 	// send last packet
@@ -185,6 +188,8 @@ int hCAN_sendMessage(int canBus, char *buf, int lenght){
 		CAN_isTransmitting(can)	 // wait until either the messages are sent or interrupt is issued
 		&& hCAN_ActiveError == hCAN_ERR_NO_ERR // or an error occours
 	);
+	
+	if(hCAN_ActiveError != hCAN_ERR_NO_ERR) return hCAN_ActiveError;
 	
 	busBlocked[canBus-1] = 0;
 	busMine[canBus-1] = 0;
