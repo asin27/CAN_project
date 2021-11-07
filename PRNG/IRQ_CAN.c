@@ -57,9 +57,5 @@ void IRQ_CAN(int canBus){
 			}*/
 		}
 	}
-	
-	if(hCAN_arbitrationLost(canBus)){
-		GUI_Text(0, 0, (uint8_t*) "ARBITRATION LOST! SOMEONE IS TRASMIITTING", Yellow, Red);
-	};
-	
+
 }
