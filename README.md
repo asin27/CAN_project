@@ -6,3 +6,4 @@ pedali --> 0x3 <br/>
 dashboard --> 0xa <br/>
 
 La dashboard si trova all'interno di cos3d
+
